@@ -201,14 +201,27 @@
       }
     };
     openingVideo.addEventListener("loadedmetadata", noteDur);
+    let nudge = false;
     openingVideo.addEventListener("seeked", () => {
       if (objetivo !== null && Math.abs(openingVideo.currentTime - objetivo) > 0.05) {
         openingVideo.currentTime = objetivo;
+        return;
       }
+      // Un video pausado no siempre repinta su capa tras un seek: se queda
+      // en negro aunque el fotograma esté decodificado. Un cambio mínimo de
+      // transform obliga al compositor a redibujarlo.
+      nudge = !nudge;
+      openingVideo.style.transform = nudge ? "translateZ(0)" : "translateZ(0) scale(1.0001)";
     });
     noteDur();
-    // Un primer play/pause deja el primer fotograma pintado en iOS,
-    // que si no muestra el póster hasta que el usuario toca la pantalla.
+    const listo = () => openingVideo.classList.add("listo");
+    if (openingVideo.requestVideoFrameCallback) {
+      // Solo mostramos el video cuando el navegador confirma que pintó un
+      // fotograma. Si nunca ocurre, el póster de fondo queda visible.
+      openingVideo.requestVideoFrameCallback(listo);
+    } else {
+      openingVideo.addEventListener("loadeddata", listo, { once: true });
+    }
     openingVideo.play().then(() => openingVideo.pause()).catch(() => {});
   }
 

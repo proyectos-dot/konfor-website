@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260801e">
-<link rel="stylesheet" href="styles.css?v=20260801e">
+<link rel="stylesheet" href="tokens.css?v=20260801i">
+<link rel="stylesheet" href="styles.css?v=20260801i">
 </head>
 <body>
 
@@ -110,6 +110,18 @@
      páginas de solución, cambiando data-default para que cada
      segmento abra en su propia pantalla.
      ======================================================= -->
+
+<!-- ============ ESCENA: el problema ============ -->
+<section class="escena escena--izq" data-reveal>
+  <img class="escena-img" src="assets/esc/problema.jpg" alt="Papeles de laboratorio, recetas y estudios acumulados sin orden sobre una mesa" loading="lazy">
+  <div class="escena-veil"></div>
+  <div class="escena-inner">
+    <p class="escena-eyebrow">Lo que hay hoy</p>
+    <h2 class="escena-title">Su historia existe.<br>Está en una <em>gaveta.</em></h2>
+    <p class="escena-sub">Repartida entre laboratorios, consultorios y sobres que nadie vuelve a abrir. Cada médico nuevo empieza de cero, y el que la sostiene todo el tiempo es usted.</p>
+  </div>
+</section>
+
 <!-- ============ EL PRODUCTO ============
      Las pantallas son las del prototipo Konfor Health OS, con sus
      datos reales. Se reconstruyen en CSS en vez de pegar capturas
@@ -462,23 +474,57 @@
     <h2 class="section-title">El sistema es uno.<br>La entrada <span class="accent">no.</span></h2>
     <p class="section-body">Cada actor entra al sistema por una puerta distinta, con una promesa distinta y una prueba distinta que exigir. Elija la suya.</p>
     <div class="aud-grid">
-      <a class="aud" href="soluciones/medicos.html" data-reveal>
-        <span class="aud-eyebrow">Para médicos</span>
-        <h3>Usted activa el valor. Captura la menor parte.</h3>
-        <p>Una posición dentro de la infraestructura en lugar de una comisión por referir. Y el paciente llega con historia, no con un sobre de estudios.</p>
-        <span class="aud-go">Ver la propuesta médica →</span>
+      <a class="aud" href="soluciones/residentes.html" data-reveal>
+        <div class="aud-media">
+          <img src="assets/esc/residente.jpg" alt="" loading="lazy">
+          <div class="aud-over">
+            <span class="aud-eyebrow">Para quien va a vivir aquí</span>
+            <h3>Una casa que envejece con usted</h3>
+          </div>
+        </div>
+        <div class="aud-body">
+          <p>Autonomía con soporte. No que lo cuiden: que no tenga que pedir permiso para vivir su vida.</p>
+          <span class="aud-go">Ver cómo se vive aquí →</span>
+        </div>
       </a>
       <a class="aud" href="soluciones/familias.html" data-reveal>
-        <span class="aud-eyebrow">Para familias y cuidadores</span>
-        <h3>Acompañar sin coordinar cada crisis desde lejos.</h3>
-        <p>Para los dos millones de dominicanos que cuidan a sus padres a distancia con llamadas, favores y memoria.</p>
-        <span class="aud-go">Ver cómo funciona →</span>
+        <div class="aud-media">
+          <img src="assets/esc/familia.jpg" alt="" loading="lazy">
+          <div class="aud-over">
+            <span class="aud-eyebrow">Para la familia</span>
+            <h3>Saber sin tener que preguntar</h3>
+          </div>
+        </div>
+        <div class="aud-body">
+          <p>Para los dos millones de dominicanos que cuidan a sus padres a distancia con llamadas, favores y memoria.</p>
+          <span class="aud-go">Ver cómo funciona →</span>
+        </div>
+      </a>
+      <a class="aud" href="soluciones/medicos.html" data-reveal>
+        <div class="aud-media">
+          <img src="assets/esc/medico.jpg" alt="" loading="lazy">
+          <div class="aud-over">
+            <span class="aud-eyebrow">Para médicos</span>
+            <h3>El paciente llega con historia</h3>
+          </div>
+        </div>
+        <div class="aud-body">
+          <p>Usted activa el valor del sistema y captura la menor parte. No es falta de esfuerzo: es arquitectura.</p>
+          <span class="aud-go">Ver la propuesta médica →</span>
+        </div>
       </a>
       <a class="aud" href="soluciones/desarrolladores.html" data-reveal>
-        <span class="aud-eyebrow">Para desarrolladores</span>
-        <h3>Deje de vender metros cuadrados. Opere un nodo.</h3>
-        <p>Certificación en tres niveles para que su proyecto entre a la red: demanda calificada, régimen fiscal y un activo que no termina en la entrega.</p>
-        <span class="aud-go">Ver la certificación →</span>
+        <div class="aud-media">
+          <img src="assets/esc/desarrollador.jpg" alt="" loading="lazy">
+          <div class="aud-over">
+            <span class="aud-eyebrow">Para desarrolladores</span>
+            <h3>Deje de vender metros cuadrados</h3>
+          </div>
+        </div>
+        <div class="aud-body">
+          <p>Certificación en tres niveles para que su proyecto entre a la red y no termine el día de la entrega.</p>
+          <span class="aud-go">Ver la certificación →</span>
+        </div>
       </a>
     </div>
   </div>
@@ -634,6 +680,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=20260801e"></script>
+<script src="main.js?v=20260801i"></script>
 </body>
 </html>

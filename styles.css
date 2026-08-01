@@ -1081,3 +1081,115 @@ body { font-family: var(--cuerpo); }
   .opening-track { height: 360svh; }
   .band { max-width: calc(100% - 2.8rem); }
 }
+
+/* ============================================================
+   ESCENA A SANGRE — una imagen, una línea, nada más
+   Jerarquía fuerte: un solo elemento dominante por pantalla.
+   ============================================================ */
+.escena {
+  position: relative;
+  min-height: 92svh;
+  display: grid; place-items: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+.escena-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.06);
+  transition: transform 1.6s var(--ease);
+}
+.escena.in-view .escena-img { transform: scale(1); }
+.escena-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,14,28,0.35), rgba(10,14,28,0.72));
+}
+.escena--izq .escena-veil {
+  background: linear-gradient(90deg, rgba(10,14,28,0.88) 0%, rgba(10,14,28,0.55) 45%, rgba(10,14,28,0.15) 100%);
+}
+.escena-inner {
+  position: relative; z-index: 2;
+  max-width: min(46rem, calc(100% - 5rem));
+  text-align: center;
+  color: var(--sobre-navy);
+  opacity: 0; transform: translateY(26px);
+  transition: opacity 0.9s var(--ease) 0.15s, transform 0.9s var(--ease) 0.15s;
+}
+.escena.in-view .escena-inner { opacity: 1; transform: none; }
+.escena--izq .escena-inner {
+  text-align: left;
+  margin-right: auto; margin-left: clamp(1.6rem, 8vw, 7rem);
+}
+.escena-eyebrow {
+  font-family: var(--ui); font-size: 0.68rem; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--oro-claro); margin-bottom: 1.4rem;
+}
+.escena-title {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2.1rem, 5.2vw, 4.2rem);
+  line-height: 1.08; letter-spacing: -0.015em;
+}
+.escena-title em { color: var(--oro-claro); font-style: italic; }
+.escena-sub {
+  margin-top: 1.6rem; color: rgba(245,243,238,0.74);
+  font-size: 1.02rem; max-width: 32rem;
+}
+.escena--izq .escena-sub { margin-left: 0; }
+.escena--centro .escena-sub { margin-left: auto; margin-right: auto; }
+
+/* Las tarjetas de audiencia ahora llevan su escena */
+.aud { position: relative; overflow: hidden; padding: 0; border: none; background: none; }
+.aud-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--r-tarjeta); }
+.aud-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+.aud:hover .aud-media img { transform: scale(1.05); }
+.aud-media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,14,28,0) 40%, rgba(10,14,28,0.82) 100%);
+}
+.aud-over {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 1.6rem 1.5rem;
+  color: var(--sobre-navy);
+}
+.aud-over .aud-eyebrow { color: var(--oro-claro); }
+.aud-over h3 { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; margin: 0.5rem 0 0; color: var(--sobre-navy); }
+.aud-body { padding: 1.2rem 0.2rem 0; }
+.aud-body p { color: var(--tinta-45); font-size: 0.92rem; }
+.aud-go { display: inline-block; margin-top: 1rem; font-size: 0.8rem; color: var(--oro); font-family: var(--ui); }
+.aud:hover .aud-go { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Hero de página de solución con su escena */
+.sol-hero--foto { min-height: 82svh; display: flex; align-items: center; border-bottom: none; }
+.sol-hero--foto .sol-hero-video { object-fit: cover; }
+.sol-hero--foto .sol-title, .sol-hero--foto .sol-lead { color: var(--sobre-navy); }
+.sol-hero--foto .sol-lead { color: rgba(245,243,238,0.76); }
+
+@media (max-width: 960px) {
+  .escena { min-height: 78svh; }
+  .escena--izq .escena-inner { margin-left: 1.4rem; }
+}
+
+/* El hero con foto necesita el velo lateral para que el texto respire */
+.sol-hero--foto .escena-veil {
+  background: linear-gradient(90deg, rgba(10,14,28,0.9) 0%, rgba(10,14,28,0.62) 45%, rgba(10,14,28,0.2) 100%);
+}
+.sol-hero--foto .escena-img { transform: none; }
+.sol-hero--foto .seg-badge { border-color: rgba(201,160,82,0.6); }
+.sol-hero--foto .btn-line { border-color: rgba(245,243,238,0.4); color: var(--sobre-navy); }
+.sol-hero--foto .btn-line:hover { border-color: var(--oro-claro); color: var(--oro-claro); }
+
+/* Si el video no llega a pintar —conexión lenta, códec, ahorro de datos—
+   el póster queda debajo y la apertura nunca se ve como un rectángulo vacío. */
+.opening-sticky {
+  background-image: url("assets/video/valle_poster.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.opening-video { background: transparent; }
+/* El video aparece solo cuando confirmamos que decodificó un fotograma.
+   Hasta entonces manda el póster: nunca un rectángulo negro. */
+.opening-video { opacity: 0; transition: opacity 0.6s var(--ease); }
+.opening-video.listo { opacity: 1; }
