@@ -175,6 +175,57 @@
     });
   };
 
+  /* ---------- Apertura: el scroll conduce el video ---------- */
+  const opening = document.querySelector(".opening");
+  const openingVideo = document.getElementById("openingVideo");
+  const bands = Array.from(document.querySelectorAll(".band"));
+  const cue = document.querySelector(".opening-cue");
+  let videoDur = 0;
+
+  // Pedir un seek nuevo mientras el anterior sigue en curso hace que el
+  // navegador descarte la petición sin avisar: el video se queda clavado.
+  // Guardamos el último objetivo y lo aplicamos cuando el seek termina.
+  let objetivo = null;
+  const buscar = (t) => {
+    if (!openingVideo || !videoDur) return;
+    objetivo = t;
+    if (openingVideo.seeking) return;
+    openingVideo.currentTime = objetivo;
+  };
+
+  if (openingVideo) {
+    const noteDur = () => {
+      if (openingVideo.duration && isFinite(openingVideo.duration)) {
+        videoDur = openingVideo.duration;
+        updateOpening();
+      }
+    };
+    openingVideo.addEventListener("loadedmetadata", noteDur);
+    openingVideo.addEventListener("seeked", () => {
+      if (objetivo !== null && Math.abs(openingVideo.currentTime - objetivo) > 0.05) {
+        openingVideo.currentTime = objetivo;
+      }
+    });
+    noteDur();
+    // Un primer play/pause deja el primer fotograma pintado en iOS,
+    // que si no muestra el póster hasta que el usuario toca la pantalla.
+    openingVideo.play().then(() => openingVideo.pause()).catch(() => {});
+  }
+
+  const updateOpening = () => {
+    if (!opening || !bands.length) return;
+    const rect = opening.getBoundingClientRect();
+    const total = opening.offsetHeight - window.innerHeight;
+    const p = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0;
+
+    if (videoDur && !reduceMotion) buscar(p * videoDur);
+
+    // Cada banda ocupa su tramo del recorrido
+    const activa = Math.min(Math.floor(p * bands.length), bands.length - 1);
+    bands.forEach((b, i) => b.classList.toggle("on", i === activa));
+    if (cue) cue.classList.toggle("hide", p > 0.06);
+  };
+
   /* ---------- Scroll unificado ---------- */
   const header = document.getElementById("siteHeader");
   const progressBar = document.getElementById("progressBar");
@@ -194,6 +245,7 @@
     // Fuera del rAF: en pestañas ocultas rAF no corre y el contenido
     // se quedaría invisible hasta que el usuario vuelva y haga scroll.
     revealPass();
+    updateOpening();
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {

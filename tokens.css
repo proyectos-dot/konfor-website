@@ -1,0 +1,62 @@
+/* ============================================================
+   KONFOR — Sistema visual «Patrimonio»
+   Contrato tomado del prototipo Konfor Health OS. El sitio y el
+   producto tienen que verse como la misma casa: papel de base,
+   navy solo para los momentos que importan, oro únicamente sobre
+   la cifra que da valor.
+   ============================================================ */
+
+:root {
+  /* Superficies */
+  --papel: #f5f3ee;
+  --papel-2: #efece4;
+  --papel-3: #e8e4da;
+  --navy: #0a0e1c;
+  --navy-grad: linear-gradient(160deg, #101830, #0a0e1c);
+
+  /* Tinta y sus opacidades canónicas */
+  --tinta: #0a0e1c;
+  --tinta-45: rgba(10, 14, 28, 0.45);
+  --tinta-35: rgba(10, 14, 28, 0.35);
+  --tinta-12: rgba(10, 14, 28, 0.12);
+  --tinta-08: rgba(10, 14, 28, 0.08);
+
+  /* Sobre navy */
+  --sobre-navy: #f5f3ee;
+  --sobre-navy-55: rgba(245, 243, 238, 0.55);
+  --sobre-navy-14: rgba(245, 243, 238, 0.14);
+
+  /* Oro: nunca en bordes ni decoración */
+  --oro: #c9a24b;
+  --oro-claro: #e8c87a;
+  --oro-grad: linear-gradient(135deg, #c9a24b, #e8c87a);
+
+  /* Semánticos: solo en insignias, nunca para alarmar */
+  --ok: #2e7d5b;
+  --warn: #b7791f;
+  --riesgo: #b5484d;
+
+  /* Tipografía */
+  --serif: "Fraunces", Georgia, serif;
+  --ui: "Outfit", -apple-system, "Helvetica Neue", sans-serif;
+  --cuerpo: "Inter", -apple-system, "Helvetica Neue", sans-serif;
+
+  /* Radios: solo estos cuatro */
+  --r-tarjeta: 28px;
+  --r-interna: 20px;
+  --r-chip: 14px;
+  --r-pill: 999px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* El grano del navy: sin él, el azul se ve plano y barato */
+.grano::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
