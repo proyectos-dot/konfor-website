@@ -25,8 +25,8 @@
 <meta name="theme-color" content="#0a0e1c">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "KONFOR", "url": "https://konfor.do", "description": "Infraestructura de longevidad: vivienda, salud coordinada y comunidad como un solo sistema.", "parentOrganization": {"@type": "Organization", "name": "Grupo PÁEZ", "url": "https://paez.com.do"}, "address": {"@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Certificación KOSD", "description": "Certificación de proyectos como infraestructura de longevidad en tres niveles: Ready, Adapted y Operated."}}}</script>
-<link rel="stylesheet" href="tokens.css?v=20260801w">
-<link rel="stylesheet" href="styles.css?v=20260801w">
+<link rel="stylesheet" href="tokens.css?v=20260802a">
+<link rel="stylesheet" href="styles.css?v=20260802a">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -54,7 +54,7 @@
   <a class="header-cta" href="#contacto">Conversemos</a>
 </header>
 
-<main id="contenido" id="top">
+<main id="contenido">
 
 <!-- ============ APERTURA INMERSIVA ============
      El video no se reproduce solo: avanza con el scroll. La
@@ -770,6 +770,45 @@
   </div>
 </section>
 
+
+<!-- ============ IDENTIDAD VERIFICABLE ============
+     Twilio (registro A2P), Meta Business y Google Business exigen
+     ver nombre legal, dirección y teléfono EN el sitio. Sin esto
+     el registro se rechaza. Los campos se publican solos desde
+     datos.js en cuanto dejen de ser PENDIENTE.
+     ============================================= -->
+<section class="identidad" id="identidad">
+  <div class="identidad-inner">
+    <p class="section-kicker">Identificación de la empresa</p>
+    <div class="ident-grid" data-identidad>
+      <div class="ident-item">
+        <span class="ident-label">Razón social</span>
+        <span class="ident-valor">KONFOR · Grupo PÁEZ</span>
+      </div>
+      <div class="ident-item" data-campo="rnc" hidden>
+        <span class="ident-label">RNC</span>
+        <span class="ident-valor"></span>
+      </div>
+      <div class="ident-item" data-campo="direccion" hidden>
+        <span class="ident-label">Dirección</span>
+        <span class="ident-valor"></span>
+      </div>
+      <div class="ident-item" data-campo="telefono" hidden>
+        <span class="ident-label">Teléfono</span>
+        <span class="ident-valor"></span>
+      </div>
+      <div class="ident-item" data-campo="horario" hidden>
+        <span class="ident-label">Horario</span>
+        <span class="ident-valor"></span>
+      </div>
+      <div class="ident-item">
+        <span class="ident-label">Correo</span>
+        <span class="ident-valor"><a href="mailto:proyectos@paez.com.do">proyectos@paez.com.do</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
@@ -785,12 +824,13 @@
       <p class="footer-brand">KONFOR</p>
       <p class="footer-note">Sistema de continuidad humana.<br>Un sistema de Grupo PÁEZ · Santo Domingo, República Dominicana.</p>
     </div>
+    <p class="footer-links"><a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de uso</a></p>
     <p class="footer-legal mono">© 2026 KONFOR · Material informativo. No constituye oferta pública de valores ni consejo médico o de inversión. Las capacidades en desarrollo se identifican como tales.</p>
   </div>
 </footer>
 
-<script src="datos.js?v=20260801w"></script>
-<script src="main.js?v=20260801w"></script>
-<script src="contacto.js?v=20260801w"></script>
+<script src="datos.js?v=20260802a"></script>
+<script src="main.js?v=20260802a"></script>
+<script src="contacto.js?v=20260802a"></script>
 </body>
 </html>

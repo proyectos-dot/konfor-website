@@ -5,6 +5,17 @@
   const D = window.DATOS || {};
   const real = (v) => v && v !== "PENDIENTE";
 
+
+  // Identidad de empresa: Twilio, Meta y Google la exigen visible.
+  // Cada campo aparece solo si tiene valor real — publicar
+  // "PENDIENTE" es peor que no publicar nada.
+  document.querySelectorAll("[data-identidad] [data-campo]").forEach(function (el) {
+    var v = D[el.dataset.campo];
+    if (!real(v)) return;
+    el.querySelector(".ident-valor").textContent = v;
+    el.hidden = false;
+  });
+
   const barra = document.querySelector("[data-contacto]");
   if (!barra) return;
 
