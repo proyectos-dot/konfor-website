@@ -4,20 +4,27 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Este archivo lo comparten la portada y las páginas de solución, que no
+  // tienen preloader, reloj ni canvas. Todo lo del hero va condicionado.
+
   /* ---------- Preloader ---------- */
   const preloader = document.getElementById("preloader");
-  window.addEventListener("load", () => setTimeout(() => preloader.classList.add("done"), 700));
-  setTimeout(() => preloader.classList.add("done"), 2800);
+  if (preloader) {
+    window.addEventListener("load", () => setTimeout(() => preloader.classList.add("done"), 700));
+    setTimeout(() => preloader.classList.add("done"), 2800);
+  }
 
   /* ---------- Reloj del hero ---------- */
   const clock = document.getElementById("heroClock");
-  const tickClock = () => {
-    const d = new Date();
-    const pad = (n) => String(n).padStart(2, "0");
-    clock.textContent = "SDQ " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) + " AST";
-  };
-  tickClock();
-  setInterval(tickClock, 1000);
+  if (clock) {
+    const tickClock = () => {
+      const d = new Date();
+      const pad = (n) => String(n).padStart(2, "0");
+      clock.textContent = "SDQ " + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) + " AST";
+    };
+    tickClock();
+    setInterval(tickClock, 1000);
+  }
 
   /* ---------- Typewriter del tag ---------- */
   const tag = document.querySelector("[data-type-target]");
@@ -35,8 +42,9 @@
     setTimeout(type, 700);
   }
 
-  /* ---------- Canvas: red de nodos / capas de capital ---------- */
+  /* ---------- Canvas: red de nodos ---------- */
   const canvas = document.getElementById("heroCanvas");
+  if (canvas) {
   const ctx = canvas.getContext("2d");
   let W, H, dpr, nodes = [];
 
@@ -86,7 +94,7 @@
         const d = Math.hypot(dx, dy);
         if (d < LINK) {
           const a = (1 - d / LINK) * 0.16;
-          ctx.strokeStyle = "rgba(255, 90, 31," + a.toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(201, 160, 82," + a.toFixed(3) + ")";
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(n.x, n.y);
@@ -119,6 +127,7 @@
       else { cancelAnimationFrame(rafId); rafId = null; }
     });
   }).observe(canvas);
+  }
 
   /* ---------- Tesis: palabras encendidas ---------- */
   const thesisText = document.getElementById("thesisText");
@@ -178,8 +187,11 @@
       const vh = window.innerHeight;
       const docH = document.documentElement.scrollHeight - vh;
 
-      progressBar.style.width = (docH > 0 ? (y / docH) * 100 : 0) + "%";
-      header.classList.toggle("scrolled", y > 40);
+      if (progressBar) progressBar.style.width = (docH > 0 ? (y / docH) * 100 : 0) + "%";
+      // Las páginas de solución nacen con el encabezado ya en estado "scrolled"
+      if (header && !document.body.classList.contains("page-solution")) {
+        header.classList.toggle("scrolled", y > 40);
+      }
 
       // Tesis
       if (words.length) {
@@ -200,8 +212,10 @@
           const idx = parseInt(l.dataset.layer, 10);
           l.classList.toggle("on", idx <= step);
         });
-        if (step >= 1 && step <= 5) stackCaption.textContent = captions[step - 1];
-        else if (step > 5) stackCaption.textContent = "la doble hélice · nodo físico + capa digital";
+        if (stackCaption) {
+          if (step >= 1 && step <= 5) stackCaption.textContent = captions[step - 1];
+          else if (step > 5) stackCaption.textContent = "la doble hélice · nodo físico + capa digital";
+        }
       }
     });
   };

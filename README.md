@@ -14,10 +14,36 @@ Luego abrir `http://localhost:4802`.
 
 | Archivo | Qué contiene |
 |---|---|
-| `index.html` | Ocho movimientos: hero, tesis, doble hélice, circuito mínimo, límites, nodos, personas, método y contacto |
-| `styles.css` | Sistema visual completo |
-| `main.js` | Canvas de red de nodos, ensamblaje del stack por scroll, revelados, iluminación de la tesis |
-| `assets/` | Renders de los nodos físicos |
+| `index.html` | Portada: tesis, doble hélice, circuito mínimo, selector de soluciones, familia de nodos, nodos en obra, límites, método y contacto |
+| `soluciones/medicos.html` | Segmento médico: diagnóstico de la captura de valor, la posición ofrecida, el activo clínico y los límites |
+| `soluciones/familias.html` | Segmento familia y diáspora, con video |
+| `soluciones/desarrolladores.html` | KOSD: los tres niveles de certificación, el contrato y las objeciones |
+| `styles.css` | Sistema visual completo, incluido el de las páginas de solución |
+| `main.js` | Compartido por todas las páginas. Todo lo del hero va condicionado, porque las páginas de solución no tienen canvas, preloader ni reloj |
+| `assets/` · `assets/video/` | Renders de los nodos y videos comprimidos para web |
+
+## Arquitectura de navegación
+
+La portada explica el sistema. Cada segmento tiene su propia página con su propio
+diagnóstico, su propia promesa y sus propios límites — el modelo de una plataforma
+que se organiza por industria y caso de uso, no por catálogo de funciones.
+
+`Sistema · Médicos · Familias · Desarrolladores · Nodos`
+
+**La página de desarrolladores es la pieza que faltaba.** Es la que convierte a
+KONFOR de "otro proyecto inmobiliario" en "el estándar bajo el que otros
+construyen". Sin ella no hay red: solo hay nodos propios.
+
+## Versionado de assets
+
+`styles.css` y `main.js` se referencian con `?v=AAAAMMDD`. **Al desplegar un
+cambio hay que subir esa fecha en todos los HTML**, o los navegadores servirán la
+versión anterior desde caché. Es exactamente el fallo que apareció al construir
+las páginas de solución: el HTML nuevo cargaba el JavaScript viejo.
+
+```bash
+cd ~/Desktop/konfor-website && grep -rl 'v=2026' --include=*.html . | xargs sed -i '' 's/v=20260801/v=NUEVAFECHA/g'
+```
 
 ## Sistema visual — "Obsidiana & Oro"
 
