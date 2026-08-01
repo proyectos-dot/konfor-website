@@ -2,967 +2,267 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KONFOR — Sistema de continuidad humana</title>
-<meta name="description" content="Comunidades donde vivir, salud y compañía funcionan como un solo sistema, con una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>KONFOR — Envejecer sin depender de nadie</title>
+<meta name="description" content="KONFOR sostiene la vida diaria de una persona mayor — lo que come, lo que toma, cómo se mueve, cuándo la ve el médico — sin que eso caiga sobre la familia. Monitoreo, prevención y acompañamiento en República Dominicana.">
 <link rel="canonical" href="https://konfor.do/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f5f3ee">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KONFOR">
 <meta property="og:locale" content="es_DO">
 <meta property="og:url" content="https://konfor.do/">
-<meta property="og:title" content="KONFOR — Infraestructura de longevidad">
-<meta property="og:description" content="Comunidades donde vivir, salud y compañía funcionan como un solo sistema, con una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.">
-<meta property="og:image" content="https://konfor.do/assets/og/og-home.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:title" content="KONFOR — Envejecer sin depender de nadie">
+<meta property="og:description" content="Vivienda, salud y compañía funcionando como un solo sistema. Monitoreo diario, prevención real y acompañamiento humano.">
+<meta property="og:image" content="https://konfor.do/assets/img/01-mujer-balcon-1200.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="KONFOR — Infraestructura de longevidad">
-<meta name="twitter:description" content="Comunidades donde vivir, salud y compañía funcionan como un solo sistema, con una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.">
-<meta name="twitter:image" content="https://konfor.do/assets/og/og-home.jpg">
-<meta name="theme-color" content="#0a0e1c">
+<meta name="twitter:title" content="KONFOR — Envejecer sin depender de nadie">
+<meta name="twitter:description" content="Vivienda, salud y compañía funcionando como un solo sistema.">
+<meta name="twitter:image" content="https://konfor.do/assets/img/01-mujer-balcon-1200.jpg">
+
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "KONFOR", "url": "https://konfor.do", "description": "Gestión, administración y operación de comunidades de longevidad y centros de bienestar; plataformas tecnológicas de interoperabilidad, historia clínica electrónica y coordinación de servicios de salud; certificación de estándares de calidad.", "parentOrganization": {"@type": "Organization", "name": "Constructora Páez y Asociados, S.R.L.", "url": "https://paez.com.do"}, "address": {"@type": "PostalAddress", "streetAddress": "Av. César Nicolás Penson No. 73", "addressLocality": "Gazcue, Santo Domingo", "addressCountry": "DO"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Certificación KOSD", "description": "Certificación de proyectos como infraestructura de longevidad en tres niveles: Ready, Adapted y Operated."}}, "legalName": "KONFOR, S.R.L.", "identifier": {"@type": "PropertyValue", "propertyID": "ONAPI Nombre Comercial", "value": "945088"}, "knowsAbout": ["Comunidades de longevidad", "Coordinación de servicios de salud", "Historia clínica electrónica", "Interoperabilidad", "Certificación de estándares"]}</script>
-<link rel="stylesheet" href="tokens.css?v=20260802e">
-<link rel="stylesheet" href="styles.css?v=20260802e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css?v=20260803a">
+<link rel="stylesheet" href="v3.css?v=20260803a">
+<link rel="preload" as="image" href="assets/seq/f_001.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "KONFOR",
+  "url": "https://konfor.do/",
+  "logo": "https://konfor.do/assets/favicon.svg",
+  "description": "Infraestructura de longevidad: vivienda, salud preventiva, servicios y coordinación familiar operando como un solo sistema.",
+  "parentOrganization": { "@type": "Organization", "name": "Grupo PÁEZ", "url": "https://paez.com.do/" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO" },
+  "email": "proyectos@paez.com.do",
+  "areaServed": "DO"
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="pre-terminal">
-    <p><span class="pre-prompt">&gt;</span> konfor<span class="pre-cursor">_</span></p>
-  </div>
-</div>
-
-<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-
-<header class="site-header" id="siteHeader">
-  <a class="brand" href="#apertura">
-    <span class="brand-block"></span>
-    <span class="brand-name">KONFOR</span>
+<header class="cabecera">
+  <a class="marca" href="index.html" aria-label="KONFOR, inicio">
+    <span class="marca-bloque" aria-hidden="true"></span>
+    <span class="marca-nombre">KONFOR</span>
   </a>
-  <nav class="top-nav">
-    <a href="#servicios">Servicios</a>
-    <a href="#producto">Producto</a>
-    <a href="soluciones/residentes.html">Vivir aquí</a>
-    <a href="soluciones/familias.html">Familias</a>
-    <a href="soluciones/medicos.html">Médicos</a>
-    <a href="soluciones/desarrolladores.html">Desarrolladores</a>
+  <nav class="nav-alta" aria-label="Principal">
+    <a href="salud.html">Salud</a>
+    <a href="familias.html">Familias</a>
+    <a href="medicos.html">Médicos</a>
+    <a href="certificacion.html">Certificación</a>
+    <a href="nodos.html">Dónde estamos</a>
   </nav>
-  <a class="header-cta" href="#contacto">Conversemos</a>
 </header>
 
 <main id="contenido">
 
-<!-- ============ APERTURA INMERSIVA ============
-     El video no se reproduce solo: avanza con el scroll. La
-     persona conduce la escena, que es lo que la hace inmersiva.
-     ========================================================= -->
-<section class="opening" id="apertura">
-  <div class="opening-sticky">
-    <canvas class="opening-canvas" id="openingCanvas" aria-hidden="true"></canvas>
-    <div class="opening-veil"></div>
-
-    <div class="band" data-band="0">
-      <p class="band-eyebrow">República Dominicana</p>
-      <h1 class="band-title">Estamos entrando<br>en la era de la<br><em>longevidad.</em></h1>
-    </div>
-
-    <div class="band" data-band="1">
-      <h2 class="band-title">Para 2036 habrá más<br>dominicanos de 60<br>que niños de 15.</h2>
-      <p class="band-sub">No es una proyección discutible. Las personas que tendrán sesenta años en 2050 ya nacieron.</p>
-    </div>
-
-    <div class="band" data-band="2">
-      <h2 class="band-title">Vamos a vivir<br>muchos más años.</h2>
-      <p class="band-sub">Lo que nadie ha construido todavía es el lugar donde esos años se viven bien.</p>
-    </div>
-
-    <div class="band" data-band="3">
-      <h2 class="band-title">Eso es lo que<br>estamos <em>construyendo.</em></h2>
-      <div class="band-actions">
-        <a href="#servicios" class="btn btn-solid" data-magnetic>Ver qué ofrecemos</a>
-        <a href="#soluciones" class="btn btn-line btn-line--claro" data-magnetic>¿Usted quién es?</a>
+<!-- ═══ H-01 · LA LLEGADA · T2 ═══════════════════════════ -->
+<section class="recorrido" aria-label="Vista de las Amapolas">
+  <div class="recorrido-pista"></div>
+  <div class="recorrido-fijo">
+    <canvas id="lienzo" aria-hidden="true"></canvas>
+    <div class="recorrido-texto">
+      <div class="tiempo on">
+        <p class="kicker kicker-claro">República Dominicana</p>
+        <h1 class="display" style="margin-top:1rem">Envejecer sin depender de nadie.</h1>
       </div>
-    </div>
-
-    <div class="opening-cue" aria-hidden="true"><span></span><p>Desliza</p></div>
-  </div>
-  <div class="opening-track" aria-hidden="true"></div>
-</section>
-
-
-<!-- ============ QUÉ HACEMOS ============
-     Va temprano y en concreto. La lista sale de la actividad
-     declarada en el registro ONAPI 945088: lo que decimos aquí
-     es exactamente lo que la empresa está autorizada a hacer.
-     ===================================== -->
-<section class="servicios" id="servicios">
-  <div class="servicios-inner">
-    <p class="section-kicker">Qué hacemos</p>
-    <h2 class="section-title">Cuatro servicios.<br>Un mismo <span class="accent">estándar.</span></h2>
-    <p class="section-body">No vendemos un concepto. Operamos comunidades, coordinamos salud, certificamos proyectos de terceros y administramos membresías. Esto es lo que se contrata.</p>
-
-    <div class="serv-grid">
-
-      <article class="serv" data-reveal>
-        <span class="serv-num">01</span>
-        <h3>Comunidades de longevidad</h3>
-        <p class="serv-que">Operamos residencias donde vivienda, salud y compañía funcionan como un solo sistema.</p>
-        <ul class="serv-lista">
-          <li>Apartamento propio, diseñado para envejecer sin mudarse</li>
-          <li>Consulta, fisioterapia y piscina terapéutica en el sitio</li>
-          <li>Comedor con plan alimentario según su perfil clínico</li>
-          <li>Programación comunitaria y red de vecinos</li>
-        </ul>
-        <div class="serv-precio">
-          <span class="serv-precio-label">Desde</span>
-          <span class="serv-precio-valor">US$225,000</span>
-          <span class="serv-precio-nota">Apartamento de 81.42 m², 2 habitaciones · Vista de las Amapolas, Villa Altagracia</span>
+      <div class="tiempo">
+        <p class="display">Vivienda, salud y compañía funcionando como un solo sistema.</p>
+      </div>
+      <div class="tiempo">
+        <p class="display">No es un asilo. Es la otra respuesta.</p>
+        <div class="acciones">
+          <a class="boton boton-oro" href="salud.html" data-traspaso>Conocer KONFOR Health</a>
+          <a class="boton boton-linea" href="#donde">¿Dónde está?</a>
         </div>
-        <a class="serv-cta" href="soluciones/residentes.html">Ver cómo se vive aquí →</a>
-      </article>
-
-      <article class="serv" data-reveal>
-        <span class="serv-num">02</span>
-        <h3>Coordinación de salud</h3>
-        <p class="serv-que">Reunimos su historia clínica en un solo lugar y la mantenemos viva entre consultas, para usted, su familia y su médico.</p>
-        <ul class="serv-lista">
-          <li>Historia clínica electrónica con sus estudios cargados</li>
-          <li>Seguimiento entre consultas y recordatorios de tratamiento</li>
-          <li>Panel para la familia, con los permisos que usted autorice</li>
-          <li>Resumen para su médico, con lo que cambió desde la última visita</li>
-          <li>Telemedicina y monitoreo remoto</li>
-        </ul>
-        <div class="serv-precio" data-precio="membresia">
-          <span class="serv-precio-label">Membresía</span>
-          <span class="serv-precio-valor serv-pendiente">Por anunciar</span>
-          <span class="serv-precio-nota">La aplicación está en desarrollo. Publicaremos el precio cuando abra el registro.</span>
-        </div>
-        <a class="serv-cta" href="soluciones/familias.html">Ver cómo funciona →</a>
-      </article>
-
-      <article class="serv" data-reveal>
-        <span class="serv-num">03</span>
-        <h3>Certificación de estándares</h3>
-        <p class="serv-que">Certificamos proyectos de otros desarrolladores como infraestructura de longevidad, en tres niveles.</p>
-        <ul class="serv-lista">
-          <li>Blueprint arquitectónico y estándares de programa de área</li>
-          <li>Protocolos de integración técnica y acceso a la red</li>
-          <li>Auditoría de cumplimiento y sello de certificación</li>
-          <li>Acompañamiento hasta el siguiente nivel</li>
-        </ul>
-        <div class="serv-precio">
-          <span class="serv-precio-label">Nivel de entrada</span>
-          <span class="serv-precio-valor">0.5% – 1%</span>
-          <span class="serv-precio-nota">Costo incremental estimado sobre el costo total de obra, para KONFOR Ready. Los niveles superiores se cotizan por proyecto.</span>
-        </div>
-        <a class="serv-cta" href="soluciones/desarrolladores.html">Ver los tres niveles →</a>
-      </article>
-
-      <article class="serv" data-reveal>
-        <span class="serv-num">04</span>
-        <h3>Red de prestadores</h3>
-        <p class="serv-que">Coordinamos la red de médicos y servicios que atiende a las personas del sistema, con gobierno clínico propio.</p>
-        <ul class="serv-lista">
-          <li>Vinculación de médicos y especialidades a la red</li>
-          <li>Consulta, diagnóstico y procedimiento en un mismo activo</li>
-          <li>Participación en el resultado, no comisión por referido</li>
-          <li>Educación médica continua y cobertura de responsabilidad civil</li>
-        </ul>
-        <div class="serv-precio">
-          <span class="serv-precio-label">Vinculación</span>
-          <span class="serv-precio-valor">Sin capital inicial</span>
-          <span class="serv-precio-nota">El primer nivel de vinculación no exige inversión. Las condiciones se tratan en privado.</span>
-        </div>
-        <a class="serv-cta" href="soluciones/medicos.html">Ver la propuesta médica →</a>
-      </article>
-
-    </div>
-
-    <p class="serv-registro">Actividad amparada por el Registro de Nombre Comercial ONAPI n.º 945088, vigente hasta 2036.</p>
-  </div>
-</section>
-
-<!-- ============ CÓMO EMPIEZA ============ -->
-<section class="pasos">
-  <div class="pasos-inner">
-    <p class="section-kicker">Cómo empieza</p>
-    <h2 class="section-title">Cuatro pasos.<br>El primero no <span class="accent">cuesta nada.</span></h2>
-    <div class="pasos-grid">
-      <div class="paso" data-reveal>
-        <span class="paso-num">01</span>
-        <h3>Conversamos</h3>
-        <p>Una llamada o una visita para entender qué necesita hoy. Sin presentación de ventas.</p>
-      </div>
-      <div class="paso" data-reveal>
-        <span class="paso-num">02</span>
-        <h3>Reunimos su historia</h3>
-        <p>Cargamos sus estudios, medicamentos y antecedentes. Lo que existe en papel pasa a estar en un solo lugar.</p>
-      </div>
-      <div class="paso" data-reveal>
-        <span class="paso-num">03</span>
-        <h3>Se define el plan</h3>
-        <p>Su médico decide la ruta clínica. Nosotros la ordenamos en acciones con responsable y fecha.</p>
-      </div>
-      <div class="paso" data-reveal>
-        <span class="paso-num">04</span>
-        <h3>El sistema acompaña</h3>
-        <p>Seguimiento entre consultas, avisos a quien usted autorice y ajustes cuando algo cambia.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ TESIS ============ -->
-<section class="thesis" id="tesis">
-  <div class="thesis-inner">
-    <p class="section-kicker mono">01 / la tesis</p>
-    <h2 class="thesis-text" id="thesisText">
-      El problema de la longevidad no es solamente clínico ni residencial. Es un problema de coordinación entre sistemas que hoy obligan al individuo y a su familia a improvisar.
-    </h2>
-  </div>
-  <div class="thesis-pillars">
-    <div class="pillar" data-reveal>
-      <span class="pillar-num mono">/01</span>
-      <h3>Un estudio que no llega al médico</h3>
-      <p>La información existe, pero se dispersa entre laboratorios, consultorios y gavetas. Nadie la sostiene en el tiempo.</p>
-    </div>
-    <div class="pillar" data-reveal>
-      <span class="pillar-num mono">/02</span>
-      <h3>Una familia que no conoce el plan</h3>
-      <p>Los hijos se enteran tarde y desde lejos. Cada episodio se resuelve con llamadas, favores y memoria.</p>
-    </div>
-    <div class="pillar" data-reveal>
-      <span class="pillar-num mono">/03</span>
-      <h3>Un entorno que no responde</h3>
-      <p>La vivienda, el edificio y el barrio no cambian cuando cambian las necesidades de quien los habita.</p>
-    </div>
+<!-- ═══ H-02 · LA PREGUNTA · T7 ══════════════════════════ -->
+<section class="seccion respiro">
+  <div>
+    <h2 class="subtitulo" data-revelar>¿Quién te va a cuidar cuando ya no puedas solo?</h2>
+    <p class="prosa" data-revelar>Casi todo el mundo tiene la misma respuesta: <strong>mis hijos.</strong><br>
+      Y casi nadie ha querido decirle eso a sus hijos.</p>
   </div>
 </section>
 
-<!-- ============ EL PRODUCTO: mockup por perfil ============
-     Bloque reutilizable. Se pega tal cual en index.html y en las
-     páginas de solución, cambiando data-default para que cada
-     segmento abra en su propia pantalla.
-     ======================================================= -->
-
-
-<!-- ============ JUAN ============
-     La historia antes que la tesis. Un país entero se entiende
-     mejor a través de un hombre que a través de una estadística.
-     ============================================ -->
-<section class="escena escena--izq" data-reveal>
-  <img class="escena-img" src="assets/film/juan_ciudad.jpg" alt="Un hombre de 62 años mira al amanecer la ciudad que ayudó a construir" loading="lazy" width="1600" height="900">
-  <div class="escena-veil"></div>
-  <div class="escena-inner">
-    <p class="escena-eyebrow">Juan · 62 años</p>
-    <h2 class="escena-title">Construyó la ciudad<br>torre por torre.<br>A sí mismo, <em>no.</em></h2>
-    <p class="escena-sub">Se levanta antes que el sol, como toda la vida. Esta mañana algo en el pecho le aprieta. Un segundo. Lo deja pasar. Juan siempre lo deja pasar.</p>
-  </div>
-</section>
-
-<section class="escena escena--izq" data-reveal>
-  <img class="escena-img" src="assets/film/juan_hospital.jpg" alt="Habitación de hospital" loading="lazy" width="1600" height="900">
-  <div class="escena-veil"></div>
-  <div class="escena-inner">
-    <p class="escena-eyebrow">La misma mañana</p>
-    <h2 class="escena-title">Estaba escrito desde<br>hacía cuarenta años.<br>En pedazos que<br><em>nadie unió.</em></h2>
-    <p class="escena-sub">La presión a los 26. La diabetes a los 40. «Estoy bien, mujer.» Cada médico tenía una parte. Ninguno tenía la historia. La información existía — la coordinación, no.</p>
-  </div>
-</section>
-
-<section class="escena escena--centro" data-reveal>
-  <img class="escena-img" src="assets/film/el_pais.jpg" alt="Multitud de personas" loading="lazy" width="1600" height="900">
-  <div class="escena-veil"></div>
-  <div class="escena-inner">
-    <h2 class="escena-title">Y lo que le pasó a Juan<br>le está pasando a<br><em>un país entero.</em></h2>
-  </div>
-</section>
-
-<!-- ============ EL PAÍS EN CIFRAS ============ -->
-<section class="datos">
-  <div class="datos-inner">
-    <p class="section-kicker">La ola ya nació</p>
-    <h2 class="section-title">El siglo XX resolvió el acceso.<br>El siglo XXI exige <span class="accent">coordinación.</span></h2>
-    <div class="datos-grid">
-      <div class="dato" data-reveal><b>97.5%</b><span>de cobertura alcanzada en 2026. El acceso dejó de ser el problema.</span></div>
-      <div class="dato" data-reveal><b>21%</b><span>del gasto en salud sigue saliendo del bolsillo de la gente.</span></div>
-      <div class="dato" data-reveal><b>1,420,000</b><span>dominicanos superan los 60 años: el 13.2% del país, y más del 20% en 2050.</span></div>
-      <div class="dato" data-reveal><b>5,011</b><span>residentes atendidos en 148 hogares formales de todo el país.</span></div>
-      <div class="dato" data-reveal><b>Ninguno</b><span>de los 25 actores relevantes integra cuidado, prevención y residencia.</span></div>
-      <div class="dato" data-reveal><b>&lt;0.5%</b><span>de nuestros mayores vive en vivienda de longevidad. En mercados maduros, cerca del 5%.</span></div>
-    </div>
-    <p class="datos-pie">El camino que a Europa le tomó medio siglo, nosotros lo recorreremos en la mitad del tiempo. La ventana se mide en años, no en décadas.</p>
-  </div>
-</section>
-
-<!-- ============ LA DECLARACIÓN ============ -->
-<section class="declara" data-reveal>
-  <div class="declara-inner">
-    <p class="escena-eyebrow">La respuesta</p>
-    <h2 class="declara-title">No es una aplicación.<br>No es una clínica.<br>No es un proyecto<br>inmobiliario.</h2>
-    <p class="declara-remate">Es un <em>estándar.</em></p>
-  </div>
-</section>
-
-<!-- ============ ESCENA: el problema ============ -->
-<section class="escena escena--izq" data-reveal>
-  <img class="escena-img" src="assets/esc/problema.jpg" alt="Papeles de laboratorio, recetas y estudios acumulados sin orden sobre una mesa" loading="lazy" width="1600" height="893">
-  <div class="escena-veil"></div>
-  <div class="escena-inner">
-    <p class="escena-eyebrow">Lo que hay hoy</p>
-    <h2 class="escena-title">Su historia existe.<br>Está en una <em>gaveta.</em></h2>
-    <p class="escena-sub">Repartida entre laboratorios, consultorios y sobres que nadie vuelve a abrir. Cada médico nuevo empieza de cero, y el que la sostiene todo el tiempo es usted.</p>
-  </div>
-</section>
-
-<!-- ============ EL PRODUCTO ============
-     Las pantallas son las del prototipo Konfor Health OS, con sus
-     datos reales. Se reconstruyen en CSS en vez de pegar capturas
-     para que queden nítidas a cualquier resolución.
-     ===================================================== -->
-<section class="product" id="producto">
-  <div class="product-inner">
-    <p class="section-kicker">02 / el producto</p>
-    <h2 class="section-title">Su salud, cuidada<br>como un <span class="accent">patrimonio.</span></h2>
-    <p class="section-body">Un patrimonio se administra: se sabe qué se tiene, qué lo amenaza y qué se está haciendo al respecto. La salud casi nunca se trata así. Konfor Health es la aplicación que la ordena — y cada quien ve solo la parte que le toca.</p>
-
-    <div class="product-stage">
-
-      <div class="pv-switch" role="tablist" aria-label="Ver la aplicación según el perfil">
-        <button class="pv-btn active" type="button" role="tab" aria-selected="true" aria-controls="panel-residente" id="tab-residente" data-view="residente">
-          <span class="pv-who">Mi día</span>
-          <span class="pv-role">Quien la usa</span>
-        </button>
-        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-familia" id="tab-familia" tabindex="-1" data-view="familia">
-          <span class="pv-who">Mi círculo</span>
-          <span class="pv-role">La familia</span>
-        </button>
-        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-medico" id="tab-medico" tabindex="-1" data-view="medico">
-          <span class="pv-who">Mi paciente</span>
-          <span class="pv-role">El médico</span>
-        </button>
-        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-desarrollador" id="tab-desarrollador" tabindex="-1" data-view="desarrollador">
-          <span class="pv-who">Mi nodo</span>
-          <span class="pv-role">El desarrollador</span>
-        </button>
+<!-- ═══ H-03 · LA RESPUESTA · T3 · navy 1 de 3 ═══════════ -->
+<section class="seccion navy grano">
+  <div class="centro dos">
+    <div class="pliegue">
+      <div>
+        <p class="kicker kicker-claro">Qué es KONFOR</p>
+        <h2 class="display" style="margin-top:1.2rem">KONFOR es la <em>otra respuesta</em>.</h2>
+        <p class="prosa" style="margin-top:1.6rem">Un sistema que sostiene la vida diaria de una persona mayor —lo que come, lo que toma, cómo se mueve, con quién habla, cuándo la ve el médico— <strong>sin que eso caiga sobre la familia</strong>.</p>
+        <p class="prosa">No es un asilo. No es una app. No es una clínica. Es la forma de vivir bien mientras se envejece, organizada.</p>
       </div>
+    </div>
+    <div data-revelar>
+      <img src="assets/img/01-mujer-balcon-1200.jpg"
+           srcset="assets/img/01-mujer-balcon-1200.jpg 1200w, assets/img/01-mujer-balcon-2400.jpg 2400w"
+           sizes="(min-width:900px) 40vw, 92vw"
+           alt="Una mujer de 72 años en el balcón de su apartamento al amanecer, mirando la cordillera con una taza de café."
+           style="border-radius:var(--r-tarjeta)" loading="lazy" width="966" height="1200">
+    </div>
+  </div>
+</section>
 
-      <div class="product-display">
-
-        <div class="phone" aria-hidden="true">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-
-            <!-- HOY -->
-            <div class="scr active" data-screen="residente">
-              <div class="scr-top"><span>19:42</span><span>▪▪▪</span></div>
-              <div class="scr-body">
-                <p class="scr-label">LUNES · 29 DE JUNIO</p>
-                <p class="scr-greet">Buenas noches,<br><strong>José.</strong></p>
-
-                <div class="isla grano">
-                  <div class="isla-top">
-                    <span class="isla-eyebrow">Tu meta de hoy</span>
-                    <span class="isla-week">semana 4 de 12</span>
-                  </div>
-                  <p class="isla-meta">Completa tu día y baja <em>~0.1 años</em> de edad biológica esta semana.</p>
-                  <div class="isla-bar"><i style="--p:42%"></i></div>
-                  <p class="isla-pts">20 pts</p>
-                  <div class="isla-stats">
-                    <div class="isla-stat"><b>2</b><small>de 6</small><span>Acciones</span></div>
-                    <div class="isla-stat"><b>12</b><small>días</small><span>Racha</span></div>
-                    <div class="isla-stat oro"><b>48.2</b><small>›</small><span>Edad bio</span></div>
-                  </div>
-                </div>
-
-                <p class="scr-label">MAÑANA · ✓ COMPLETA</p>
-                <div class="card card--done">
-                  <span class="card-check">✓</span>
-                  <div>
-                    <p class="card-title">Desayuno proteico</p>
-                    <p class="card-meta">7:00 a.m. · Huevos, aguacate y pan integral · 493 kcal</p>
-                  </div>
-                </div>
-                <div class="card card--done">
-                  <span class="card-check">✓</span>
-                  <div>
-                    <p class="card-title">Metformina 500 mg</p>
-                    <p class="card-meta">8:00 a.m. · Con el desayuno</p>
-                  </div>
-                </div>
-
-                <p class="scr-label">MEDIODÍA</p>
-                <div class="card card--now">
-                  <span class="card-tag">AHORA</span>
-                  <p class="card-title">Almuerzo con proteína</p>
-                  <p class="card-meta">1:00 p.m. · Pollo a la plancha, arroz y ensalada · 640 kcal</p>
-                </div>
-
-                <p class="scr-foot">4 pendientes · tu día, por momentos.</p>
-              </div>
-              <div class="appbar">
-                <span class="on">Hoy</span><span>Familia</span>
-                <span class="fab">＋</span>
-                <span>Protocolo</span><span>Menú</span>
-              </div>
+<!-- ═══ H-04 · MONITOREO · T4 ════════════════════════════ -->
+<section class="seccion">
+  <div class="centro">
+    <p class="kicker" data-revelar>Lo primero de tres</p>
+    <h2 class="titulo" data-revelar style="margin-top:1rem">Se sabe cómo va. Todos los días.</h2>
+    <div class="dos" style="margin-top:3rem">
+      <div data-revelar>
+        <p class="prosa">No el día de la cita. El martes cualquiera. Si la presión subió, si durmió mal tres noches seguidas, si dejó de caminar — se ve, y se ve a tiempo.</p>
+      </div>
+      <div class="voltea">
+        <div class="voltea-caja">
+          <div class="cara cara-frente">
+            <img src="assets/img/02-manos-tensiometro-1200.jpg" alt="Manos de una mujer mayor junto a un tensiómetro doméstico sobre la mesa de la cocina." loading="lazy">
+            <div class="cara-texto">
+              <p class="subtitulo">Lo que usted vive</p>
+              <p class="prosa" style="color:rgba(245,243,238,.8)">Una lectura por la mañana. Nada más.</p>
             </div>
-
-            <!-- FAMILIA -->
-            <div class="scr" data-screen="familia">
-              <div class="scr-top"><span>19:42</span><span>▪▪▪</span></div>
-              <div class="scr-body">
-                <p class="scr-label">TU CÍRCULO</p>
-                <p class="scr-greet"><strong>Familia.</strong></p>
-                <p class="scr-sub">Acompaña la salud de los tuyos, estés donde estés.</p>
-
-                <div class="card card--alert">
-                  <span class="card-tag">ATENCIÓN</span>
-                  <p class="card-title">Don Rafael</p>
-                  <p class="card-meta">Tu papá · 78 años · adherencia 82%</p>
-                  <p class="card-note" style="color:var(--warn)">Enalapril de las 8:00 p.m. sin marcar</p>
-                </div>
-
-                <div class="card card--calm">
-                  <span class="card-tag">ESTABLE</span>
-                  <p class="card-title">Doña Carmen</p>
-                  <p class="card-meta">Tu mamá · 74 años · adherencia 96%</p>
-                </div>
-
-                <div class="card card--calm">
-                  <span class="card-tag">ESTABLE</span>
-                  <p class="card-title">Elena</p>
-                  <p class="card-meta">Tu esposa · 49 años · adherencia 91%</p>
-                </div>
-
-                <div class="card card--soft">
-                  <p class="card-title">＋ Cuida a un ser querido</p>
-                  <p class="card-meta">Invítalo con cariño — tú ves lo que él permita.</p>
-                </div>
-
-                <p class="scr-foot">Tú también vas bien, José. 12 días de racha.</p>
-              </div>
-              <div class="appbar">
-                <span>Hoy</span><span class="on">Familia</span>
-                <span class="fab">＋</span>
-                <span>Protocolo</span><span>Menú</span>
-              </div>
-            </div>
-
-            <!-- MÉDICO -->
-            <div class="scr" data-screen="medico">
-              <div class="scr-top"><span>14:54</span><span>▪▪▪</span></div>
-              <div class="scr-body">
-                <p class="scr-label">RESUMEN PARA SU MÉDICO</p>
-                <p class="scr-greet"><strong>José D.</strong><br>52 años</p>
-
-                <div class="isla grano">
-                  <div class="isla-top">
-                    <span class="isla-eyebrow">Desde la última visita</span>
-                    <span class="isla-week">3 meses</span>
-                  </div>
-                  <p class="isla-meta">41 biomarcadores cruzados.<br><em>5 a vigilar.</em></p>
-                  <div class="isla-stats">
-                    <div class="isla-stat"><b>36</b><span>En rango</span></div>
-                    <div class="isla-stat"><b>5</b><span>A vigilar</span></div>
-                    <div class="isla-stat oro"><b>76</b><small>/100</small><span>Salud</span></div>
-                  </div>
-                </div>
-
-                <p class="scr-label">LO QUE REQUIERE SU CRITERIO</p>
-                <div class="row"><span>LDL</span><span class="row-v">156.7 · alto</span></div>
-                <div class="row"><span>Triglicéridos</span><span class="row-v">237.0 · alto</span></div>
-                <div class="row"><span>A1c</span><span class="row-v">5.82 · límite</span></div>
-                <div class="row"><span>GGT</span><span class="row-v">63.4 · límite</span></div>
-                <div class="row"><span>Sat. hierro</span><span class="row-v">17.1 · bajo</span></div>
-
-                <div class="card card--soft">
-                  <p class="card-title">Adherencia del trimestre</p>
-                  <p class="card-meta">94% · la adherencia es parte del tratamiento</p>
-                </div>
-
-                <p class="scr-foot">KONFOR describe y coordina. No diagnostica ni prescribe.</p>
-              </div>
-              <div class="appbar">
-                <span>Hoy</span><span>Familia</span>
-                <span class="fab">＋</span>
-                <span class="on">Protocolo</span><span>Menú</span>
-              </div>
-            </div>
-
-            <!-- DESARROLLADOR -->
-            <div class="scr" data-screen="desarrollador">
-              <div class="scr-top"><span>9:40</span><span>▪▪▪</span></div>
-              <div class="scr-body">
-                <p class="scr-label">SU NODO</p>
-                <p class="scr-greet"><strong>Torre Serena</strong><br>Santiago · 84 unidades</p>
-
-                <div class="isla grano">
-                  <div class="isla-top">
-                    <span class="isla-eyebrow">Nivel actual</span>
-                    <span class="isla-week">certificación</span>
-                  </div>
-                  <p class="isla-meta">KONFOR <em>Ready</em></p>
-                  <div class="isla-bar"><i style="--p:61%"></i></div>
-                  <p class="isla-pts">61% de adopción</p>
-                  <div class="isla-stats">
-                    <div class="isla-stat"><b>19</b><span>Colocadas</span></div>
-                    <div class="isla-stat"><b>37</b><span>De la red</span></div>
-                    <div class="isla-stat oro"><b>4</b><small>meses</small><span>A Adapted</span></div>
-                  </div>
-                </div>
-
-                <p class="scr-label">ESTE TRIMESTRE</p>
-                <div class="row"><span>Servicios coordinados</span><span class="row-v">212</span></div>
-                <div class="row"><span>Residentes con perfil</span><span class="row-v">51 de 84</span></div>
-                <div class="row"><span>Meses de datos</span><span class="row-v">8 de 12</span></div>
-
-                <div class="card card--soft">
-                  <p class="card-title">Su edificio sigue produciendo</p>
-                  <p class="card-meta">14 meses después de la última entrega</p>
-                </div>
-
-                <p class="scr-foot">El activo no terminó en la escritura.</p>
-              </div>
-              <div class="appbar">
-                <span>Hoy</span><span>Familia</span>
-                <span class="fab">＋</span>
-                <span>Protocolo</span><span class="on">Menú</span>
-              </div>
-            </div>
-
+            <span class="voltea-pista">se voltea</span>
           </div>
-        </div>
-
-        <div class="product-copy">
-          <div class="pc active" role="tabpanel" id="panel-residente" aria-labelledby="tab-residente" data-copy="residente">
-            <h3>Su día, no su expediente</h3>
-            <p>No hay gráficas que aprender ni formularios que llenar. Hay lo que toca ahora y lo que viene después, con una sola cifra que resume si va bien: su edad biológica.</p>
-            <ul class="pc-list">
-              <li>Cada acción del día vale puntos y mueve esa cifra</li>
-              <li>Si un día no pudo, el sistema compensa sin regañar</li>
-              <li>Usted decide quién de su familia ve qué</li>
+          <div class="cara cara-reverso">
+            <p class="kicker kicker-claro">Lo que el sistema hace</p>
+            <ul>
+              <li>Registro diario y lectura de biomarcadores</li>
+              <li>Seguimiento de actividad</li>
+              <li>Nota automática al expediente</li>
+              <li>Aviso al médico cuando la curva se sale</li>
             </ul>
           </div>
-          <div class="pc" role="tabpanel" id="panel-familia" aria-labelledby="tab-familia" data-copy="familia">
-            <h3>Saber sin tener que preguntar</h3>
-            <p>Su papá, su mamá y su esposa en una sola pantalla, ordenados por quién necesita atención hoy. Cuando todo está estable, la aplicación se lo dice y usted sigue con su día.</p>
-            <ul class="pc-list">
-              <li>Ordenado por urgencia real, no por lista alfabética</li>
-              <li>Avisa cuando una dosis queda sin marcar, no después</li>
-              <li>Cada quien autoriza qué comparte, y puede revocarlo</li>
-            </ul>
-          </div>
-          <div class="pc" role="tabpanel" id="panel-medico" aria-labelledby="tab-medico" data-copy="medico">
-            <h3>El paciente llega con historia</h3>
-            <p>En lugar de dos puntos de datos al año, un resumen de lo que cambió entre consultas, con lo que requiere criterio médico marcado arriba y el resto disponible si lo busca.</p>
-            <ul class="pc-list">
-              <li>Estudios ya cargados: sin repetir por extravío</li>
-              <li>Adherencia real, que es la mitad del tratamiento</li>
-              <li>El sistema describe y coordina; usted diagnostica</li>
-            </ul>
-          </div>
-          <div class="pc" role="tabpanel" id="panel-desarrollador" aria-labelledby="tab-desarrollador" data-copy="desarrollador">
-            <h3>El tablero de su activo</h3>
-            <p>Un edificio convencional deja de darle información el día de la entrega. Un nodo certificado le sigue diciendo qué tan usado está y qué le falta para subir de nivel.</p>
-            <ul class="pc-list">
-              <li>Cuántas unidades se colocaron con demanda de la red</li>
-              <li>Progreso verificable hacia el siguiente nivel</li>
-              <li>Servicios coordinados dentro de su edificio</li>
-            </ul>
-          </div>
-          <p class="product-honest">Konfor Health está en desarrollo. Estas pantallas reproducen el prototipo funcional, no una versión publicada en tiendas.</p>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- ============ CIRCUITO MÍNIMO ============ -->
-<section class="circuit">
-  <div class="circuit-inner">
-    <p class="section-kicker mono">03 / cómo funciona</p>
-    <h2 class="section-title">Cinco pasos.<br>Ni uno <span class="accent">de más.</span></h2>
-    <p class="section-body">El sistema solo debe recoger aquello que puede custodiar, explicar y convertir en una acción legítima. El diagnóstico y la prescripción permanecen siempre bajo responsabilidad clínica.</p>
-    <ol class="circuit-steps">
-      <li data-reveal><span class="mono">01</span><h4>Entorno</h4><p>El lugar donde ocurre la vida diaria.</p></li>
-      <li data-reveal><span class="mono">02</span><h4>Señal</h4><p>Algo cambia y queda registrado.</p></li>
-      <li data-reveal><span class="mono">03</span><h4>Interpretación</h4><p>Un profesional autorizado le da sentido.</p></li>
-      <li data-reveal><span class="mono">04</span><h4>Acción</h4><p>Se decide y se ejecuta, con responsable.</p></li>
-      <li data-reveal><span class="mono">05</span><h4>Seguimiento</h4><p>Se verifica que se haya cerrado.</p></li>
-    </ol>
-    <p class="circuit-ethics" data-reveal><strong>Frontera ética.</strong> La historia de salud pertenece a la persona, no a nosotros. Cada quien accede solo a lo que su papel requiere, y siempre con permiso. La coordinación no autoriza a KONFOR a decidir tratamientos ni a usar datos de salud para presionar decisiones financieras.</p>
+<!-- ═══ H-05 · PREVENCIÓN ════════════════════════════════ -->
+<section class="sangre">
+  <img src="assets/img/03-sendero-2400.jpg"
+       srcset="assets/img/03-sendero-1200.jpg 1200w, assets/img/03-sendero-2400.jpg 2400w"
+       sizes="100vw"
+       alt="Dos personas mayores caminando al amanecer por el sendero de piedra entre los edificios de la comunidad." loading="lazy" width="2400" height="1339">
+  <div class="sangre-texto">
+    <p class="kicker kicker-claro" data-revelar>Lo segundo</p>
+    <h2 class="titulo" data-revelar style="margin-top:1rem">Lo que se ve a tiempo casi nunca se vuelve grave.</h2>
+    <p class="prosa" data-revelar style="margin-top:1.4rem">El deterioro no llega de golpe: se anuncia. Camina un poco menos, come un poco peor, duerme distinto. Nosotros vemos esa curva antes de que tenga nombre, y el médico decide qué hacer con ella.</p>
   </div>
 </section>
 
-<!-- ============ LOS CINCO EJES ============ -->
-<section class="axes" id="ejes">
-  <div class="axes-inner">
-    <p class="section-kicker mono">04 / los cinco ejes</p>
-    <h2 class="section-title">Una vida no se divide<br>en <span class="accent">departamentos.</span></h2>
-    <p class="section-body">Dónde vive, cómo está de salud, con quién cuenta, cómo paga y qué pasa cuando cambian sus necesidades. Hoy cada uno de esos cinco frentes se atiende por separado, y la persona queda encargada de unirlos. KONFOR los trata como un solo sistema.</p>
-    <div class="axes-grid">
-      <div class="ax" data-reveal>
-        <span class="ax-num">01</span>
-        <h3>Vivienda</h3>
-        <p>Una casa que se adapta cuando cambia quien la habita, en vez de obligar a mudarse.</p>
-        <span class="ax-state ax-state--live">En obra</span>
-      </div>
-      <div class="ax" data-reveal>
-        <span class="ax-num">02</span>
-        <h3>Salud</h3>
-        <p>Seguimiento continuo entre consultas, para que el hallazgo llegue antes que la crisis.</p>
-        <span class="ax-state ax-state--live">En estructuración</span>
-      </div>
-      <div class="ax" data-reveal>
-        <span class="ax-num">03</span>
-        <h3>Comunidad</h3>
-        <p>Compañía con quien compartir la etapa. El aislamiento enferma tanto como una condición médica.</p>
-        <span class="ax-state ax-state--live">En obra</span>
-      </div>
-      <div class="ax" data-reveal>
-        <span class="ax-num">04</span>
-        <h3>Finanzas</h3>
-        <p>Que el patrimonio de una vida alcance para sostener esa vida hasta el final.</p>
-        <span class="ax-state">En diseño</span>
-      </div>
-      <div class="ax" data-reveal>
-        <span class="ax-num">05</span>
-        <h3>Continuidad</h3>
-        <p>Que la historia no se reinicie cada vez que cambia el médico, la casa o el país.</p>
-        <span class="ax-state">En diseño</span>
-      </div>
+<!-- ═══ H-06 · ACOMPAÑAMIENTO ════════════════════════════ -->
+<section class="seccion">
+  <div class="centro dos invertida">
+    <div data-revelar>
+      <img src="assets/img/04-hija-noche-1200.jpg"
+           srcset="assets/img/04-hija-noche-1200.jpg 1200w, assets/img/04-hija-noche-2400.jpg 2400w"
+           sizes="(min-width:900px) 40vw, 92vw"
+           alt="Una mujer de 45 años en su sala de noche, teléfono en mano, con expresión de alivio."
+           style="border-radius:var(--r-tarjeta)" loading="lazy" width="966" height="1200">
     </div>
-    <p class="axes-note">Decimos en qué estado está cada eje porque la diferencia entre lo que ya opera y lo que está en diseño es exactamente lo que un lector serio necesita saber.</p>
-  </div>
-</section>
-
-
-<!-- ============ LA CAPA QUE FALTABA ============ -->
-<section class="escena escena--centro" data-reveal>
-  <img class="escena-img" src="assets/film/tec_campo_oro.jpg" alt="Una figura de pie en un campo de partículas de luz dorada" loading="lazy" width="1600" height="900">
-  <div class="escena-veil"></div>
-  <div class="escena-inner">
-    <p class="escena-eyebrow">La tecnología</p>
-    <h2 class="escena-title">Cada dato de su vida<br>deja de <em>perderse.</em></h2>
-    <p class="escena-sub">Se convierte en una sola imagen viva de quién es usted. Y esa imagen se lee hacia adelante.</p>
-  </div>
-</section>
-
-<section class="adelanta">
-  <div class="adelanta-inner">
-    <p class="section-kicker">Leer hacia adelante</p>
-    <h2 class="section-title">Ver lo que todavía<br><span class="accent">no ha pasado.</span></h2>
-    <p class="section-body">La sombra de un tumor años antes. La deriva silenciosa hacia la diabetes. El primer susurro del Alzheimer. No para asustar a nadie — para adelantarse, y apagar ese riesgo antes de que tenga nombre.</p>
-    <div class="adelanta-grid">
-      <div class="adel" data-reveal><span class="adel-num">01</span><h3>Observa</h3><p>Lo que come, cómo duerme, cómo se mueve, qué dicen sus estudios. Todo en un solo hilo continuo.</p></div>
-      <div class="adel" data-reveal><span class="adel-num">02</span><h3>Anticipa</h3><p>Reconoce la deriva antes de que se vuelva diagnóstico, y la señala a quien puede actuar.</p></div>
-      <div class="adel" data-reveal><span class="adel-num">03</span><h3>Ajusta</h3><p>Lo que come, cómo se cocina, sus hábitos, su ejercicio. Y agenda con sus médicos.</p></div>
-      <div class="adel" data-reveal><span class="adel-num">04</span><h3>Acompaña</h3><p>Siempre encendido. Visible para usted y para su familia, aunque esté lejos.</p></div>
-    </div>
-    <p class="adelanta-pie">Usted no tiene que decidir cada día. El sistema se ocupa mientras usted vive — y la decisión clínica siempre queda en su médico.</p>
-  </div>
-</section>
-
-
-<!-- ============ QUIÉN LO CONSTRUYE ============
-     La marca nueva no tiene track record; la constructora sí.
-     Sin este puente, KONFOR parece una promesa sin obra detrás.
-     ============================================= -->
-<section class="quien">
-  <div class="quien-inner">
-    <div class="quien-copy">
-      <p class="section-kicker">Quién lo construye</p>
-      <h2 class="section-title">Un estándar lo puede<br>escribir cualquiera.<br>Levantarlo, <span class="accent">no.</span></h2>
-      <p class="section-body">KONFOR no nace de una presentación. Nace de una constructora dominicana con veinte años de obra entregada — vivienda social, residencias de lujo, hotelería en casco histórico protegido e infraestructura clínica. El estándar se escribe donde ya se sabe construir.</p>
-      <a class="quien-link" href="https://paez.com.do" target="_blank" rel="noopener">Ver la memoria de obra de Grupo PÁEZ →</a>
-    </div>
-    <div class="quien-cifras">
-      <div class="qc" data-reveal><b>90,444</b><span>metros cuadrados construidos</span></div>
-      <div class="qc" data-reveal><b>9</b><span>desarrollos con ubicación verificable</span></div>
-      <div class="qc" data-reveal><b>20+</b><span>años de obra en República Dominicana</span></div>
-      <div class="qc" data-reveal><b>5</b><span>tipologías distintas dominadas</span></div>
+    <div>
+      <p class="kicker" data-revelar>Lo tercero</p>
+      <h2 class="titulo" data-revelar style="margin-top:1rem">Alguien pregunta cómo amaneciste. Y no es tu hija.</h2>
+      <p class="prosa" data-revelar style="margin-top:1.4rem">Cada mañana hay una llamada. Si contesta y está bien, el día sigue. Si algo no cuadra —no contestó, se saltó el medicamento, la presión no bajó— la familia se entera antes de tener que preguntar.</p>
+      <p class="prosa-serif" data-revelar style="margin-top:1.6rem">Su hija deja de ser la enfermera. Vuelve a ser su hija.</p>
+      <div class="acciones" data-revelar>
+        <a class="boton boton-linea" href="familias.html" data-traspaso>Para quien cuida a distancia</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SELECTOR DE AUDIENCIA ============ -->
-<section class="audience" id="soluciones">
-  <div class="aud-inner">
-    <p class="section-kicker mono">05 / soluciones</p>
-    <h2 class="section-title">El sistema es uno.<br>La entrada <span class="accent">no.</span></h2>
-    <p class="section-body">Cada actor entra al sistema por una puerta distinta, con una promesa distinta y una prueba distinta que exigir. Elija la suya.</p>
-    <div class="aud-grid">
-      <a class="aud" href="soluciones/residentes.html" data-reveal>
-        <div class="aud-media">
-          <img src="assets/esc/residente.jpg" alt="" loading="lazy" width="1600" height="893">
-          <div class="aud-over">
-            <span class="aud-eyebrow">Para quien va a vivir aquí</span>
-            <h3>Una casa que envejece con usted</h3>
-          </div>
-        </div>
-        <div class="aud-body">
-          <p>Autonomía con soporte. No que lo cuiden: que no tenga que pedir permiso para vivir su vida.</p>
-          <span class="aud-go">Ver cómo se vive aquí →</span>
-        </div>
-      </a>
-      <a class="aud" href="soluciones/familias.html" data-reveal>
-        <div class="aud-media">
-          <img src="assets/esc/familia.jpg" alt="" loading="lazy" width="1600" height="893">
-          <div class="aud-over">
-            <span class="aud-eyebrow">Para la familia</span>
-            <h3>Saber sin tener que preguntar</h3>
-          </div>
-        </div>
-        <div class="aud-body">
-          <p>Para los dos millones de dominicanos que cuidan a sus padres a distancia con llamadas, favores y memoria.</p>
-          <span class="aud-go">Ver cómo funciona →</span>
-        </div>
-      </a>
-      <a class="aud" href="soluciones/medicos.html" data-reveal>
-        <div class="aud-media">
-          <img src="assets/esc/medico.jpg" alt="" loading="lazy" width="1600" height="893">
-          <div class="aud-over">
-            <span class="aud-eyebrow">Para médicos</span>
-            <h3>El paciente llega con historia</h3>
-          </div>
-        </div>
-        <div class="aud-body">
-          <p>Usted activa el valor del sistema y captura la menor parte. No es falta de esfuerzo: es arquitectura.</p>
-          <span class="aud-go">Ver la propuesta médica →</span>
-        </div>
-      </a>
-      <a class="aud" href="soluciones/desarrolladores.html" data-reveal>
-        <div class="aud-media">
-          <img src="assets/esc/desarrollador.jpg" alt="" loading="lazy" width="1600" height="893" srcset="assets/esc/desarrollador-900.jpg 900w, assets/esc/desarrollador.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
-          <div class="aud-over">
-            <span class="aud-eyebrow">Para desarrolladores</span>
-            <h3>Deje de vender metros cuadrados</h3>
-          </div>
-        </div>
-        <div class="aud-body">
-          <p>Certificación en tres niveles para que su proyecto entre a la red y no termine el día de la entrega.</p>
-          <span class="aud-go">Ver la certificación →</span>
-        </div>
-      </a>
+<!-- ═══ H-07 · ¿DÓNDE ESTÁ KONFOR? ═══════════════════════ -->
+<section class="seccion" id="donde" style="background:var(--papel-2)">
+  <div class="centro">
+    <p class="kicker" data-revelar>Dónde está</p>
+    <h2 class="titulo" data-revelar style="margin-top:1rem">Cuatro nodos. Uno en obra.</h2>
+    <p class="prosa" data-revelar style="margin-top:1.2rem">Un nodo se define por su función en la red, no por su forma. Esto es lo que hay y en qué estado está.</p>
+
+    <div style="margin-top:2.6rem">
+      <div class="nodo" data-revelar>
+        <h3>Vista de las Amapolas</h3><span class="estado">En obra</span>
+        <p class="donde">Comunidad de longevidad · Villa Altagracia</p>
+      </div>
+      <div class="nodo" data-revelar>
+        <h3>Hub Médico PÁEZ</h3><span class="estado">En estructuración</span>
+        <p class="donde">Centro médico ambulatorio · Santo Domingo</p>
+      </div>
+      <div class="nodo" data-revelar>
+        <h3>Meriño 354</h3><span class="estado">En plano</span>
+        <p class="donde">Recuperación y estancia corta · Ciudad Colonial</p>
+      </div>
+      <div class="nodo" data-revelar>
+        <h3>Punta del Rey</h3><span class="estado">En plano</span>
+        <p class="donde">Ecosistema territorial · Miches</p>
+      </div>
+    </div>
+
+    <div class="acciones" data-revelar>
+      <a class="boton boton-linea" href="nodos.html" data-traspaso>Ver los nodos</a>
     </div>
   </div>
 </section>
 
-<!-- ============ FAMILIA DE NODOS ============ -->
-<section class="nodefam">
-  <div class="nodefam-inner">
-    <p class="section-kicker mono">06 / la familia de nodos</p>
-    <h2 class="section-title">Un nodo no se define<br>por su forma. Por su <span class="accent">función.</span></h2>
-    <p class="section-body">Cuatro tipologías, cada una con un papel distinto en la red. Es el lugar donde la infraestructura digital se materializa y donde la vida cotidiana se vuelve legible para el sistema — siempre con permiso de quien la vive.</p>
-    <div class="node-grid">
-      <article class="nd" data-reveal>
-        <span class="nd-letter">L</span>
-        <h3>Longevity Node</h3>
-        <p class="nd-sub">Residencia</p>
-        <p>Comunidad diseñada para la longevidad activa. Es el nodo con la vida diaria más continua: convivencia, movimiento, alimentación y prevención.</p>
-        <p class="nd-inst">Vista de las Amapolas · Villa Altagracia</p>
-      </article>
-      <article class="nd" data-reveal>
-        <span class="nd-letter">M</span>
-        <h3>Medical Node</h3>
-        <p class="nd-sub">Clínico ambulatorio</p>
-        <p>El orquestador clínico de la red: consulta especializada, diagnóstico avanzado y cirugía ambulatoria en un mismo activo.</p>
-        <p class="nd-inst">Hub Médico PÁEZ · Distrito Nacional</p>
-      </article>
-      <article class="nd" data-reveal>
-        <span class="nd-letter">R</span>
-        <h3>Recovery Node</h3>
-        <p class="nd-sub">Recuperación de corta estancia</p>
-        <p>Estancias breves con supervisión y continuidad directa con el nodo médico. Recuperación posprocedimiento y hospitalidad médica.</p>
-        <p class="nd-inst">Meriño 354 · Ciudad Colonial</p>
-      </article>
-      <article class="nd" data-reveal>
-        <span class="nd-letter">C</span>
-        <h3>City Node</h3>
-        <p class="nd-sub">Ecosistema territorial</p>
-        <p>Varias tipologías de nodo dentro de un mismo perímetro, donde la coordinación entre ellas alcanza su máximo efecto.</p>
-        <p class="nd-inst">Punta del Rey · Miches</p>
-      </article>
+<!-- ═══ H-08 · EL RESPALDO ═══════════════════════════════ -->
+<section class="sangre" style="min-height:66svh">
+  <img src="assets/film/tec_ciudad_oro.jpg"
+       alt="Vista aérea de Santo Domingo al amanecer." loading="lazy">
+  <div class="sangre-texto">
+    <h2 class="titulo" data-revelar>Treinta años construyendo.<br>90,444 m² entregados.</h2>
+    <p class="prosa" data-revelar style="margin-top:1.4rem">KONFOR no lo levanta una startup. Lo levanta Grupo PÁEZ, que lleva tres décadas construyendo en República Dominicana y respondiendo por lo que construye.</p>
+    <div class="acciones" data-revelar>
+      <a class="boton boton-linea" href="https://paez.com.do/" rel="noopener">Conocer Grupo PÁEZ</a>
     </div>
-    <p class="vehicles-foot mono" data-reveal>Los nodos propios prueban el estándar. Los nodos certificados de terceros son los que lo escalan.</p>
   </div>
 </section>
 
-<!-- ============ LÍMITES: lo que no somos ============ -->
-<section class="limits" id="limites">
-  <div class="limits-inner">
-    <p class="section-kicker mono">07 / los límites</p>
-    <h2 class="section-title">Lo que <span class="accent">no</span> somos.</h2>
-    <p class="section-body">Una categoría no se gana diciendo que todo está integrado. Estas distinciones son la parte más importante de nuestra promesa, porque marcan dónde termina.</p>
-    <div class="limits-table">
-      <div class="limits-head mono"><span>KONFOR no es</span><span>KONFOR busca ser</span></div>
-      <div class="limits-row" data-reveal><span class="lr-no">Una clínica que diagnostica y prescribe.</span><span class="lr-yes">Una capa que organiza información, acciones y seguimiento entre personas y profesionales autorizados.</span></div>
-      <div class="limits-row" data-reveal><span class="lr-no">Una inmobiliaria con amenidades wellness.</span><span class="lr-yes">Un estándar de entorno, operación y continuidad aplicable a nodos propios o de terceros.</span></div>
-      <div class="limits-row" data-reveal><span class="lr-no">Una app de recordatorios.</span><span class="lr-yes">Una historia continua que convierte información en acciones con responsable y fecha.</span></div>
-      <div class="limits-row" data-reveal><span class="lr-no">Un fondo que promete rendimiento.</span><span class="lr-yes">Una arquitectura que, en fases posteriores y reguladas, podría conectar capital con infraestructura de longevidad.</span></div>
-      <div class="limits-row" data-reveal><span class="lr-no">Un asilo o residencia para dependencia tardía.</span><span class="lr-yes">Autonomía con soporte para adultos funcionales, con rutas claras cuando aumenta la necesidad de cuidado.</span></div>
-    </div>
-    <p class="limits-note mono" data-reveal>Estado actual: la arquitectura está formulada y hay software funcional. Todavía no opera como una sola red clínica y comercial demostrada. Lo decimos aquí porque preferimos que lo lea de nosotros.</p>
-  </div>
-</section>
-
-<!-- ============ NODOS ============ -->
-<section class="vehicles" id="nodos">
-  <div class="vehicles-head">
-    <p class="section-kicker mono">08 / los nodos</p>
-    <h2 class="section-title">Donde la tesis<br>toca el <span class="accent">mundo físico.</span></h2>
-    <p class="section-body">KONFOR nace de PÁEZ, una constructora y promotora dominicana con más de veinte años de experiencia. Esa procedencia no se oculta: es la razón por la que la promesa empieza con nodos reales y no con una aplicación.</p>
-  </div>
-  <div class="vehicle-cards">
-    <article class="vcard" data-reveal>
-      <div class="vcard-media">
-        <img src="assets/vista_aerea.jpg" alt="Vista de las Amapolas" width="2400" height="1350" loading="lazy" decoding="async" srcset="assets/vista_aerea-900.jpg 900w, assets/vista_aerea.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
-        <span class="vcard-badge mono">EN OBRA</span>
-      </div>
-      <div class="vcard-body">
-        <h3>Vista de las Amapolas</h3>
-        <p class="vcard-type mono">comunidad de longevidad · villa altagracia</p>
-        <p class="vcard-desc">El primer nodo donde el entorno físico, la membresía y la continuidad digital se diseñan juntos. Comunidad residencial a 30 minutos de Santo Domingo, con fideicomiso constituido y obra iniciada.</p>
-        <ul class="vcard-list mono">
-          <li><span>Rol en el sistema</span><span>Nodo de longevidad</span></li>
-          <li><span>Estructura</span><span>Fideicomiso Ley 189-11</span></li>
-          <li><span>Programa</span><span>Residencial + plaza comercial</span></li>
-        </ul>
-      </div>
-    </article>
-    <article class="vcard" data-reveal>
-      <div class="vcard-media">
-        <img src="assets/hub_torre.jpg" alt="Hub Médico PÁEZ" width="2000" height="1323" loading="lazy" decoding="async" srcset="assets/hub_torre-900.jpg 900w, assets/hub_torre.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
-        <span class="vcard-badge mono">PROYECTADO</span>
-      </div>
-      <div class="vcard-body">
-        <h3>Hub Médico PÁEZ</h3>
-        <p class="vcard-type mono">centro ambulatorio · distrito nacional</p>
-        <p class="vcard-desc">Nodo clínico proyectado para conectar la vida cotidiana con diagnóstico y especialidad: consulta, imagen, laboratorio, cirugía electiva y continuidad. No es un hospital.</p>
-        <ul class="vcard-list mono">
-          <li><span>Rol en el sistema</span><span>Nodo clínico ambulatorio</span></li>
-          <li><span>Alcance</span><span>Mediana complejidad</span></li>
-          <li><span>Estado</span><span>En estructuración</span></li>
-        </ul>
-      </div>
-    </article>
-    <article class="vcard" data-reveal>
-      <div class="vcard-media">
-        <img src="assets/merino_354.jpg" alt="Meriño 354 — Ciudad Colonial" width="1600" height="1770" loading="lazy" decoding="async" srcset="assets/merino_354-900.jpg 900w, assets/merino_354.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
-        <span class="vcard-badge mono">FIDEICOMISO CONSTITUIDO</span>
-      </div>
-      <div class="vcard-body">
-        <h3>Meriño 354</h3>
-        <p class="vcard-type mono">condohotel boutique · ciudad colonial</p>
-        <p class="vcard-desc">Proyecto condotelero en el casco histórico de la primera ciudad de América, bajo fideicomiso. Aporta gobernanza fiduciaria y experiencia de operación hotelera al sistema.</p>
-        <ul class="vcard-list mono">
-          <li><span>Rol en el sistema</span><span>Gobernanza y hospitalidad</span></li>
-          <li><span>Régimen</span><span>CONFOTUR</span></li>
-          <li><span>Estado</span><span>En desarrollo</span></li>
-        </ul>
-      </div>
-    </article>
-  </div>
-  <p class="vehicles-foot mono" data-reveal>Verni Colonial y Altos del Jovero completan el aprendizaje acumulado: hospitalidad, operación recurrente y venta patrimonial en Ciudad Colonial y Miches.</p>
-</section>
-
-<!-- ============ LÍNEA ROJA ============ -->
-<section class="redline">
-  <div class="redline-inner" data-reveal>
-    <p class="section-kicker mono">09 / el método</p>
-    <h2 class="redline-title">No construimos autonomía sobre procesos que <span class="accent">todavía no sabemos operar a mano.</span></h2>
-    <p class="redline-text">Es fácil producir sistemas; es difícil ganarse la confianza. Por eso cada capa avanza en escalera: primero el humano ejecuta y el sistema observa; después el sistema documenta y mide; solo entonces propone, y siempre con aprobación humana. La automatización llega cuando el proceso ya dejó de cambiar cada semana — no antes.</p>
-  </div>
-</section>
-
-<!-- ============ CONTACTO ============ -->
-<section class="access" id="contacto">
-  <div class="access-inner">
-    <p class="section-kicker mono">10 / conversemos</p>
-    <h2 class="access-title">Una institución serena<br>que sabe hasta <span class="accent">dónde llega.</span></h2>
-    <p class="access-sub">Si usted es residente, familiar, médico, desarrollador o capital institucional, la conversación empieza igual: entendiendo qué necesita, qué podemos probar hoy y qué todavía no.</p>
-    <a class="btn btn-solid btn-lg" href="mailto:proyectos@paez.com.do?subject=KONFOR%20—%20conversación" data-magnetic>proyectos@paez.com.do</a>
-    <p class="access-fine mono">santo domingo, república dominicana · un sistema de grupo páez</p>
-  </div>
-</section>
-
-
-<!-- ============ IDENTIDAD VERIFICABLE ============
-     Twilio (registro A2P), Meta Business y Google Business exigen
-     ver nombre legal, dirección y teléfono EN el sitio. Sin esto
-     el registro se rechaza. Los campos se publican solos desde
-     datos.js en cuanto dejen de ser PENDIENTE.
-     ============================================= -->
-<section class="identidad" id="identidad">
-  <div class="identidad-inner">
-    <p class="section-kicker">Identificación de la empresa</p>
-    <div class="ident-grid" data-identidad>
-      <div class="ident-item">
-        <span class="ident-label">Razón social</span>
-        <span class="ident-valor">KONFOR · Grupo PÁEZ</span>
-      </div>
-      <div class="ident-item">
-        <span class="ident-label">Registro Mercantil</span>
-        <span class="ident-valor">158473SD</span>
-      </div>
-      <div class="ident-item">
-        <span class="ident-label">Nombre comercial ONAPI</span>
-        <span class="ident-valor">945088 · vigente hasta 2036</span>
-      </div>
-      <div class="ident-item" data-campo="rnc" hidden>
-        <span class="ident-label">RNC</span>
-        <span class="ident-valor"></span>
-      </div>
-      <div class="ident-item" data-campo="direccion" hidden>
-        <span class="ident-label">Dirección</span>
-        <span class="ident-valor"></span>
-      </div>
-      <div class="ident-item" data-campo="telefono" hidden>
-        <span class="ident-label">Teléfono</span>
-        <span class="ident-valor"></span>
-      </div>
-      <div class="ident-item" data-campo="horario" hidden>
-        <span class="ident-label">Horario</span>
-        <span class="ident-valor"></span>
-      </div>
-      <div class="ident-item">
-        <span class="ident-label">Correo</span>
-        <span class="ident-valor"><a href="mailto:proyectos@paez.com.do">proyectos@paez.com.do</a></span>
-      </div>
+<!-- ═══ H-09 · EL CIERRE · navy 3 de 3 ═══════════════════ -->
+<section class="seccion navy grano" style="text-align:center">
+  <div class="estrecho">
+    <h2 class="display mascara" style="max-width:20ch;margin:0 auto">La categoría va a existir. La pregunta es <em>quién define el estándar</em>.</h2>
+    <p class="prosa" data-revelar style="margin:1.8rem auto 0">No es invertir en un edificio. Es participar en la creación de una nueva categoría.</p>
+    <div class="acciones" data-revelar style="justify-content:center">
+      <a class="boton boton-oro" href="salud.html" data-traspaso>Conocer KONFOR Health</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="site-footer">
-    <nav class="pie-nav" aria-label="Otras soluciones">
-    <a href="index.html">El sistema</a>
-    <a href="soluciones/residentes.html">Vivir aquí</a>
-    <a href="soluciones/familias.html">Familias</a>
-    <a href="soluciones/medicos.html">Médicos</a>
-    <a href="soluciones/desarrolladores.html">Desarrolladores</a>
+<footer class="pie">
+  <nav class="pie-nav" aria-label="Pie">
+    <a href="index.html">Inicio</a>
+    <a href="salud.html">Salud</a>
+    <a href="familias.html">Familias</a>
+    <a href="medicos.html">Médicos</a>
+    <a href="certificacion.html">Certificación</a>
+    <a href="nodos.html">Dónde estamos</a>
+    <a href="privacidad.html">Privacidad</a>
+    <a href="terminos.html">Términos</a>
   </nav>
-  <div class="footer-inner">
-    <div>
-      <p class="footer-brand">KONFOR</p>
-      <p class="footer-note">Sistema de continuidad humana.<br>Un sistema de Grupo PÁEZ · Santo Domingo, República Dominicana.</p>
-    </div>
-    <p class="footer-links"><a href="privacidad.html">Política de privacidad</a> · <a href="terminos.html">Términos de uso</a></p>
-    <p class="footer-legal mono">© 2026 KONFOR · Material informativo. No constituye oferta pública de valores ni consejo médico o de inversión. Las capacidades en desarrollo se identifican como tales.</p>
+  <div class="pie-fondo">
+    <p class="pie-marca">KONFOR</p>
+    <p>Un sistema de Grupo PÁEZ · Santo Domingo, República Dominicana · <a href="mailto:proyectos@paez.com.do" style="text-decoration:underline">proyectos@paez.com.do</a></p>
+    <p>Nombre comercial registrado ONAPI n.º 945088.</p>
+    <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye oferta pública de valores ni consejo médico. KONFOR no diagnostica ni prescribe.</p>
   </div>
 </footer>
 
-<script src="datos.js?v=20260802e"></script>
-<script src="main.js?v=20260802e"></script>
-<script src="contacto.js?v=20260802e"></script>
+<script src="v3.js?v=20260803a" defer></script>
 </body>
 </html>

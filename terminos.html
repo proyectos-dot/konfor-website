@@ -12,24 +12,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Outfit:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260802e">
-<link rel="stylesheet" href="styles.css?v=20260802e">
+<link rel="stylesheet" href="tokens.css?v=20260803a">
+<link rel="stylesheet" href="v3.css?v=20260803a">
 </head>
 <body class="page-legal">
 <a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<header class="site-header scrolled">
-  <a class="brand" href="index.html">
-    <span class="brand-block"></span>
-    <span class="brand-name">KONFOR</span>
+<header class="cabecera posada">
+  <a class="marca" href="index.html" aria-label="KONFOR, inicio">
+    <span class="marca-bloque" aria-hidden="true"></span><span class="marca-nombre">KONFOR</span>
   </a>
-  <a class="header-cta" href="index.html">Volver al sitio</a>
+  <nav class="nav-alta" aria-label="Principal">
+    <a href="salud.html">Salud</a><a href="familias.html">Familias</a><a href="medicos.html">Médicos</a>
+    <a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
+  </nav>
 </header>
 
 <main id="contenido" class="legal">
   <div class="legal-inner">
-    <p class="section-kicker">Legal</p>
-    <h1 class="legal-title">Términos<br>de <span class="accent">Uso</span></h1>
+    <p class="kicker">Legal</p>
+    <h1 class="">Términos<br>de <span class="accent">Uso</span></h1>
     <p class="legal-fecha">Última actualización: 1 de agosto de 2026</p>
 
     <h2>1. Quiénes somos</h2>
@@ -74,19 +76,18 @@
   </div>
 </main>
 
-<footer class="site-footer">
-  <nav class="pie-nav" aria-label="Legal">
-    <a href="index.html">Inicio</a>
-    <a href="privacidad.html">Privacidad</a>
-    <a href="terminos.html">Términos</a>
+<footer class="pie">
+  <nav class="pie-nav" aria-label="Pie">
+    <a href="index.html">Inicio</a><a href="salud.html">Salud</a><a href="familias.html">Familias</a>
+    <a href="medicos.html">Médicos</a><a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
+    <a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a>
   </nav>
-  <div class="footer-inner">
-    <div>
-      <p class="footer-brand">KONFOR</p>
-      <p class="footer-note">Un sistema de Grupo PÁEZ · Santo Domingo, República Dominicana.</p>
-    </div>
-    <p class="footer-legal">© 2026 KONFOR. Material informativo. No constituye oferta pública de valores ni consejo médico.</p>
+  <div class="pie-fondo">
+    <p class="pie-marca">KONFOR</p>
+    <p>Un sistema de Grupo PÁEZ · Santo Domingo, República Dominicana · <a href="mailto:proyectos@paez.com.do">proyectos@paez.com.do</a></p>
+    <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye oferta pública de valores ni consejo médico.</p>
   </div>
 </footer>
+<script src="v3.js?v=20260803a" defer></script>
 </body>
 </html>
