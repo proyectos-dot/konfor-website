@@ -1193,3 +1193,61 @@ body { font-family: var(--cuerpo); }
    Hasta entonces manda el póster: nunca un rectángulo negro. */
 .opening-video { opacity: 0; transition: opacity 0.6s var(--ease); }
 .opening-video.listo { opacity: 1; }
+
+/* ---------- El país en cifras ---------- */
+.datos { padding: clamp(6rem,14vh,10rem) 2.5rem; background: var(--papel-2); }
+.datos-inner { max-width: 76rem; margin: 0 auto; }
+.datos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem 2rem; margin-top: 4rem; }
+.dato { border-top: 1px solid var(--tinta-12); padding-top: 1.4rem; }
+.dato b {
+  display: block; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2rem,3.6vw,3rem); color: var(--oro); line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.dato span { display: block; margin-top: 0.8rem; font-size: 0.92rem; color: var(--tinta-45); }
+.datos-pie {
+  margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--tinta-12);
+  max-width: 46rem; color: var(--tinta-45); font-size: 0.98rem;
+}
+
+/* ---------- La declaración ---------- */
+.declara {
+  background: var(--navy-grad); color: var(--sobre-navy);
+  padding: clamp(7rem,18vh,13rem) 2.5rem; text-align: center;
+  position: relative;
+}
+.declara-inner { max-width: 54rem; margin: 0 auto; }
+.declara-title {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(1.9rem,4.6vw,3.6rem); line-height: 1.24;
+  color: rgba(245,243,238,0.5);
+}
+.declara-remate {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2.6rem,7vw,5.6rem); margin-top: 2rem;
+}
+.declara-remate em { color: var(--oro-claro); font-style: italic; }
+
+/* ---------- Leer hacia adelante ---------- */
+.adelanta { padding: clamp(6rem,14vh,10rem) 2.5rem; }
+.adelanta-inner { max-width: 76rem; margin: 0 auto; }
+.adelanta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.6rem; margin-top: 3.5rem; }
+.adel { border-top: 2px solid var(--tinta-12); padding-top: 1.3rem; position: relative; }
+.adel::before {
+  content: ""; position: absolute; top: -2px; left: 0; width: 0; height: 2px;
+  background: var(--oro-grad); transition: width 0.9s var(--ease);
+}
+.adel.in-view::before { width: 100%; }
+.adel:nth-child(2)::before { transition-delay: 0.1s; }
+.adel:nth-child(3)::before { transition-delay: 0.2s; }
+.adel:nth-child(4)::before { transition-delay: 0.3s; }
+.adel-num { font-family: var(--ui); font-size: 0.66rem; letter-spacing: 0.2em; color: var(--oro); }
+.adel h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; margin: 0.5rem 0 0.6rem; }
+.adel p { font-size: 0.9rem; color: var(--tinta-45); }
+.adelanta-pie { margin-top: 3rem; max-width: 42rem; color: var(--tinta-45); font-size: 0.95rem; }
+
+@media (max-width: 960px) {
+  .datos, .declara, .adelanta { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .datos-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+  .adelanta-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+}
