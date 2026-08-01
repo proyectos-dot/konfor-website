@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KONFOR — Sistema de continuidad humana</title>
-<meta name="description" content="KONFOR organiza la continuidad entre vivienda, salud, comunidad, familia y servicios alrededor de una identidad que pertenece a la persona.">
+<meta name="description" content="Comunidades donde vivir, salud y compañía funcionan como un solo sistema, con una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260801">
+<link rel="stylesheet" href="styles.css?v=20260801c">
 </head>
 <body>
 
@@ -26,11 +26,11 @@
     <span class="brand-name">KONFOR</span>
   </a>
   <nav class="top-nav">
-    <a href="#tesis">Sistema</a>
-    <a href="soluciones/medicos.html">Médicos</a>
+    <a href="#producto">Producto</a>
+    <a href="soluciones/residentes.html">Vivir aquí</a>
     <a href="soluciones/familias.html">Familias</a>
+    <a href="soluciones/medicos.html">Médicos</a>
     <a href="soluciones/desarrolladores.html">Desarrolladores</a>
-    <a href="#nodos">Nodos</a>
   </nav>
   <a class="header-cta" href="#contacto">Conversemos</a>
 </header>
@@ -48,10 +48,10 @@
       <span class="ht-line"><span>improvisar su</span></span>
       <span class="ht-line"><span class="accent">propia vida.</span></span>
     </h1>
-    <p class="hero-sub">Vivienda por un lado. Médicos por otro. La familia coordinando por WhatsApp. KONFOR es la capa que organiza esa continuidad — entre vivienda, salud, comunidad, familia y servicios — alrededor de una identidad que pertenece a la persona.</p>
+    <p class="hero-sub">La casa por un lado, los médicos por otro y la familia coordinando por WhatsApp. KONFOR construye comunidades donde vivir, salud y compañía funcionan como un solo sistema — y una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.</p>
     <div class="hero-actions">
-      <a href="#tesis" class="btn btn-solid" data-magnetic>Entender la tesis</a>
-      <a href="#limites" class="btn btn-line" data-magnetic>Ver hasta dónde llegamos</a>
+      <a href="#producto" class="btn btn-solid" data-magnetic>Ver cómo funciona</a>
+      <a href="#soluciones" class="btn btn-line" data-magnetic>¿Usted quién es?</a>
     </div>
   </div>
   <div class="hero-meta mono" aria-hidden="true">
@@ -88,20 +88,244 @@
   </div>
 </section>
 
+<!-- ============ EL PRODUCTO: mockup por perfil ============
+     Bloque reutilizable. Se pega tal cual en index.html y en las
+     páginas de solución, cambiando data-default para que cada
+     segmento abra en su propia pantalla.
+     ======================================================= -->
+<section class="product" id="producto">
+  <div class="product-inner">
+    <p class="section-kicker mono">02 / el producto</p>
+    <h2 class="section-title">La misma información.<br>Cuatro maneras de <span class="accent">necesitarla.</span></h2>
+    <p class="section-body">Una señora en Villa Altagracia, su hija en Nueva York, su cardiólogo y el desarrollador del edificio miran la misma realidad — pero ninguno necesita ver lo mismo. Elija quién es y vea su pantalla.</p>
+
+    <div class="product-stage">
+
+      <div class="pv-switch" role="tablist" aria-label="Ver la aplicación según el perfil">
+        <button class="pv-btn active" role="tab" aria-selected="true" data-view="residente">
+          <span class="pv-who">Vivo aquí</span>
+          <span class="pv-role">Residente</span>
+        </button>
+        <button class="pv-btn" role="tab" aria-selected="false" data-view="familia">
+          <span class="pv-who">Cuido a mi madre</span>
+          <span class="pv-role">Familia</span>
+        </button>
+        <button class="pv-btn" role="tab" aria-selected="false" data-view="medico">
+          <span class="pv-who">Soy su médico</span>
+          <span class="pv-role">Médico</span>
+        </button>
+        <button class="pv-btn" role="tab" aria-selected="false" data-view="desarrollador">
+          <span class="pv-who">Construyo el edificio</span>
+          <span class="pv-role">Desarrollador</span>
+        </button>
+      </div>
+
+      <div class="product-display">
+
+        <!-- TELÉFONO -->
+        <div class="phone" aria-hidden="true">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+
+            <!-- RESIDENTE -->
+            <div class="scr active" data-screen="residente">
+              <div class="scr-top">
+                <span class="scr-time mono">7:12</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body">
+                <p class="scr-greet">Buenos días,<br><strong>María.</strong></p>
+                <p class="scr-sub">Hoy es un día tranquilo.</p>
+
+                <div class="card card--now">
+                  <span class="card-tag mono">AHORA</span>
+                  <p class="card-title">Caminata en el jardín</p>
+                  <p class="card-meta">7:30 · con el grupo de la mañana</p>
+                </div>
+
+                <p class="scr-label mono">DESPUÉS</p>
+                <div class="card">
+                  <p class="card-title">Terapia física</p>
+                  <p class="card-meta">10:00 · Sala 2 · Lucía</p>
+                </div>
+                <div class="card">
+                  <p class="card-title">Almuerzo</p>
+                  <p class="card-meta">12:30 · bajo en sodio, como pidió su cardiólogo</p>
+                </div>
+
+                <div class="card card--done">
+                  <span class="card-check">✓</span>
+                  <div>
+                    <p class="card-title">Pastilla de la mañana</p>
+                    <p class="card-meta">Tomada a las 7:05</p>
+                  </div>
+                </div>
+
+                <p class="scr-foot">Carmen vio su resumen anoche.</p>
+              </div>
+            </div>
+
+            <!-- FAMILIA -->
+            <div class="scr" data-screen="familia">
+              <div class="scr-top">
+                <span class="scr-time mono">6:12</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body">
+                <p class="scr-greet">Mamá está<br><strong>bien.</strong></p>
+                <p class="scr-sub">No hay nada que necesite tu atención hoy.</p>
+
+                <div class="card card--calm">
+                  <span class="card-tag mono">ESTA SEMANA</span>
+                  <p class="card-title">Medicación al día</p>
+                  <div class="dots-week" aria-hidden="true">
+                    <i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i>
+                  </div>
+                  <p class="card-meta">7 de 7 días</p>
+                </div>
+
+                <p class="scr-label mono">LO PRÓXIMO</p>
+                <div class="card">
+                  <p class="card-title">Cardiología · Dr. Feli</p>
+                  <p class="card-meta">Martes 3:00 p.m. · confirmada</p>
+                  <p class="card-note">Los estudios ya están cargados.</p>
+                </div>
+
+                <div class="card card--soft">
+                  <p class="card-title">Ayer salió al jardín dos veces</p>
+                  <p class="card-meta">Estuvo con Altagracia y con Rosa</p>
+                </div>
+
+                <p class="scr-foot">Te avisamos solo cuando haga falta.</p>
+              </div>
+            </div>
+
+            <!-- MÉDICO -->
+            <div class="scr" data-screen="medico">
+              <div class="scr-top">
+                <span class="scr-time mono">2:54</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body scr-body--clinical">
+                <p class="scr-label mono">PRÓXIMO PACIENTE · 3:00</p>
+                <p class="scr-greet scr-greet--sm"><strong>María R.</strong><br>68 años · HTA</p>
+
+                <div class="card card--alert">
+                  <span class="card-tag mono">REQUIERE SU CRITERIO</span>
+                  <p class="card-title">Presión sistólica al alza</p>
+                  <p class="card-meta">Promedio 14 días: 148/88 · antes 132/80</p>
+                </div>
+
+                <p class="scr-label mono">DESDE LA ÚLTIMA VISITA</p>
+                <div class="row"><span>Adherencia</span><span class="row-v">94%</span></div>
+                <div class="row"><span>Peso</span><span class="row-v">+1.2 kg</span></div>
+                <div class="row"><span>Actividad</span><span class="row-v">estable</span></div>
+                <div class="row"><span>Sueño</span><span class="row-v">−40 min</span></div>
+
+                <div class="card card--soft">
+                  <p class="card-title">Laboratorio del 14 de julio</p>
+                  <p class="card-meta">Cargado · no requiere repetirse</p>
+                </div>
+
+                <p class="scr-foot">Preparado en 4 minutos de lectura.</p>
+              </div>
+            </div>
+
+            <!-- DESARROLLADOR -->
+            <div class="scr" data-screen="desarrollador">
+              <div class="scr-top">
+                <span class="scr-time mono">9:40</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body scr-body--clinical">
+                <p class="scr-label mono">SU NODO</p>
+                <p class="scr-greet scr-greet--sm"><strong>Torre Serena</strong><br>Santiago · 84 unidades</p>
+
+                <div class="card card--level">
+                  <span class="card-tag mono">NIVEL ACTUAL</span>
+                  <p class="card-title">KONFOR Ready</p>
+                  <div class="lvl-track" aria-hidden="true"><i style="--p:61%"></i></div>
+                  <p class="card-meta">61% de adopción · faltan 4 meses de datos para Adapted</p>
+                </div>
+
+                <p class="scr-label mono">ESTE TRIMESTRE</p>
+                <div class="row"><span>Unidades colocadas</span><span class="row-v">19</span></div>
+                <div class="row"><span>Interesados desde la red</span><span class="row-v">37</span></div>
+                <div class="row"><span>Servicios coordinados</span><span class="row-v">212</span></div>
+
+                <div class="card card--soft">
+                  <p class="card-title">Su edificio sigue produciendo</p>
+                  <p class="card-meta">14 meses después de la última entrega</p>
+                </div>
+
+                <p class="scr-foot">El activo no terminó en la escritura.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EXPLICACIÓN AL LADO -->
+        <div class="product-copy">
+          <div class="pc active" data-copy="residente">
+            <h3>Su día, no su expediente</h3>
+            <p>María no ve gráficas ni porcentajes. Ve lo que toca ahora y lo que viene después. La aplicación no le pide que aprenda nada: le quita de encima recordar.</p>
+            <ul class="pc-list">
+              <li>Nunca le pregunta cómo se siente diez veces al día</li>
+              <li>Ella decide quién de su familia puede ver qué</li>
+              <li>Si no abre la aplicación, el sistema igual funciona</li>
+            </ul>
+          </div>
+          <div class="pc" data-copy="familia">
+            <h3>La pantalla que casi nunca lo llama</h3>
+            <p>El valor no está en la información: está en el silencio. Cuando todo va bien, esta pantalla dice que todo va bien y usted sigue con su día. Cuando algo cambia, se entera antes de que sea una crisis a medianoche.</p>
+            <ul class="pc-list">
+              <li>Ver sin tener que preguntarle a ella</li>
+              <li>Enterarse temprano, no en emergencias</li>
+              <li>Su madre autoriza el acceso y puede quitarlo</li>
+            </ul>
+          </div>
+          <div class="pc" data-copy="medico">
+            <h3>Cuatro minutos antes de la consulta</h3>
+            <p>Usted no recibe un volcado de datos. Recibe lo que cambió desde la última vez que la vio, con lo que requiere su criterio marcado arriba. El resto queda disponible si lo quiere buscar.</p>
+            <ul class="pc-list">
+              <li>La tendencia entre consultas, no dos puntos sueltos</li>
+              <li>Los estudios ya cargados: sin repetir por extravío</li>
+              <li>El sistema señala; usted diagnostica y prescribe</li>
+            </ul>
+          </div>
+          <div class="pc" data-copy="desarrollador">
+            <h3>El tablero de su activo</h3>
+            <p>Después de la entrega, un edificio convencional deja de darle información. Un nodo certificado le sigue diciendo qué tan usado está, cuánta demanda le llega de la red y qué le falta para subir de nivel.</p>
+            <ul class="pc-list">
+              <li>Absorción y colocación con origen identificado</li>
+              <li>Progreso verificable hacia el siguiente nivel</li>
+              <li>Servicios coordinados dentro de su edificio</li>
+            </ul>
+          </div>
+          <p class="product-honest mono">La aplicación está en desarrollo. Estas pantallas muestran el alcance definido, no una versión publicada.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ============ LA DOBLE HÉLICE (scroll assembly) ============ -->
 <section class="stack" id="helice">
   <div class="stack-sticky">
     <div class="stack-head">
-      <p class="section-kicker mono">02 / la doble hélice</p>
-      <h2 class="section-title">El nodo produce contexto.<br>La capa digital produce <span class="accent">continuidad.</span></h2>
+      <p class="section-kicker mono">03 / cómo se sostiene</p>
+      <h2 class="section-title">El lugar produce contexto.<br>La aplicación produce <span class="accent">continuidad.</span></h2>
     </div>
     <div class="stack-stage">
       <div class="stack-layers" id="stackLayers">
         <div class="slayer" data-layer="5"><span class="slayer-tag mono">05</span><div><h4>Estándar</h4><p>Cuando las reglas pueden verificarse en más de un sitio, la experiencia se vuelve especificación replicable.</p></div></div>
         <div class="slayer" data-layer="4"><span class="slayer-tag mono">04</span><div><h4>Retroalimentación</h4><p>La operación física genera datos y necesidades; la coordinación mejora el uso del nodo.</p></div></div>
-        <div class="slayer" data-layer="3"><span class="slayer-tag mono">03</span><div><h4>Capa digital</h4><p>Convierte información dispersa en una ruta visible de acciones y seguimiento.</p></div></div>
-        <div class="slayer" data-layer="2"><span class="slayer-tag mono">02</span><div><h4>Identidad longitudinal</h4><p>Conecta persona, hogar, permisos, profesionales, planes, observaciones y eventos.</p></div></div>
-        <div class="slayer" data-layer="1"><span class="slayer-tag mono">01</span><div><h4>Capa física</h4><p>Residencias, hubs ambulatorios y espacios donde ocurren la vida, el cuidado y la comunidad.</p></div></div>
+        <div class="slayer" data-layer="3"><span class="slayer-tag mono">03</span><div><h4>La aplicación</h4><p>Convierte información dispersa en una ruta visible de acciones y seguimiento.</p></div></div>
+        <div class="slayer" data-layer="2"><span class="slayer-tag mono">02</span><div><h4>Una sola historia</h4><p>Conecta a la persona con su familia, sus médicos y su plan, en un solo hilo que no se reinicia.</p></div></div>
+        <div class="slayer" data-layer="1"><span class="slayer-tag mono">01</span><div><h4>El lugar</h4><p>Residencias y centros médicos: donde de verdad ocurren la vida, el cuidado y la compañía.</p></div></div>
       </div>
       <p class="stack-caption mono" id="stackCaption">desliza para ensamblar el sistema ↓</p>
     </div>
@@ -112,7 +336,7 @@
 <!-- ============ CIRCUITO MÍNIMO ============ -->
 <section class="circuit">
   <div class="circuit-inner">
-    <p class="section-kicker mono">03 / el circuito mínimo</p>
+    <p class="section-kicker mono">04 / cómo funciona</p>
     <h2 class="section-title">Cinco pasos.<br>Ni uno <span class="accent">de más.</span></h2>
     <p class="section-body">El sistema solo debe recoger aquello que puede custodiar, explicar y convertir en una acción legítima. El diagnóstico y la prescripción permanecen siempre bajo responsabilidad clínica.</p>
     <ol class="circuit-steps">
@@ -122,14 +346,56 @@
       <li data-reveal><span class="mono">04</span><h4>Acción</h4><p>Se decide y se ejecuta, con responsable.</p></li>
       <li data-reveal><span class="mono">05</span><h4>Seguimiento</h4><p>Se verifica que se haya cerrado.</p></li>
     </ol>
-    <p class="circuit-ethics" data-reveal><strong>Frontera ética.</strong> La identidad longitudinal pertenece a la persona. El acceso es por propósito, consentimiento y rol. La coordinación no autoriza a KONFOR a decidir tratamientos ni a usar datos de salud para presionar decisiones financieras.</p>
+    <p class="circuit-ethics" data-reveal><strong>Frontera ética.</strong> La historia de salud pertenece a la persona, no a nosotros. Cada quien accede solo a lo que su papel requiere, y siempre con permiso. La coordinación no autoriza a KONFOR a decidir tratamientos ni a usar datos de salud para presionar decisiones financieras.</p>
+  </div>
+</section>
+
+<!-- ============ LOS CINCO EJES ============ -->
+<section class="axes" id="ejes">
+  <div class="axes-inner">
+    <p class="section-kicker mono">05 / los cinco ejes</p>
+    <h2 class="section-title">Una vida no se divide<br>en <span class="accent">departamentos.</span></h2>
+    <p class="section-body">Dónde vive, cómo está de salud, con quién cuenta, cómo paga y qué pasa cuando cambian sus necesidades. Hoy cada uno de esos cinco frentes se atiende por separado, y la persona queda encargada de unirlos. KONFOR los trata como un solo sistema.</p>
+    <div class="axes-grid">
+      <div class="ax" data-reveal>
+        <span class="ax-num">01</span>
+        <h3>Vivienda</h3>
+        <p>Una casa que se adapta cuando cambia quien la habita, en vez de obligar a mudarse.</p>
+        <span class="ax-state ax-state--live">En obra</span>
+      </div>
+      <div class="ax" data-reveal>
+        <span class="ax-num">02</span>
+        <h3>Salud</h3>
+        <p>Seguimiento continuo entre consultas, para que el hallazgo llegue antes que la crisis.</p>
+        <span class="ax-state ax-state--live">En estructuración</span>
+      </div>
+      <div class="ax" data-reveal>
+        <span class="ax-num">03</span>
+        <h3>Comunidad</h3>
+        <p>Compañía con quien compartir la etapa. El aislamiento enferma tanto como una condición médica.</p>
+        <span class="ax-state ax-state--live">En obra</span>
+      </div>
+      <div class="ax" data-reveal>
+        <span class="ax-num">04</span>
+        <h3>Finanzas</h3>
+        <p>Que el patrimonio de una vida alcance para sostener esa vida hasta el final.</p>
+        <span class="ax-state">En diseño</span>
+      </div>
+      <div class="ax" data-reveal>
+        <span class="ax-num">05</span>
+        <h3>Continuidad</h3>
+        <p>Que la historia no se reinicie cada vez que cambia el médico, la casa o el país.</p>
+        <span class="ax-state">En diseño</span>
+      </div>
+    </div>
+    <p class="axes-note">Decimos en qué estado está cada eje porque la diferencia entre lo que ya opera y lo que está en diseño es exactamente lo que un lector serio necesita saber.</p>
   </div>
 </section>
 
 <!-- ============ SELECTOR DE AUDIENCIA ============ -->
 <section class="audience" id="soluciones">
   <div class="aud-inner">
-    <p class="section-kicker mono">04 / soluciones</p>
+    <p class="section-kicker mono">06 / soluciones</p>
     <h2 class="section-title">El sistema es uno.<br>La entrada <span class="accent">no.</span></h2>
     <p class="section-body">Cada actor entra al sistema por una puerta distinta, con una promesa distinta y una prueba distinta que exigir. Elija la suya.</p>
     <div class="aud-grid">
@@ -158,7 +424,7 @@
 <!-- ============ FAMILIA DE NODOS ============ -->
 <section class="nodefam">
   <div class="nodefam-inner">
-    <p class="section-kicker mono">05 / la familia de nodos</p>
+    <p class="section-kicker mono">07 / la familia de nodos</p>
     <h2 class="section-title">Un nodo no se define<br>por su forma. Por su <span class="accent">función.</span></h2>
     <p class="section-body">Cuatro tipologías, cada una con un papel distinto en la red. Es el lugar donde la infraestructura digital se materializa y donde la vida cotidiana se vuelve legible para el sistema — siempre con permiso de quien la vive.</p>
     <div class="node-grid">
@@ -198,14 +464,14 @@
 <!-- ============ LÍMITES: lo que no somos ============ -->
 <section class="limits" id="limites">
   <div class="limits-inner">
-    <p class="section-kicker mono">06 / los límites</p>
+    <p class="section-kicker mono">08 / los límites</p>
     <h2 class="section-title">Lo que <span class="accent">no</span> somos.</h2>
     <p class="section-body">Una categoría no se gana diciendo que todo está integrado. Estas distinciones son la parte más importante de nuestra promesa, porque marcan dónde termina.</p>
     <div class="limits-table">
       <div class="limits-head mono"><span>KONFOR no es</span><span>KONFOR busca ser</span></div>
       <div class="limits-row" data-reveal><span class="lr-no">Una clínica que diagnostica y prescribe.</span><span class="lr-yes">Una capa que organiza información, acciones y seguimiento entre personas y profesionales autorizados.</span></div>
       <div class="limits-row" data-reveal><span class="lr-no">Una inmobiliaria con amenidades wellness.</span><span class="lr-yes">Un estándar de entorno, operación y continuidad aplicable a nodos propios o de terceros.</span></div>
-      <div class="limits-row" data-reveal><span class="lr-no">Una app de recordatorios.</span><span class="lr-yes">Una identidad longitudinal que convierte datos en acciones aceptadas.</span></div>
+      <div class="limits-row" data-reveal><span class="lr-no">Una app de recordatorios.</span><span class="lr-yes">Una historia continua que convierte información en acciones con responsable y fecha.</span></div>
       <div class="limits-row" data-reveal><span class="lr-no">Un fondo que promete rendimiento.</span><span class="lr-yes">Una arquitectura que, en fases posteriores y reguladas, podría conectar capital con infraestructura de longevidad.</span></div>
       <div class="limits-row" data-reveal><span class="lr-no">Un asilo o residencia para dependencia tardía.</span><span class="lr-yes">Autonomía con soporte para adultos funcionales, con rutas claras cuando aumenta la necesidad de cuidado.</span></div>
     </div>
@@ -216,7 +482,7 @@
 <!-- ============ NODOS ============ -->
 <section class="vehicles" id="nodos">
   <div class="vehicles-head">
-    <p class="section-kicker mono">07 / los nodos</p>
+    <p class="section-kicker mono">09 / los nodos</p>
     <h2 class="section-title">Donde la tesis<br>toca el <span class="accent">mundo físico.</span></h2>
     <p class="section-body">KONFOR nace de PÁEZ, una constructora y promotora dominicana con más de veinte años de experiencia. Esa procedencia no se oculta: es la razón por la que la promesa empieza con nodos reales y no con una aplicación.</p>
   </div>
@@ -276,7 +542,7 @@
 <!-- ============ LÍNEA ROJA ============ -->
 <section class="redline">
   <div class="redline-inner" data-reveal>
-    <p class="section-kicker mono">08 / el método</p>
+    <p class="section-kicker mono">10 / el método</p>
     <h2 class="redline-title">No construimos autonomía sobre procesos que <span class="accent">todavía no sabemos operar a mano.</span></h2>
     <p class="redline-text">Es fácil producir sistemas; es difícil ganarse la confianza. Por eso cada capa avanza en escalera: primero el humano ejecuta y el sistema observa; después el sistema documenta y mide; solo entonces propone, y siempre con aprobación humana. La automatización llega cuando el proceso ya dejó de cambiar cada semana — no antes.</p>
   </div>
@@ -285,7 +551,7 @@
 <!-- ============ CONTACTO ============ -->
 <section class="access" id="contacto">
   <div class="access-inner">
-    <p class="section-kicker mono">09 / conversemos</p>
+    <p class="section-kicker mono">11 / conversemos</p>
     <h2 class="access-title">Una institución serena<br>que sabe hasta <span class="accent">dónde llega.</span></h2>
     <p class="access-sub">Si usted es residente, familiar, médico, desarrollador o capital institucional, la conversación empieza igual: entendiendo qué necesita, qué podemos probar hoy y qué todavía no.</p>
     <a class="btn btn-solid btn-lg" href="mailto:proyectos@paez.com.do?subject=KONFOR%20—%20conversación" data-magnetic>proyectos@paez.com.do</a>
@@ -305,6 +571,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=20260801"></script>
+<script src="main.js?v=20260801c"></script>
 </body>
 </html>

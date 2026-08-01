@@ -146,17 +146,32 @@
   }
 
   /* ---------- Reveals ---------- */
-  // Revelado por posición, no por IntersectionObserver: un salto instantáneo
-  // (ancla, scroll brusco) puede llevar una sección de "debajo" a "encima" sin
-  // que el ratio de intersección cambie nunca, y el observer jamás dispara.
+  // Dos mecanismos a propósito, porque cada uno cubre el punto ciego del otro:
+  //
+  // 1) IntersectionObserver: no depende de eventos de scroll. Cuando el
+  //    elemento que scrollea no es el documento (basta un `overflow` en un
+  //    ancestro), `window` no recibe ningún evento de scroll y todo el
+  //    contenido se queda invisible para siempre. El observer sí dispara.
+  // 2) Barrido por posición: un salto instantáneo — un ancla, un
+  //    scrollIntoView — puede pasar una sección de "debajo" a "encima" sin que
+  //    el ratio de intersección cambie nunca, y ahí el observer no dispara.
   let pending = Array.from(document.querySelectorAll("[data-reveal]"));
+  const reveal = (el) => {
+    el.classList.add("in-view");
+    pending = pending.filter((p) => p !== el);
+    io.unobserve(el);
+  };
+  const io = new IntersectionObserver(
+    (entries) => entries.forEach((e) => { if (e.isIntersecting) reveal(e.target); }),
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.01 }
+  );
+  pending.forEach((el) => io.observe(el));
+
   const revealPass = () => {
     if (!pending.length) return;
     const trigger = window.innerHeight * 0.85;
-    pending = pending.filter((el) => {
-      if (el.getBoundingClientRect().top >= trigger) return true;
-      el.classList.add("in-view");
-      return false;
+    pending.slice().forEach((el) => {
+      if (el.getBoundingClientRect().top < trigger) reveal(el);
     });
   };
 
@@ -224,6 +239,27 @@
   window.addEventListener("load", onScroll);
   document.addEventListener("visibilitychange", onScroll);
   onScroll();
+
+  /* ---------- Selector de perfil del mockup ---------- */
+  const pvBtns = Array.from(document.querySelectorAll(".pv-btn"));
+  if (pvBtns.length) {
+    const screens = Array.from(document.querySelectorAll(".scr"));
+    const copies = Array.from(document.querySelectorAll(".pc"));
+    const show = (view) => {
+      pvBtns.forEach((b) => {
+        const on = b.dataset.view === view;
+        b.classList.toggle("active", on);
+        b.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      screens.forEach((s) => s.classList.toggle("active", s.dataset.screen === view));
+      copies.forEach((c) => c.classList.toggle("active", c.dataset.copy === view));
+    };
+    pvBtns.forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
+
+    // Cada página de solución abre el mockup en su propio perfil
+    const preset = document.querySelector(".product")?.dataset.default;
+    if (preset) show(preset);
+  }
 
   /* ---------- Magnéticos ---------- */
   if (!reduceMotion && matchMedia("(pointer: fine)").matches) {

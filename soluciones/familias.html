@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=20260801">
+<link rel="stylesheet" href="../styles.css?v=20260801c">
 </head>
 <body class="page-solution">
 
@@ -21,10 +21,10 @@
   </a>
   <nav class="top-nav">
     <a href="../index.html#tesis">Sistema</a>
-    <a href="medicos.html">Médicos</a>
+    <a href="residentes.html">Vivir aquí</a>
     <a href="familias.html" class="is-current">Familias</a>
+    <a href="medicos.html">Médicos</a>
     <a href="desarrolladores.html">Desarrolladores</a>
-    <a href="../index.html#nodos">Nodos</a>
   </nav>
   <a class="header-cta" href="#contacto">Conversemos</a>
 </header>
@@ -88,11 +88,235 @@
       </div>
       <div class="pos" data-reveal>
         <h3>Ella sigue mandando</h3>
-        <p>La identidad longitudinal pertenece a su madre, no a usted ni a nosotros. Ella autoriza quién entra y para qué. El sistema acompaña; no tutela.</p>
+        <p>Su historia de salud le pertenece a ella, no a usted ni a nosotros. Ella autoriza quién entra y para qué. El sistema acompaña; no tutela.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ============ EL PRODUCTO: mockup por perfil ============
+     Bloque reutilizable. Se pega tal cual en index.html y en las
+     páginas de solución, cambiando data-default para que cada
+     segmento abra en su propia pantalla.
+     ======================================================= -->
+<section class="product" id="producto" data-default="familia">
+  <div class="product-inner">
+    <p class="section-kicker mono">03 / la aplicación</p>
+    <h2 class="section-title">La misma información.<br>Cuatro maneras de <span class="accent">necesitarla.</span></h2>
+    <p class="section-body">Una señora en Villa Altagracia, su hija en Nueva York, su cardiólogo y el desarrollador del edificio miran la misma realidad — pero ninguno necesita ver lo mismo. Elija quién es y vea su pantalla.</p>
+
+    <div class="product-stage">
+
+      <div class="pv-switch" role="tablist" aria-label="Ver la aplicación según el perfil">
+        <button class="pv-btn active" role="tab" aria-selected="true" data-view="residente">
+          <span class="pv-who">Vivo aquí</span>
+          <span class="pv-role">Residente</span>
+        </button>
+        <button class="pv-btn" role="tab" aria-selected="false" data-view="familia">
+          <span class="pv-who">Cuido a mi madre</span>
+          <span class="pv-role">Familia</span>
+        </button>
+        <button class="pv-btn" role="tab" aria-selected="false" data-view="medico">
+          <span class="pv-who">Soy su médico</span>
+          <span class="pv-role">Médico</span>
+        </button>
+        <button class="pv-btn" role="tab" aria-selected="false" data-view="desarrollador">
+          <span class="pv-who">Construyo el edificio</span>
+          <span class="pv-role">Desarrollador</span>
+        </button>
+      </div>
+
+      <div class="product-display">
+
+        <!-- TELÉFONO -->
+        <div class="phone" aria-hidden="true">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+
+            <!-- RESIDENTE -->
+            <div class="scr active" data-screen="residente">
+              <div class="scr-top">
+                <span class="scr-time mono">7:12</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body">
+                <p class="scr-greet">Buenos días,<br><strong>María.</strong></p>
+                <p class="scr-sub">Hoy es un día tranquilo.</p>
+
+                <div class="card card--now">
+                  <span class="card-tag mono">AHORA</span>
+                  <p class="card-title">Caminata en el jardín</p>
+                  <p class="card-meta">7:30 · con el grupo de la mañana</p>
+                </div>
+
+                <p class="scr-label mono">DESPUÉS</p>
+                <div class="card">
+                  <p class="card-title">Terapia física</p>
+                  <p class="card-meta">10:00 · Sala 2 · Lucía</p>
+                </div>
+                <div class="card">
+                  <p class="card-title">Almuerzo</p>
+                  <p class="card-meta">12:30 · bajo en sodio, como pidió su cardiólogo</p>
+                </div>
+
+                <div class="card card--done">
+                  <span class="card-check">✓</span>
+                  <div>
+                    <p class="card-title">Pastilla de la mañana</p>
+                    <p class="card-meta">Tomada a las 7:05</p>
+                  </div>
+                </div>
+
+                <p class="scr-foot">Carmen vio su resumen anoche.</p>
+              </div>
+            </div>
+
+            <!-- FAMILIA -->
+            <div class="scr" data-screen="familia">
+              <div class="scr-top">
+                <span class="scr-time mono">6:12</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body">
+                <p class="scr-greet">Mamá está<br><strong>bien.</strong></p>
+                <p class="scr-sub">No hay nada que necesite tu atención hoy.</p>
+
+                <div class="card card--calm">
+                  <span class="card-tag mono">ESTA SEMANA</span>
+                  <p class="card-title">Medicación al día</p>
+                  <div class="dots-week" aria-hidden="true">
+                    <i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i>
+                  </div>
+                  <p class="card-meta">7 de 7 días</p>
+                </div>
+
+                <p class="scr-label mono">LO PRÓXIMO</p>
+                <div class="card">
+                  <p class="card-title">Cardiología · Dr. Feli</p>
+                  <p class="card-meta">Martes 3:00 p.m. · confirmada</p>
+                  <p class="card-note">Los estudios ya están cargados.</p>
+                </div>
+
+                <div class="card card--soft">
+                  <p class="card-title">Ayer salió al jardín dos veces</p>
+                  <p class="card-meta">Estuvo con Altagracia y con Rosa</p>
+                </div>
+
+                <p class="scr-foot">Te avisamos solo cuando haga falta.</p>
+              </div>
+            </div>
+
+            <!-- MÉDICO -->
+            <div class="scr" data-screen="medico">
+              <div class="scr-top">
+                <span class="scr-time mono">2:54</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body scr-body--clinical">
+                <p class="scr-label mono">PRÓXIMO PACIENTE · 3:00</p>
+                <p class="scr-greet scr-greet--sm"><strong>María R.</strong><br>68 años · HTA</p>
+
+                <div class="card card--alert">
+                  <span class="card-tag mono">REQUIERE SU CRITERIO</span>
+                  <p class="card-title">Presión sistólica al alza</p>
+                  <p class="card-meta">Promedio 14 días: 148/88 · antes 132/80</p>
+                </div>
+
+                <p class="scr-label mono">DESDE LA ÚLTIMA VISITA</p>
+                <div class="row"><span>Adherencia</span><span class="row-v">94%</span></div>
+                <div class="row"><span>Peso</span><span class="row-v">+1.2 kg</span></div>
+                <div class="row"><span>Actividad</span><span class="row-v">estable</span></div>
+                <div class="row"><span>Sueño</span><span class="row-v">−40 min</span></div>
+
+                <div class="card card--soft">
+                  <p class="card-title">Laboratorio del 14 de julio</p>
+                  <p class="card-meta">Cargado · no requiere repetirse</p>
+                </div>
+
+                <p class="scr-foot">Preparado en 4 minutos de lectura.</p>
+              </div>
+            </div>
+
+            <!-- DESARROLLADOR -->
+            <div class="scr" data-screen="desarrollador">
+              <div class="scr-top">
+                <span class="scr-time mono">9:40</span>
+                <span class="scr-dots mono">▪▪▪</span>
+              </div>
+              <div class="scr-body scr-body--clinical">
+                <p class="scr-label mono">SU NODO</p>
+                <p class="scr-greet scr-greet--sm"><strong>Torre Serena</strong><br>Santiago · 84 unidades</p>
+
+                <div class="card card--level">
+                  <span class="card-tag mono">NIVEL ACTUAL</span>
+                  <p class="card-title">KONFOR Ready</p>
+                  <div class="lvl-track" aria-hidden="true"><i style="--p:61%"></i></div>
+                  <p class="card-meta">61% de adopción · faltan 4 meses de datos para Adapted</p>
+                </div>
+
+                <p class="scr-label mono">ESTE TRIMESTRE</p>
+                <div class="row"><span>Unidades colocadas</span><span class="row-v">19</span></div>
+                <div class="row"><span>Interesados desde la red</span><span class="row-v">37</span></div>
+                <div class="row"><span>Servicios coordinados</span><span class="row-v">212</span></div>
+
+                <div class="card card--soft">
+                  <p class="card-title">Su edificio sigue produciendo</p>
+                  <p class="card-meta">14 meses después de la última entrega</p>
+                </div>
+
+                <p class="scr-foot">El activo no terminó en la escritura.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EXPLICACIÓN AL LADO -->
+        <div class="product-copy">
+          <div class="pc active" data-copy="residente">
+            <h3>Su día, no su expediente</h3>
+            <p>María no ve gráficas ni porcentajes. Ve lo que toca ahora y lo que viene después. La aplicación no le pide que aprenda nada: le quita de encima recordar.</p>
+            <ul class="pc-list">
+              <li>Nunca le pregunta cómo se siente diez veces al día</li>
+              <li>Ella decide quién de su familia puede ver qué</li>
+              <li>Si no abre la aplicación, el sistema igual funciona</li>
+            </ul>
+          </div>
+          <div class="pc" data-copy="familia">
+            <h3>La pantalla que casi nunca lo llama</h3>
+            <p>El valor no está en la información: está en el silencio. Cuando todo va bien, esta pantalla dice que todo va bien y usted sigue con su día. Cuando algo cambia, se entera antes de que sea una crisis a medianoche.</p>
+            <ul class="pc-list">
+              <li>Ver sin tener que preguntarle a ella</li>
+              <li>Enterarse temprano, no en emergencias</li>
+              <li>Su madre autoriza el acceso y puede quitarlo</li>
+            </ul>
+          </div>
+          <div class="pc" data-copy="medico">
+            <h3>Cuatro minutos antes de la consulta</h3>
+            <p>Usted no recibe un volcado de datos. Recibe lo que cambió desde la última vez que la vio, con lo que requiere su criterio marcado arriba. El resto queda disponible si lo quiere buscar.</p>
+            <ul class="pc-list">
+              <li>La tendencia entre consultas, no dos puntos sueltos</li>
+              <li>Los estudios ya cargados: sin repetir por extravío</li>
+              <li>El sistema señala; usted diagnostica y prescribe</li>
+            </ul>
+          </div>
+          <div class="pc" data-copy="desarrollador">
+            <h3>El tablero de su activo</h3>
+            <p>Después de la entrega, un edificio convencional deja de darle información. Un nodo certificado le sigue diciendo qué tan usado está, cuánta demanda le llega de la red y qué le falta para subir de nivel.</p>
+            <ul class="pc-list">
+              <li>Absorción y colocación con origen identificado</li>
+              <li>Progreso verificable hacia el siguiente nivel</li>
+              <li>Servicios coordinados dentro de su edificio</li>
+            </ul>
+          </div>
+          <p class="product-honest mono">La aplicación está en desarrollo. Estas pantallas muestran el alcance definido, no una versión publicada.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="promise">
   <video class="promise-video" autoplay muted loop playsinline preload="none" poster="../assets/video/autonomia_w_poster.jpg" aria-hidden="true">
@@ -116,7 +340,7 @@
       <div class="limits-row" data-reveal><span class="lr-no">Una residencia de dependencia tardía.</span><span class="lr-yes">Autonomía con soporte, con rutas claras cuando aumenta la necesidad de cuidado.</span></div>
       <div class="limits-row" data-reveal><span class="lr-no">Una app de recordatorios.</span><span class="lr-yes">Una historia continua que se sostiene entre médicos, casa y familia.</span></div>
     </div>
-    <p class="limits-note mono" data-reveal>La capa digital está en desarrollo. Lo decimos aquí porque preferimos que lo lea de nosotros y no que lo descubra después.</p>
+    <p class="limits-note mono" data-reveal>La aplicación está en desarrollo. Lo decimos aquí porque preferimos que lo lea de nosotros y no que lo descubra después.</p>
   </div>
 </section>
 
@@ -142,6 +366,6 @@
   </div>
 </footer>
 
-<script src="../main.js?v=20260801"></script>
+<script src="../main.js?v=20260801c"></script>
 </body>
 </html>
