@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KONFOR — Sistema de continuidad humana</title>
+<meta name="description" content="KONFOR organiza la continuidad entre vivienda, salud, comunidad, familia y servicios alrededor de una identidad que pertenece a la persona.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-terminal">
+    <p><span class="pre-prompt">&gt;</span> konfor<span class="pre-cursor">_</span></p>
+  </div>
+</div>
+
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#top">
+    <span class="brand-block"></span>
+    <span class="brand-name">KONFOR</span>
+  </a>
+  <nav class="top-nav">
+    <a href="#tesis">Tesis</a>
+    <a href="#helice">Sistema</a>
+    <a href="#limites">Límites</a>
+    <a href="#nodos">Nodos</a>
+    <a href="#personas">Personas</a>
+  </nav>
+  <a class="header-cta" href="#contacto">Conversemos</a>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-tag mono" data-type-target>// sistema de continuidad humana · santo domingo</p>
+    <h1 class="hero-title">
+      <span class="ht-line"><span>Nadie debería</span></span>
+      <span class="ht-line"><span>improvisar su</span></span>
+      <span class="ht-line"><span class="accent">propia vida.</span></span>
+    </h1>
+    <p class="hero-sub">Vivienda por un lado. Médicos por otro. La familia coordinando por WhatsApp. KONFOR es la capa que organiza esa continuidad — entre vivienda, salud, comunidad, familia y servicios — alrededor de una identidad que pertenece a la persona.</p>
+    <div class="hero-actions">
+      <a href="#tesis" class="btn btn-solid" data-magnetic>Entender la tesis</a>
+      <a href="#limites" class="btn btn-line" data-magnetic>Ver hasta dónde llegamos</a>
+    </div>
+  </div>
+  <div class="hero-meta mono" aria-hidden="true">
+    <span>SDQ · 18.4861° N</span>
+    <span id="heroClock">—</span>
+    <span>scroll ↓</span>
+  </div>
+</section>
+
+<!-- ============ TESIS ============ -->
+<section class="thesis" id="tesis">
+  <div class="thesis-inner">
+    <p class="section-kicker mono">01 / la tesis</p>
+    <h2 class="thesis-text" id="thesisText">
+      El problema de la longevidad no es solamente clínico ni residencial. Es un problema de coordinación entre sistemas que hoy obligan al individuo y a su familia a improvisar.
+    </h2>
+  </div>
+  <div class="thesis-pillars">
+    <div class="pillar" data-reveal>
+      <span class="pillar-num mono">/01</span>
+      <h3>Un estudio que no llega al médico</h3>
+      <p>La información existe, pero se dispersa entre laboratorios, consultorios y gavetas. Nadie la sostiene en el tiempo.</p>
+    </div>
+    <div class="pillar" data-reveal>
+      <span class="pillar-num mono">/02</span>
+      <h3>Una familia que no conoce el plan</h3>
+      <p>Los hijos se enteran tarde y desde lejos. Cada episodio se resuelve con llamadas, favores y memoria.</p>
+    </div>
+    <div class="pillar" data-reveal>
+      <span class="pillar-num mono">/03</span>
+      <h3>Un entorno que no responde</h3>
+      <p>La vivienda, el edificio y el barrio no cambian cuando cambian las necesidades de quien los habita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA DOBLE HÉLICE (scroll assembly) ============ -->
+<section class="stack" id="helice">
+  <div class="stack-sticky">
+    <div class="stack-head">
+      <p class="section-kicker mono">02 / la doble hélice</p>
+      <h2 class="section-title">El nodo produce contexto.<br>La capa digital produce <span class="accent">continuidad.</span></h2>
+    </div>
+    <div class="stack-stage">
+      <div class="stack-layers" id="stackLayers">
+        <div class="slayer" data-layer="5"><span class="slayer-tag mono">05</span><div><h4>Estándar</h4><p>Cuando las reglas pueden verificarse en más de un sitio, la experiencia se vuelve especificación replicable.</p></div></div>
+        <div class="slayer" data-layer="4"><span class="slayer-tag mono">04</span><div><h4>Retroalimentación</h4><p>La operación física genera datos y necesidades; la coordinación mejora el uso del nodo.</p></div></div>
+        <div class="slayer" data-layer="3"><span class="slayer-tag mono">03</span><div><h4>Capa digital</h4><p>Convierte información dispersa en una ruta visible de acciones y seguimiento.</p></div></div>
+        <div class="slayer" data-layer="2"><span class="slayer-tag mono">02</span><div><h4>Identidad longitudinal</h4><p>Conecta persona, hogar, permisos, profesionales, planes, observaciones y eventos.</p></div></div>
+        <div class="slayer" data-layer="1"><span class="slayer-tag mono">01</span><div><h4>Capa física</h4><p>Residencias, hubs ambulatorios y espacios donde ocurren la vida, el cuidado y la comunidad.</p></div></div>
+      </div>
+      <p class="stack-caption mono" id="stackCaption">desliza para ensamblar el sistema ↓</p>
+    </div>
+  </div>
+  <div class="stack-track" aria-hidden="true"></div>
+</section>
+
+<!-- ============ CIRCUITO MÍNIMO ============ -->
+<section class="circuit">
+  <div class="circuit-inner">
+    <p class="section-kicker mono">03 / el circuito mínimo</p>
+    <h2 class="section-title">Cinco pasos.<br>Ni uno <span class="accent">de más.</span></h2>
+    <p class="section-body">El sistema solo debe recoger aquello que puede custodiar, explicar y convertir en una acción legítima. El diagnóstico y la prescripción permanecen siempre bajo responsabilidad clínica.</p>
+    <ol class="circuit-steps">
+      <li data-reveal><span class="mono">01</span><h4>Entorno</h4><p>El lugar donde ocurre la vida diaria.</p></li>
+      <li data-reveal><span class="mono">02</span><h4>Señal</h4><p>Algo cambia y queda registrado.</p></li>
+      <li data-reveal><span class="mono">03</span><h4>Interpretación</h4><p>Un profesional autorizado le da sentido.</p></li>
+      <li data-reveal><span class="mono">04</span><h4>Acción</h4><p>Se decide y se ejecuta, con responsable.</p></li>
+      <li data-reveal><span class="mono">05</span><h4>Seguimiento</h4><p>Se verifica que se haya cerrado.</p></li>
+    </ol>
+    <p class="circuit-ethics" data-reveal><strong>Frontera ética.</strong> La identidad longitudinal pertenece a la persona. El acceso es por propósito, consentimiento y rol. La coordinación no autoriza a KONFOR a decidir tratamientos ni a usar datos de salud para presionar decisiones financieras.</p>
+  </div>
+</section>
+
+<!-- ============ LÍMITES: lo que no somos ============ -->
+<section class="limits" id="limites">
+  <div class="limits-inner">
+    <p class="section-kicker mono">04 / los límites</p>
+    <h2 class="section-title">Lo que <span class="accent">no</span> somos.</h2>
+    <p class="section-body">Una categoría no se gana diciendo que todo está integrado. Estas distinciones son la parte más importante de nuestra promesa, porque marcan dónde termina.</p>
+    <div class="limits-table">
+      <div class="limits-head mono"><span>KONFOR no es</span><span>KONFOR busca ser</span></div>
+      <div class="limits-row" data-reveal><span class="lr-no">Una clínica que diagnostica y prescribe.</span><span class="lr-yes">Una capa que organiza información, acciones y seguimiento entre personas y profesionales autorizados.</span></div>
+      <div class="limits-row" data-reveal><span class="lr-no">Una inmobiliaria con amenidades wellness.</span><span class="lr-yes">Un estándar de entorno, operación y continuidad aplicable a nodos propios o de terceros.</span></div>
+      <div class="limits-row" data-reveal><span class="lr-no">Una app de recordatorios.</span><span class="lr-yes">Una identidad longitudinal que convierte datos en acciones aceptadas.</span></div>
+      <div class="limits-row" data-reveal><span class="lr-no">Un fondo que promete rendimiento.</span><span class="lr-yes">Una arquitectura que, en fases posteriores y reguladas, podría conectar capital con infraestructura de longevidad.</span></div>
+      <div class="limits-row" data-reveal><span class="lr-no">Un asilo o residencia para dependencia tardía.</span><span class="lr-yes">Autonomía con soporte para adultos funcionales, con rutas claras cuando aumenta la necesidad de cuidado.</span></div>
+    </div>
+    <p class="limits-note mono" data-reveal>Estado actual: la arquitectura está formulada y hay software funcional. Todavía no opera como una sola red clínica y comercial demostrada. Lo decimos aquí porque preferimos que lo lea de nosotros.</p>
+  </div>
+</section>
+
+<!-- ============ NODOS ============ -->
+<section class="vehicles" id="nodos">
+  <div class="vehicles-head">
+    <p class="section-kicker mono">05 / los nodos</p>
+    <h2 class="section-title">Donde la tesis<br>toca el <span class="accent">mundo físico.</span></h2>
+    <p class="section-body">KONFOR nace de PÁEZ, una constructora y promotora dominicana con más de veinte años de experiencia. Esa procedencia no se oculta: es la razón por la que la promesa empieza con nodos reales y no con una aplicación.</p>
+  </div>
+  <div class="vehicle-cards">
+    <article class="vcard" data-reveal>
+      <div class="vcard-media">
+        <img src="assets/03_Vista_Amapolas_Perspectiva_1.jpg" alt="Vista de las Amapolas">
+        <span class="vcard-badge mono">EN OBRA</span>
+      </div>
+      <div class="vcard-body">
+        <h3>Vista de las Amapolas</h3>
+        <p class="vcard-type mono">comunidad de longevidad · villa altagracia</p>
+        <p class="vcard-desc">El primer nodo donde el entorno físico, la membresía y la continuidad digital se diseñan juntos. Comunidad residencial a 30 minutos de Santo Domingo, con fideicomiso constituido y obra iniciada.</p>
+        <ul class="vcard-list mono">
+          <li><span>Rol en el sistema</span><span>Nodo de longevidad</span></li>
+          <li><span>Estructura</span><span>Fideicomiso Ley 189-11</span></li>
+          <li><span>Programa</span><span>Residencial + plaza comercial</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="vcard" data-reveal>
+      <div class="vcard-media">
+        <img src="assets/08_Hub_Medico_Quisqueya_Entrada.jpg" alt="Hub Médico PÁEZ">
+        <span class="vcard-badge mono">PROYECTADO</span>
+      </div>
+      <div class="vcard-body">
+        <h3>Hub Médico PÁEZ</h3>
+        <p class="vcard-type mono">centro ambulatorio · distrito nacional</p>
+        <p class="vcard-desc">Nodo clínico proyectado para conectar la vida cotidiana con diagnóstico y especialidad: consulta, imagen, laboratorio, cirugía electiva y continuidad. No es un hospital.</p>
+        <ul class="vcard-list mono">
+          <li><span>Rol en el sistema</span><span>Nodo clínico ambulatorio</span></li>
+          <li><span>Alcance</span><span>Mediana complejidad</span></li>
+          <li><span>Estado</span><span>En estructuración</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="vcard" data-reveal>
+      <div class="vcard-media">
+        <img src="assets/merino_354.jpg" alt="Meriño 354 — Ciudad Colonial">
+        <span class="vcard-badge mono">FIDEICOMISO CONSTITUIDO</span>
+      </div>
+      <div class="vcard-body">
+        <h3>Meriño 354</h3>
+        <p class="vcard-type mono">condohotel boutique · ciudad colonial</p>
+        <p class="vcard-desc">Proyecto condotelero en el casco histórico de la primera ciudad de América, bajo fideicomiso. Aporta gobernanza fiduciaria y experiencia de operación hotelera al sistema.</p>
+        <ul class="vcard-list mono">
+          <li><span>Rol en el sistema</span><span>Gobernanza y hospitalidad</span></li>
+          <li><span>Régimen</span><span>CONFOTUR</span></li>
+          <li><span>Estado</span><span>En desarrollo</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+  <p class="vehicles-foot mono" data-reveal>Verni Colonial y Altos del Jovero completan el aprendizaje acumulado: hospitalidad, operación recurrente y venta patrimonial en Ciudad Colonial y Miches.</p>
+</section>
+
+<!-- ============ PERSONAS / MATRIZ DE MENSAJE ============ -->
+<section class="network" id="personas">
+  <div class="network-inner">
+    <div class="network-copy">
+      <p class="section-kicker mono">06 / las personas</p>
+      <h2 class="section-title">Cinco actores.<br>Una misma <span class="accent">continuidad.</span></h2>
+      <p class="section-body">La arquitectura solo se vuelve empresa cuando cada actor entiende qué recibe, qué debe probar y qué acción sigue. El residente autoriza; la familia acompaña; el médico decide clínicamente; el desarrollador construye; el capital financia. <strong>KONFOR define y coordina las reglas.</strong></p>
+      <ul class="network-rules">
+        <li data-reveal><span class="mono">→</span> <strong>Residente:</strong> su vida sigue siendo suya, con un sistema que acompaña.</li>
+        <li data-reveal><span class="mono">→</span> <strong>Familia:</strong> acompañar sin tener que coordinar cada crisis desde lejos.</li>
+        <li data-reveal><span class="mono">→</span> <strong>Médico:</strong> llegar con contexto preparado y salir con continuidad.</li>
+        <li data-reveal><span class="mono">→</span> <strong>Desarrollador:</strong> construir un nodo, no solamente un activo.</li>
+        <li data-reveal><span class="mono">→</span> <strong>Capital:</strong> financiar hitos y evidencia en una categoría emergente.</li>
+      </ul>
+    </div>
+    <div class="network-panel" data-reveal>
+      <div class="panel-head mono">secuencia_minima_de_foco.cfg</div>
+      <div class="panel-body">
+        <div class="tier"><span class="tier-name">Loop 1 · Comercial</span><div class="tier-bar"><i style="--w:100%"></i></div><span class="tier-note mono">persona → visita → reserva → fideicomiso → cierre</span></div>
+        <div class="tier"><span class="tier-name">Loop 2 · Continuidad</span><div class="tier-bar"><i style="--w:58%"></i></div><span class="tier-note mono">dato → revisión → acción → seguimiento → cierre</span></div>
+        <div class="tier"><span class="tier-name">Loop 3 · Replicación</span><div class="tier-bar"><i style="--w:26%"></i></div><span class="tier-note mono">regla → manual → segundo operador → auditoría</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LÍNEA ROJA ============ -->
+<section class="redline">
+  <div class="redline-inner" data-reveal>
+    <p class="section-kicker mono">07 / el método</p>
+    <h2 class="redline-title">No construimos autonomía sobre procesos que <span class="accent">todavía no sabemos operar a mano.</span></h2>
+    <p class="redline-text">Es fácil producir sistemas; es difícil ganarse la confianza. Por eso cada capa avanza en escalera: primero el humano ejecuta y el sistema observa; después el sistema documenta y mide; solo entonces propone, y siempre con aprobación humana. La automatización llega cuando el proceso ya dejó de cambiar cada semana — no antes.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="access" id="contacto">
+  <div class="access-inner">
+    <p class="section-kicker mono">08 / conversemos</p>
+    <h2 class="access-title">Una institución serena<br>que sabe hasta <span class="accent">dónde llega.</span></h2>
+    <p class="access-sub">Si usted es residente, familiar, médico, desarrollador o capital institucional, la conversación empieza igual: entendiendo qué necesita, qué podemos probar hoy y qué todavía no.</p>
+    <a class="btn btn-solid btn-lg" href="mailto:proyectos@paez.com.do?subject=KONFOR%20—%20conversación" data-magnetic>proyectos@paez.com.do</a>
+    <p class="access-fine mono">santo domingo, república dominicana · un sistema de grupo páez</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">KONFOR</p>
+      <p class="footer-note">Sistema de continuidad humana.<br>Un sistema de Grupo PÁEZ · Santo Domingo, República Dominicana.</p>
+    </div>
+    <p class="footer-legal mono">© 2026 KONFOR · Material informativo. No constituye oferta pública de valores ni consejo médico o de inversión. Las capacidades en desarrollo se identifican como tales.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
