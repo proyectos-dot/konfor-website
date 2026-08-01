@@ -25,10 +25,11 @@
 <meta name="theme-color" content="#0a0e1c">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "KONFOR", "url": "https://konfor.do", "description": "Infraestructura de longevidad: vivienda, salud coordinada y comunidad como un solo sistema.", "parentOrganization": {"@type": "Organization", "name": "Grupo PÁEZ", "url": "https://paez.com.do"}, "address": {"@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Certificación KOSD", "description": "Certificación de proyectos como infraestructura de longevidad en tres niveles: Ready, Adapted y Operated."}}}</script>
-<link rel="stylesheet" href="tokens.css?v=20260801m">
-<link rel="stylesheet" href="styles.css?v=20260801m">
+<link rel="stylesheet" href="tokens.css?v=20260801w">
+<link rel="stylesheet" href="styles.css?v=20260801w">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
 <div class="preloader" id="preloader" aria-hidden="true">
   <div class="pre-terminal">
@@ -53,7 +54,7 @@
   <a class="header-cta" href="#contacto">Conversemos</a>
 </header>
 
-<main id="top">
+<main id="contenido" id="top">
 
 <!-- ============ APERTURA INMERSIVA ============
      El video no se reproduce solo: avanza con el scroll. La
@@ -131,7 +132,7 @@
      mejor a través de un hombre que a través de una estadística.
      ============================================ -->
 <section class="escena escena--izq" data-reveal>
-  <img class="escena-img" src="assets/film/juan_ciudad.jpg" alt="Un hombre de 62 años mira al amanecer la ciudad que ayudó a construir" loading="lazy">
+  <img class="escena-img" src="assets/film/juan_ciudad.jpg" alt="Un hombre de 62 años mira al amanecer la ciudad que ayudó a construir" loading="lazy" width="1600" height="900">
   <div class="escena-veil"></div>
   <div class="escena-inner">
     <p class="escena-eyebrow">Juan · 62 años</p>
@@ -141,7 +142,7 @@
 </section>
 
 <section class="escena escena--izq" data-reveal>
-  <img class="escena-img" src="assets/film/juan_hospital.jpg" alt="Habitación de hospital" loading="lazy">
+  <img class="escena-img" src="assets/film/juan_hospital.jpg" alt="Habitación de hospital" loading="lazy" width="1600" height="900">
   <div class="escena-veil"></div>
   <div class="escena-inner">
     <p class="escena-eyebrow">La misma mañana</p>
@@ -151,7 +152,7 @@
 </section>
 
 <section class="escena escena--centro" data-reveal>
-  <img class="escena-img" src="assets/film/el_pais.jpg" alt="Multitud de personas" loading="lazy">
+  <img class="escena-img" src="assets/film/el_pais.jpg" alt="Multitud de personas" loading="lazy" width="1600" height="900">
   <div class="escena-veil"></div>
   <div class="escena-inner">
     <h2 class="escena-title">Y lo que le pasó a Juan<br>le está pasando a<br><em>un país entero.</em></h2>
@@ -186,7 +187,7 @@
 
 <!-- ============ ESCENA: el problema ============ -->
 <section class="escena escena--izq" data-reveal>
-  <img class="escena-img" src="assets/esc/problema.jpg" alt="Papeles de laboratorio, recetas y estudios acumulados sin orden sobre una mesa" loading="lazy">
+  <img class="escena-img" src="assets/esc/problema.jpg" alt="Papeles de laboratorio, recetas y estudios acumulados sin orden sobre una mesa" loading="lazy" width="1600" height="893">
   <div class="escena-veil"></div>
   <div class="escena-inner">
     <p class="escena-eyebrow">Lo que hay hoy</p>
@@ -209,19 +210,19 @@
     <div class="product-stage">
 
       <div class="pv-switch" role="tablist" aria-label="Ver la aplicación según el perfil">
-        <button class="pv-btn active" role="tab" aria-selected="true" data-view="residente">
+        <button class="pv-btn active" type="button" role="tab" aria-selected="true" aria-controls="panel-residente" id="tab-residente" data-view="residente">
           <span class="pv-who">Mi día</span>
           <span class="pv-role">Quien la usa</span>
         </button>
-        <button class="pv-btn" role="tab" aria-selected="false" data-view="familia">
+        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-familia" id="tab-familia" tabindex="-1" data-view="familia">
           <span class="pv-who">Mi círculo</span>
           <span class="pv-role">La familia</span>
         </button>
-        <button class="pv-btn" role="tab" aria-selected="false" data-view="medico">
+        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-medico" id="tab-medico" tabindex="-1" data-view="medico">
           <span class="pv-who">Mi paciente</span>
           <span class="pv-role">El médico</span>
         </button>
-        <button class="pv-btn" role="tab" aria-selected="false" data-view="desarrollador">
+        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-desarrollador" id="tab-desarrollador" tabindex="-1" data-view="desarrollador">
           <span class="pv-who">Mi nodo</span>
           <span class="pv-role">El desarrollador</span>
         </button>
@@ -414,7 +415,7 @@
         </div>
 
         <div class="product-copy">
-          <div class="pc active" data-copy="residente">
+          <div class="pc active" role="tabpanel" id="panel-residente" aria-labelledby="tab-residente" data-copy="residente">
             <h3>Su día, no su expediente</h3>
             <p>No hay gráficas que aprender ni formularios que llenar. Hay lo que toca ahora y lo que viene después, con una sola cifra que resume si va bien: su edad biológica.</p>
             <ul class="pc-list">
@@ -423,7 +424,7 @@
               <li>Usted decide quién de su familia ve qué</li>
             </ul>
           </div>
-          <div class="pc" data-copy="familia">
+          <div class="pc" role="tabpanel" id="panel-familia" aria-labelledby="tab-familia" data-copy="familia">
             <h3>Saber sin tener que preguntar</h3>
             <p>Su papá, su mamá y su esposa en una sola pantalla, ordenados por quién necesita atención hoy. Cuando todo está estable, la aplicación se lo dice y usted sigue con su día.</p>
             <ul class="pc-list">
@@ -432,7 +433,7 @@
               <li>Cada quien autoriza qué comparte, y puede revocarlo</li>
             </ul>
           </div>
-          <div class="pc" data-copy="medico">
+          <div class="pc" role="tabpanel" id="panel-medico" aria-labelledby="tab-medico" data-copy="medico">
             <h3>El paciente llega con historia</h3>
             <p>En lugar de dos puntos de datos al año, un resumen de lo que cambió entre consultas, con lo que requiere criterio médico marcado arriba y el resto disponible si lo busca.</p>
             <ul class="pc-list">
@@ -441,7 +442,7 @@
               <li>El sistema describe y coordina; usted diagnostica</li>
             </ul>
           </div>
-          <div class="pc" data-copy="desarrollador">
+          <div class="pc" role="tabpanel" id="panel-desarrollador" aria-labelledby="tab-desarrollador" data-copy="desarrollador">
             <h3>El tablero de su activo</h3>
             <p>Un edificio convencional deja de darle información el día de la entrega. Un nodo certificado le sigue diciendo qué tan usado está y qué le falta para subir de nivel.</p>
             <ul class="pc-list">
@@ -522,7 +523,7 @@
 
 <!-- ============ LA CAPA QUE FALTABA ============ -->
 <section class="escena escena--centro" data-reveal>
-  <img class="escena-img" src="assets/film/tec_campo_oro.jpg" alt="Una figura de pie en un campo de partículas de luz dorada" loading="lazy">
+  <img class="escena-img" src="assets/film/tec_campo_oro.jpg" alt="Una figura de pie en un campo de partículas de luz dorada" loading="lazy" width="1600" height="900">
   <div class="escena-veil"></div>
   <div class="escena-inner">
     <p class="escena-eyebrow">La tecnología</p>
@@ -577,7 +578,7 @@
     <div class="aud-grid">
       <a class="aud" href="soluciones/residentes.html" data-reveal>
         <div class="aud-media">
-          <img src="assets/esc/residente.jpg" alt="" loading="lazy">
+          <img src="assets/esc/residente.jpg" alt="" loading="lazy" width="1600" height="893">
           <div class="aud-over">
             <span class="aud-eyebrow">Para quien va a vivir aquí</span>
             <h3>Una casa que envejece con usted</h3>
@@ -590,7 +591,7 @@
       </a>
       <a class="aud" href="soluciones/familias.html" data-reveal>
         <div class="aud-media">
-          <img src="assets/esc/familia.jpg" alt="" loading="lazy">
+          <img src="assets/esc/familia.jpg" alt="" loading="lazy" width="1600" height="893">
           <div class="aud-over">
             <span class="aud-eyebrow">Para la familia</span>
             <h3>Saber sin tener que preguntar</h3>
@@ -603,7 +604,7 @@
       </a>
       <a class="aud" href="soluciones/medicos.html" data-reveal>
         <div class="aud-media">
-          <img src="assets/esc/medico.jpg" alt="" loading="lazy">
+          <img src="assets/esc/medico.jpg" alt="" loading="lazy" width="1600" height="893">
           <div class="aud-over">
             <span class="aud-eyebrow">Para médicos</span>
             <h3>El paciente llega con historia</h3>
@@ -616,7 +617,7 @@
       </a>
       <a class="aud" href="soluciones/desarrolladores.html" data-reveal>
         <div class="aud-media">
-          <img src="assets/esc/desarrollador.jpg" alt="" loading="lazy">
+          <img src="assets/esc/desarrollador.jpg" alt="" loading="lazy" width="1600" height="893" srcset="assets/esc/desarrollador-900.jpg 900w, assets/esc/desarrollador.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
           <div class="aud-over">
             <span class="aud-eyebrow">Para desarrolladores</span>
             <h3>Deje de vender metros cuadrados</h3>
@@ -699,7 +700,7 @@
   <div class="vehicle-cards">
     <article class="vcard" data-reveal>
       <div class="vcard-media">
-        <img src="assets/vista_aerea.jpg" alt="Vista de las Amapolas">
+        <img src="assets/vista_aerea.jpg" alt="Vista de las Amapolas" width="2400" height="1350" loading="lazy" decoding="async" srcset="assets/vista_aerea-900.jpg 900w, assets/vista_aerea.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
         <span class="vcard-badge mono">EN OBRA</span>
       </div>
       <div class="vcard-body">
@@ -715,7 +716,7 @@
     </article>
     <article class="vcard" data-reveal>
       <div class="vcard-media">
-        <img src="assets/hub_torre.jpg" alt="Hub Médico PÁEZ">
+        <img src="assets/hub_torre.jpg" alt="Hub Médico PÁEZ" width="2000" height="1323" loading="lazy" decoding="async" srcset="assets/hub_torre-900.jpg 900w, assets/hub_torre.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
         <span class="vcard-badge mono">PROYECTADO</span>
       </div>
       <div class="vcard-body">
@@ -731,7 +732,7 @@
     </article>
     <article class="vcard" data-reveal>
       <div class="vcard-media">
-        <img src="assets/merino_354.jpg" alt="Meriño 354 — Ciudad Colonial">
+        <img src="assets/merino_354.jpg" alt="Meriño 354 — Ciudad Colonial" width="1600" height="1770" loading="lazy" decoding="async" srcset="assets/merino_354-900.jpg 900w, assets/merino_354.jpg 1600w" sizes="(max-width:900px) 100vw, 1600px">
         <span class="vcard-badge mono">FIDEICOMISO CONSTITUIDO</span>
       </div>
       <div class="vcard-body">
@@ -772,6 +773,13 @@
 </main>
 
 <footer class="site-footer">
+    <nav class="pie-nav" aria-label="Otras soluciones">
+    <a href="index.html">El sistema</a>
+    <a href="soluciones/residentes.html">Vivir aquí</a>
+    <a href="soluciones/familias.html">Familias</a>
+    <a href="soluciones/medicos.html">Médicos</a>
+    <a href="soluciones/desarrolladores.html">Desarrolladores</a>
+  </nav>
   <div class="footer-inner">
     <div>
       <p class="footer-brand">KONFOR</p>
@@ -781,8 +789,8 @@
   </div>
 </footer>
 
-<script src="datos.js?v=20260801m"></script>
-<script src="main.js?v=20260801m"></script>
-<script src="contacto.js?v=20260801m"></script>
+<script src="datos.js?v=20260801w"></script>
+<script src="main.js?v=20260801w"></script>
+<script src="contacto.js?v=20260801w"></script>
 </body>
 </html>

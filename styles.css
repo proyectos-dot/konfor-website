@@ -1292,3 +1292,198 @@ body { font-family: var(--cuerpo); }
   .quien { padding-left: 1.4rem; padding-right: 1.4rem; }
   .quien-inner { grid-template-columns: 1fr; gap: 3rem; }
 }
+
+/* ============================================================
+   CICLO 2 — corrección tipográfica medida
+   El público de KONFOR pasa de los 55. 16px es el mínimo web
+   general; aquí el piso sube a 17px, y las etiquetas de apoyo
+   a 15px. Medido, no estimado.
+   ============================================================ */
+body { font-size: 17px; }
+.section-body, .sol-lead, .escena-sub, .band-sub { font-size: 1.06rem; }
+.pos p, .prob p, .pain p, .whyc p, .nd p, .ax p, .adel p, .pc p,
+.lvl-desc, .obj p, .vcard-desc, .aud-body p { font-size: 0.98rem; }
+.dato span, .qc span, .nd-sub, .nd-inst, .datos-pie, .adelanta-pie,
+.rec-data dd, .tier-note, .product-honest, .levels-note, .limits-note {
+  font-size: 0.92rem;
+}
+.sobre-navy-55, .footer-note, .footer-legal { font-size: 0.9rem; }
+
+/* Sobre navy el gris al 55% también se queda corto */
+:root { --sobre-navy-55: rgba(245, 243, 238, 0.72); }
+
+/* Áreas táctiles: 44×44 es el mínimo de Apple, no una sugerencia */
+.brand { padding: 0.6rem 0; min-height: 44px; align-items: center; }
+.quien-link, .aud-go, .metodo-link { display: inline-block; padding: 0.6rem 0; min-height: 44px; }
+.top-nav a { padding: 0.7rem 0; display: inline-flex; align-items: center; min-height: 44px; }
+.rec-map { display: inline-block; padding-top: 1.2rem; min-height: 44px; }
+
+/* ============================================================
+   CICLO 3 — el oro como texto
+   Sobre papel, #c9a24b da 2.03:1. Se queda para superficies,
+   bordes de estado y display grande; el texto pequeño pasa a
+   --oro-texto (5.22:1), que se sigue leyendo dorado.
+   ============================================================ */
+.section-kicker, .aud-go, .header-cta, .card-tag, .pv-role,
+.vcard-type, .quien-link, .ax-num, .adel-num, .pillar-num,
+.lvl-tag, .why-num, .escena-eyebrow, .aud-eyebrow, .tier-note {
+  color: var(--oro-texto);
+}
+.pv-btn.active .pv-role, .aud:hover .aud-go { color: var(--oro-texto); }
+.header-cta { border-color: var(--oro-texto); }
+.ax-state--live { color: var(--oro-texto); border-color: rgba(125,98,32,0.5); }
+/* Las cifras grandes sí pueden llevar el oro pleno: a ese tamaño
+   el umbral baja a 3:1 y ganan en carácter. */
+.dato b, .qc b, .isla-stat.oro b, .declara-remate em,
+.section-title .accent, .escena-title em, .band-title em { color: var(--oro); }
+.dato b, .qc b { color: var(--oro-texto); }
+
+/* Sobre navy el oro claro sí funciona: 11.88:1 */
+.thesis .section-kicker, .redline .section-kicker,
+.escena .escena-eyebrow, .band-eyebrow, .isla-eyebrow,
+.declara .escena-eyebrow { color: var(--oro-claro); }
+
+/* ============================================================
+   CICLO 4 — navegación que no desaparece
+   Ocultar el menú bajo 960px dejaba las páginas de solución sin
+   una sola salida: para ir de médicos a familias había que
+   volver al índice y bajar 35 pantallas.
+   ============================================================ */
+.pie-nav {
+  max-width: 76rem; margin: 0 auto 2.5rem;
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.8rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(245,243,238,0.14);
+}
+.pie-nav a {
+  font-family: var(--ui); font-size: 0.95rem;
+  color: var(--sobre-navy-55);
+  min-height: 44px; display: inline-flex; align-items: center;
+  transition: color 0.3s;
+}
+.pie-nav a:hover { color: var(--oro-claro); }
+
+/* Enlace de salto: invisible hasta que alguien tabula */
+.skip-link {
+  position: fixed; top: -100px; left: 1rem; z-index: 300;
+  background: var(--navy); color: var(--sobre-navy);
+  padding: 0.9rem 1.4rem; border-radius: var(--r-pill);
+  font-family: var(--ui); font-size: 0.9rem;
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus { top: 1rem; }
+
+/* Foco visible y calibrado: el anillo del navegador se pierde
+   sobre papel crema y sobre foto. */
+a:focus-visible, button:focus-visible, summary:focus-visible, [role=tab]:focus-visible {
+  outline: 2px solid var(--oro-texto);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.escena a:focus-visible, .band a:focus-visible, .sol-hero a:focus-visible,
+.site-footer a:focus-visible, .thesis a:focus-visible {
+  outline-color: var(--oro-claro);
+}
+
+/* Con movimiento reducido, la apertura deja de secuestrar
+   cuatro pantallas y media de scroll. */
+@media (prefers-reduced-motion: reduce) {
+  .opening-track { height: 110svh; }
+}
+
+/* ============================================================
+   CICLO 6 — texto sobre foto
+   Medido sobre las imágenes reales: el gradiente de las tarjetas
+   arrancaba en 0 hasta el 40%, y el eyebrow dorado caía a 1.05:1
+   en los píxeles claros. El velo empieza antes y más denso.
+   ============================================================ */
+.aud-media::after {
+  background: linear-gradient(180deg,
+    rgba(10,14,28,0) 12%,
+    rgba(10,14,28,0.42) 42%,
+    rgba(10,14,28,0.9) 100%);
+}
+.aud-over .aud-eyebrow { color: var(--oro-claro); text-shadow: 0 1px 12px rgba(10,14,28,0.7); }
+.aud-over h3 { text-shadow: 0 1px 16px rgba(10,14,28,0.6); }
+
+/* La escena del problema es la más clara de todas */
+.escena--izq .escena-veil {
+  background: linear-gradient(90deg, rgba(10,14,28,0.94) 0%, rgba(10,14,28,0.68) 48%, rgba(10,14,28,0.28) 100%);
+}
+.band-eyebrow { text-shadow: 0 1px 14px rgba(10,14,28,0.6); }
+
+/* ============================================================
+   CICLO 7 — la raíz, no el cuerpo
+   `rem` se calcula sobre <html>. Poner 17px en <body> subía el
+   texto suelto pero dejaba en 16 la base de todos los rem, así
+   que las etiquetas seguían cayendo a 14.7px. Se corrige en la
+   raíz y todo el sistema escala con ella.
+   ============================================================ */
+html { font-size: 17px; }
+body { font-size: 1rem; }
+
+/* Display: a 40px una interlínea de 1.6 abre demasiado y rompe
+   el bloque. Los titulares grandes van entre 1.05 y 1.2. */
+.declara-remate, .redline-title, .access-title, .sol-title,
+.escena-title, .band-title, .thesis-text { line-height: 1.14; }
+.thesis-text { line-height: 1.3; }
+
+/* 44px reales, no 41 */
+.header-cta { min-height: 44px; display: inline-flex; align-items: center; }
+.btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* ============================================================
+   CICLO 8 — el último tramo
+   Subir el tipo estrecha la medida, así que las dos cosas se
+   ajustan juntas: el cuerpo llega a 17px y las tarjetas ceden
+   relleno en móvil para que la línea no baje de 30 caracteres.
+   ============================================================ */
+.pos p, .prob p, .pain p, .whyc p, .nd p, .ax p, .adel p, .pc p,
+.lvl-desc, .obj p, .vcard-desc, .aud-body p,
+.nd-sub, .nd-inst { font-size: 1rem; }
+.dato span, .qc span, .datos-pie, .adelanta-pie,
+.rec-data dd, .tier-note { font-size: 1rem; }
+
+@media (max-width: 700px) {
+  /* En una pantalla de 390px, cada milímetro de relleno le quita
+     caracteres a la línea. Las tarjetas respiran menos y leen mejor. */
+  .pos, .lvl, .vcard-body, .nd, .pillar { padding-left: 1.15rem; padding-right: 1.15rem; }
+  .product, .axes, .datos, .adelanta, .quien,
+  .sol-problem, .position, .clinical, .change, .levels,
+  .contract, .why, .objections, .audience, .nodefam {
+    padding-left: 1.1rem; padding-right: 1.1rem;
+  }
+  .escena-inner { max-width: calc(100% - 2.2rem); }
+  .escena--izq .escena-inner { margin-left: 1.1rem; }
+}
+
+/* ============================================================
+   CICLO 9 — la rejilla también es tipografía
+   Cuatro columnas en 76rem dejan 290px por tarjeta: a 17px eso
+   son 21 caracteres por línea, la mitad del mínimo legible. La
+   prosa baja a dos columnas; lo que es etiqueta puede seguir en
+   cuatro porque no se lee en renglones.
+   ============================================================ */
+@media (min-width: 961px) {
+  .adelanta-grid, .node-grid { grid-template-columns: repeat(2, 1fr); gap: 2.2rem 3rem; }
+  .prob-grid, .pain-list { grid-template-columns: repeat(2, 1fr); gap: 2rem 3rem; }
+  /* 44rem a 17px daban 81 caracteres: por encima del máximo. */
+  .redline-text, .datos-pie, .adelanta-pie, .section-body,
+  .access-sub, .escena-sub, .band-sub { max-width: 38rem; }
+  .thesis-text { max-width: 34ch; }
+}
+/* La medida óptima expresada en la unidad correcta: caracteres. */
+.section-body, .sol-lead, .redline-text, .datos-pie, .adelanta-pie { max-width: 66ch; }
+.pos p, .prob p, .pain p, .whyc p, .nd p, .adel p, .pc p, .lvl-desc { max-width: 60ch; }
+
+/* Calibración medida: en Fraunces/Inter el glifo «0» es más ancho
+   que la letra media, así que 66ch renderiza 81 caracteres reales.
+   El factor medido es 0.81 — de ahí los 54ch. */
+.section-body, .sol-lead, .redline-text, .datos-pie, .adelanta-pie,
+.access-sub, .escena-sub, .band-sub, .contact-sub { max-width: 54ch; }
+.pos p, .prob p, .pain p, .whyc p, .nd p, .adel p, .pc p, .lvl-desc,
+.vcard-desc, .aud-body p { max-width: 50ch; }
+@media (min-width: 961px) {
+  .redline-text, .datos-pie, .adelanta-pie, .section-body,
+  .access-sub, .escena-sub, .band-sub { max-width: 54ch; }
+}

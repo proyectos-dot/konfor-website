@@ -24,10 +24,11 @@
 <meta name="twitter:image" content="https://konfor.do/assets/og/og-medicos.jpg">
 <meta name="theme-color" content="#0a0e1c">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../tokens.css?v=20260801m">
-<link rel="stylesheet" href="../styles.css?v=20260801m">
+<link rel="stylesheet" href="../tokens.css?v=20260801w">
+<link rel="stylesheet" href="../styles.css?v=20260801w">
 </head>
 <body class="page-solution">
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
 <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
@@ -46,10 +47,10 @@
   <a class="header-cta" href="#contacto">Conversemos</a>
 </header>
 
-<main>
+<main id="contenido">
 
 <section class="sol-hero sol-hero--media sol-hero--foto">
-  <img class="escena-img" src="../assets/esc/medico.jpg" alt="" fetchpriority="high">
+  <img class="escena-img" src="../assets/esc/medico.jpg" alt="" fetchpriority="high" width="1600" height="893">
   <div class="escena-veil"></div>
   <div class="sol-hero-inner">
     <p class="seg-badge mono">Para médicos</p>
@@ -139,19 +140,19 @@
     <div class="product-stage">
 
       <div class="pv-switch" role="tablist" aria-label="Ver la aplicación según el perfil">
-        <button class="pv-btn active" role="tab" aria-selected="true" data-view="residente">
+        <button class="pv-btn active" type="button" role="tab" aria-selected="true" aria-controls="panel-residente" id="tab-residente" data-view="residente">
           <span class="pv-who">Mi día</span>
           <span class="pv-role">Quien la usa</span>
         </button>
-        <button class="pv-btn" role="tab" aria-selected="false" data-view="familia">
+        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-familia" id="tab-familia" tabindex="-1" data-view="familia">
           <span class="pv-who">Mi círculo</span>
           <span class="pv-role">La familia</span>
         </button>
-        <button class="pv-btn" role="tab" aria-selected="false" data-view="medico">
+        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-medico" id="tab-medico" tabindex="-1" data-view="medico">
           <span class="pv-who">Mi paciente</span>
           <span class="pv-role">El médico</span>
         </button>
-        <button class="pv-btn" role="tab" aria-selected="false" data-view="desarrollador">
+        <button class="pv-btn" type="button" role="tab" aria-selected="false" aria-controls="panel-desarrollador" id="tab-desarrollador" tabindex="-1" data-view="desarrollador">
           <span class="pv-who">Mi nodo</span>
           <span class="pv-role">El desarrollador</span>
         </button>
@@ -344,7 +345,7 @@
         </div>
 
         <div class="product-copy">
-          <div class="pc active" data-copy="residente">
+          <div class="pc active" role="tabpanel" id="panel-residente" aria-labelledby="tab-residente" data-copy="residente">
             <h3>Su día, no su expediente</h3>
             <p>No hay gráficas que aprender ni formularios que llenar. Hay lo que toca ahora y lo que viene después, con una sola cifra que resume si va bien: su edad biológica.</p>
             <ul class="pc-list">
@@ -353,7 +354,7 @@
               <li>Usted decide quién de su familia ve qué</li>
             </ul>
           </div>
-          <div class="pc" data-copy="familia">
+          <div class="pc" role="tabpanel" id="panel-familia" aria-labelledby="tab-familia" data-copy="familia">
             <h3>Saber sin tener que preguntar</h3>
             <p>Su papá, su mamá y su esposa en una sola pantalla, ordenados por quién necesita atención hoy. Cuando todo está estable, la aplicación se lo dice y usted sigue con su día.</p>
             <ul class="pc-list">
@@ -362,7 +363,7 @@
               <li>Cada quien autoriza qué comparte, y puede revocarlo</li>
             </ul>
           </div>
-          <div class="pc" data-copy="medico">
+          <div class="pc" role="tabpanel" id="panel-medico" aria-labelledby="tab-medico" data-copy="medico">
             <h3>El paciente llega con historia</h3>
             <p>En lugar de dos puntos de datos al año, un resumen de lo que cambió entre consultas, con lo que requiere criterio médico marcado arriba y el resto disponible si lo busca.</p>
             <ul class="pc-list">
@@ -371,7 +372,7 @@
               <li>El sistema describe y coordina; usted diagnostica</li>
             </ul>
           </div>
-          <div class="pc" data-copy="desarrollador">
+          <div class="pc" role="tabpanel" id="panel-desarrollador" aria-labelledby="tab-desarrollador" data-copy="desarrollador">
             <h3>El tablero de su activo</h3>
             <p>Un edificio convencional deja de darle información el día de la entrega. Un nodo certificado le sigue diciendo qué tan usado está y qué le falta para subir de nivel.</p>
             <ul class="pc-list">
@@ -419,6 +420,13 @@
 </main>
 
 <footer class="site-footer">
+    <nav class="pie-nav" aria-label="Otras soluciones">
+    <a href="../index.html">El sistema</a>
+    <a href="../soluciones/residentes.html">Vivir aquí</a>
+    <a href="../soluciones/familias.html">Familias</a>
+    <a href="../soluciones/medicos.html">Médicos</a>
+    <a href="../soluciones/desarrolladores.html">Desarrolladores</a>
+  </nav>
   <div class="footer-inner">
     <div>
       <p class="footer-brand">KONFOR</p>
@@ -428,8 +436,8 @@
   </div>
 </footer>
 
-<script src="../datos.js?v=20260801m"></script>
-<script src="../main.js?v=20260801m"></script>
-<script src="../contacto.js?v=20260801m"></script>
+<script src="../datos.js?v=20260801w"></script>
+<script src="../main.js?v=20260801w"></script>
+<script src="../contacto.js?v=20260801w"></script>
 </body>
 </html>

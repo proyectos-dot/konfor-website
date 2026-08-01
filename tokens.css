@@ -16,8 +16,10 @@
 
   /* Tinta y sus opacidades canónicas */
   --tinta: #0a0e1c;
-  --tinta-45: rgba(10, 14, 28, 0.45);
-  --tinta-35: rgba(10, 14, 28, 0.35);
+  /* 0.45 daba 2.99:1 sobre papel — por debajo del mínimo legible.
+     0.62 da 5.2:1 y mantiene la jerarquía frente a la tinta plena. */
+  --tinta-45: rgba(10, 14, 28, 0.62);
+  --tinta-35: rgba(10, 14, 28, 0.5);
   --tinta-12: rgba(10, 14, 28, 0.12);
   --tinta-08: rgba(10, 14, 28, 0.08);
 
@@ -26,9 +28,13 @@
   --sobre-navy-55: rgba(245, 243, 238, 0.55);
   --sobre-navy-14: rgba(245, 243, 238, 0.14);
 
-  /* Oro: nunca en bordes ni decoración */
+  /* Oro: nunca en bordes ni decoración.
+     Ojo: #c9a24b sobre papel da 2.03:1 — sirve para superficie y para
+     display grande, pero NO para texto pequeño. Para eso está
+     --oro-texto, que da 5.22:1 y se lee igual de dorado. */
   --oro: #c9a24b;
   --oro-claro: #e8c87a;
+  --oro-texto: #7d6220;
   --oro-grad: linear-gradient(135deg, #c9a24b, #e8c87a);
 
   /* Semánticos: solo en insignias, nunca para alarmar */

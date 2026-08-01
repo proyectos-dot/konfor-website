@@ -330,11 +330,25 @@
         const on = b.dataset.view === view;
         b.classList.toggle("active", on);
         b.setAttribute("aria-selected", on ? "true" : "false");
+        b.tabIndex = on ? 0 : -1;
       });
       screens.forEach((s) => s.classList.toggle("active", s.dataset.screen === view));
       copies.forEach((c) => c.classList.toggle("active", c.dataset.copy === view));
     };
     pvBtns.forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
+
+    // Un role=tablist promete navegación por flechas a quien usa
+    // teclado o lector de pantalla. Si se declara, se cumple.
+    pvBtns.forEach((b, i) => {
+      b.addEventListener("keydown", (e) => {
+        const salto = { ArrowRight: 1, ArrowLeft: -1, Home: -i, End: pvBtns.length - 1 - i }[e.key];
+        if (salto === undefined) return;
+        e.preventDefault();
+        const destino = pvBtns[(i + salto + pvBtns.length) % pvBtns.length];
+        show(destino.dataset.view);
+        destino.focus();
+      });
+    });
 
     // Cada página de solución abre el mockup en su propio perfil
     const preset = document.querySelector(".product")?.dataset.default;
