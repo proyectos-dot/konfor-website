@@ -10,9 +10,18 @@
   // Cada campo aparece solo si tiene valor real — publicar
   // "PENDIENTE" es peor que no publicar nada.
   document.querySelectorAll("[data-identidad] [data-campo]").forEach(function (el) {
-    var v = D[el.dataset.campo];
+    var campo = el.dataset.campo;
+    var v = D[campo];
+    // El teléfono se guarda en formato E.164 para el enlace tel:,
+    // pero se muestra como lo escribiría una persona.
+    if (campo === "telefono" && real(D.telefonoVisible)) v = D.telefonoVisible;
     if (!real(v)) return;
-    el.querySelector(".ident-valor").textContent = v;
+    if (campo === "telefono" && real(D.telefono)) {
+      el.querySelector(".ident-valor").innerHTML =
+        '<a href="tel:' + D.telefono + '">' + v + '</a>';
+    } else {
+      el.querySelector(".ident-valor").textContent = v;
+    }
     el.hidden = false;
   });
 
