@@ -175,54 +175,67 @@
     });
   };
 
-  /* ---------- Apertura: el scroll conduce el video ---------- */
+  /* ---------- Apertura: el scroll conduce la escena ----------
+     Secuencia de imágenes sobre un canvas, no un <video> con seeks.
+     Buscar posiciones en un video pausado es poco fiable: el navegador
+     descarta peticiones encoladas, no siempre repinta la capa y en iOS
+     ni siquiera decodifica sin interacción. Dibujar un JPG en un canvas
+     no falla nunca y responde al instante.
+     ----------------------------------------------------------- */
   const opening = document.querySelector(".opening");
-  const openingVideo = document.getElementById("openingVideo");
+  const canvasOp = document.getElementById("openingCanvas");
   const bands = Array.from(document.querySelectorAll(".band"));
   const cue = document.querySelector(".opening-cue");
-  let videoDur = 0;
 
-  // Pedir un seek nuevo mientras el anterior sigue en curso hace que el
-  // navegador descarte la petición sin avisar: el video se queda clavado.
-  // Guardamos el último objetivo y lo aplicamos cuando el seek termina.
-  let objetivo = null;
-  const buscar = (t) => {
-    if (!openingVideo || !videoDur) return;
-    objetivo = t;
-    if (openingVideo.seeking) return;
-    openingVideo.currentTime = objetivo;
+  const TOTAL_FRAMES = 40;
+  const frames = [];
+  let framesListos = 0;
+  let ctxOp = null;
+  let ultimoDibujado = -1;
+
+  const rutaFrame = (i) => "assets/seq/f_" + String(i + 1).padStart(3, "0") + ".jpg";
+
+  const dibujar = (i) => {
+    if (!ctxOp) return;
+    const img = frames[i];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const cw = canvasOp.width, ch = canvasOp.height;
+    // Equivalente a object-fit: cover
+    const escala = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+    const w = img.naturalWidth * escala, h = img.naturalHeight * escala;
+    ctxOp.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+    ultimoDibujado = i;
   };
 
-  if (openingVideo) {
-    const noteDur = () => {
-      if (openingVideo.duration && isFinite(openingVideo.duration)) {
-        videoDur = openingVideo.duration;
-        updateOpening();
+  const ajustarCanvas = () => {
+    if (!canvasOp) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvasOp.width = Math.round(canvasOp.clientWidth * dpr);
+    canvasOp.height = Math.round(canvasOp.clientHeight * dpr);
+    ctxOp = canvasOp.getContext("2d", { alpha: false });
+    if (ultimoDibujado >= 0) dibujar(ultimoDibujado);
+  };
+
+  if (canvasOp) {
+    ajustarCanvas();
+    // El primero manda: se pinta en cuanto llega, para que la portada
+    // nunca aparezca vacía mientras carga el resto.
+    const primero = new Image();
+    primero.onload = () => {
+      frames[0] = primero;
+      framesListos++;
+      canvasOp.classList.add("listo");
+      dibujar(0);
+      // El resto entra en segundo plano, sin bloquear nada.
+      for (let i = 1; i < TOTAL_FRAMES; i++) {
+        const im = new Image();
+        im.onload = () => { framesListos++; };
+        im.src = rutaFrame(i);
+        frames[i] = im;
       }
     };
-    openingVideo.addEventListener("loadedmetadata", noteDur);
-    let nudge = false;
-    openingVideo.addEventListener("seeked", () => {
-      if (objetivo !== null && Math.abs(openingVideo.currentTime - objetivo) > 0.05) {
-        openingVideo.currentTime = objetivo;
-        return;
-      }
-      // Un video pausado no siempre repinta su capa tras un seek: se queda
-      // en negro aunque el fotograma esté decodificado. Un cambio mínimo de
-      // transform obliga al compositor a redibujarlo.
-      nudge = !nudge;
-      openingVideo.style.transform = nudge ? "translateZ(0)" : "translateZ(0) scale(1.0001)";
-    });
-    noteDur();
-    const listo = () => openingVideo.classList.add("listo");
-    if (openingVideo.requestVideoFrameCallback) {
-      // Solo mostramos el video cuando el navegador confirma que pintó un
-      // fotograma. Si nunca ocurre, el póster de fondo queda visible.
-      openingVideo.requestVideoFrameCallback(listo);
-    } else {
-      openingVideo.addEventListener("loadeddata", listo, { once: true });
-    }
-    openingVideo.play().then(() => openingVideo.pause()).catch(() => {});
+    primero.src = rutaFrame(0);
+    window.addEventListener("resize", ajustarCanvas);
   }
 
   const updateOpening = () => {
@@ -231,9 +244,11 @@
     const total = opening.offsetHeight - window.innerHeight;
     const p = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 0;
 
-    if (videoDur && !reduceMotion) buscar(p * videoDur);
+    if (canvasOp && !reduceMotion) {
+      const i = Math.min(Math.round(p * (TOTAL_FRAMES - 1)), TOTAL_FRAMES - 1);
+      if (i !== ultimoDibujado) dibujar(i);
+    }
 
-    // Cada banda ocupa su tramo del recorrido
     const activa = Math.min(Math.floor(p * bands.length), bands.length - 1);
     bands.forEach((b, i) => b.classList.toggle("on", i === activa));
     if (cue) cue.classList.toggle("hide", p > 0.06);

@@ -1019,10 +1019,13 @@ body { font-family: var(--cuerpo); }
   position: sticky; top: 0; height: 100svh;
   overflow: hidden; display: grid; place-items: center;
 }
-.opening-video {
+.opening-canvas {
   position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%;
+  display: block;
+  opacity: 0; transition: opacity 0.7s var(--ease);
 }
+.opening-canvas.listo { opacity: 1; }
 .opening-veil {
   position: absolute; inset: 0;
   background:
@@ -1188,11 +1191,8 @@ body { font-family: var(--cuerpo); }
   background-size: cover;
   background-position: center;
 }
-.opening-video { background: transparent; }
 /* El video aparece solo cuando confirmamos que decodificó un fotograma.
    Hasta entonces manda el póster: nunca un rectángulo negro. */
-.opening-video { opacity: 0; transition: opacity 0.6s var(--ease); }
-.opening-video.listo { opacity: 1; }
 
 /* ---------- El país en cifras ---------- */
 .datos { padding: clamp(6rem,14vh,10rem) 2.5rem; background: var(--papel-2); }
@@ -1250,4 +1250,45 @@ body { font-family: var(--cuerpo); }
   .datos, .declara, .adelanta { padding-left: 1.4rem; padding-right: 1.4rem; }
   .datos-grid { grid-template-columns: 1fr; gap: 1.8rem; }
   .adelanta-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+}
+
+/* ---------- Quién lo construye: el puente con PÁEZ ---------- */
+.quien { padding: clamp(6rem,14vh,10rem) 2.5rem; background: var(--papel-2); }
+.quien-inner {
+  max-width: 76rem; margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2.5rem,6vw,5rem);
+  align-items: center;
+}
+.quien-link {
+  display: inline-block; margin-top: 2rem;
+  font-family: var(--ui); font-size: 0.86rem; color: var(--oro);
+  border-bottom: 1px solid rgba(201,160,82,0.4); padding-bottom: 2px;
+  transition: border-color 0.3s;
+}
+.quien-link:hover { border-color: var(--oro); }
+.quien-cifras { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2rem 1.6rem; }
+.qc { border-top: 1px solid var(--tinta-12); padding-top: 1.2rem; }
+.qc b {
+  display: block; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.8rem,3.2vw,2.6rem); color: var(--oro); line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.qc span { display: block; margin-top: 0.6rem; font-size: 0.85rem; color: var(--tinta-45); }
+
+/* ---------- Barra de contacto ---------- */
+.contacto-barra { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 1.6rem; }
+.contacto-barra:empty { display: none; }
+.cta-wa, .cta-tel {
+  font-family: var(--ui); font-size: 0.84rem; font-weight: 600;
+  padding: 0.9rem 1.8rem; border-radius: var(--r-pill);
+  border: 1px solid var(--tinta-12);
+  transition: all 0.3s var(--ease);
+}
+.cta-wa { background: #25d366; color: #06301a; border-color: transparent; }
+.cta-wa:hover { filter: brightness(1.06); }
+.cta-tel:hover { border-color: var(--oro); color: var(--oro); }
+
+@media (max-width: 960px) {
+  .quien { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .quien-inner { grid-template-columns: 1fr; gap: 3rem; }
 }

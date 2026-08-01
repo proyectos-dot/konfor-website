@@ -8,8 +8,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260801j">
-<link rel="stylesheet" href="styles.css?v=20260801j">
+<link rel="canonical" href="https://konfor.do/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KONFOR">
+<meta property="og:locale" content="es_DO">
+<meta property="og:url" content="https://konfor.do/">
+<meta property="og:title" content="KONFOR — Infraestructura de longevidad">
+<meta property="og:description" content="Comunidades donde vivir, salud y compañía funcionan como un solo sistema, con una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.">
+<meta property="og:image" content="https://konfor.do/assets/og/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KONFOR — Infraestructura de longevidad">
+<meta name="twitter:description" content="Comunidades donde vivir, salud y compañía funcionan como un solo sistema, con una aplicación que mantiene a la persona, su familia y su médico mirando lo mismo.">
+<meta name="twitter:image" content="https://konfor.do/assets/og/og-home.jpg">
+<meta name="theme-color" content="#0a0e1c">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "KONFOR", "url": "https://konfor.do", "description": "Infraestructura de longevidad: vivienda, salud coordinada y comunidad como un solo sistema.", "parentOrganization": {"@type": "Organization", "name": "Grupo PÁEZ", "url": "https://paez.com.do"}, "address": {"@type": "PostalAddress", "addressLocality": "Santo Domingo", "addressCountry": "DO"}, "makesOffer": {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Certificación KOSD", "description": "Certificación de proyectos como infraestructura de longevidad en tres niveles: Ready, Adapted y Operated."}}}</script>
+<link rel="stylesheet" href="tokens.css?v=20260801m">
+<link rel="stylesheet" href="styles.css?v=20260801m">
 </head>
 <body>
 
@@ -44,10 +61,7 @@
      ========================================================= -->
 <section class="opening" id="apertura">
   <div class="opening-sticky">
-    <video class="opening-video" id="openingVideo" muted playsinline preload="auto"
-           poster="assets/video/valle_poster.jpg" aria-hidden="true">
-      <source src="assets/video/scrub_valle.mp4" type="video/mp4">
-    </video>
+    <canvas class="opening-canvas" id="openingCanvas" aria-hidden="true"></canvas>
     <div class="opening-veil"></div>
 
     <div class="band" data-band="0">
@@ -532,6 +546,28 @@
   </div>
 </section>
 
+
+<!-- ============ QUIÉN LO CONSTRUYE ============
+     La marca nueva no tiene track record; la constructora sí.
+     Sin este puente, KONFOR parece una promesa sin obra detrás.
+     ============================================= -->
+<section class="quien">
+  <div class="quien-inner">
+    <div class="quien-copy">
+      <p class="section-kicker">Quién lo construye</p>
+      <h2 class="section-title">Un estándar lo puede<br>escribir cualquiera.<br>Levantarlo, <span class="accent">no.</span></h2>
+      <p class="section-body">KONFOR no nace de una presentación. Nace de una constructora dominicana con veinte años de obra entregada — vivienda social, residencias de lujo, hotelería en casco histórico protegido e infraestructura clínica. El estándar se escribe donde ya se sabe construir.</p>
+      <a class="quien-link" href="https://paez.com.do" target="_blank" rel="noopener">Ver la memoria de obra de Grupo PÁEZ →</a>
+    </div>
+    <div class="quien-cifras">
+      <div class="qc" data-reveal><b>90,444</b><span>metros cuadrados construidos</span></div>
+      <div class="qc" data-reveal><b>9</b><span>desarrollos con ubicación verificable</span></div>
+      <div class="qc" data-reveal><b>20+</b><span>años de obra en República Dominicana</span></div>
+      <div class="qc" data-reveal><b>5</b><span>tipologías distintas dominadas</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SELECTOR DE AUDIENCIA ============ -->
 <section class="audience" id="soluciones">
   <div class="aud-inner">
@@ -745,6 +781,8 @@
   </div>
 </footer>
 
-<script src="main.js?v=20260801j"></script>
+<script src="datos.js?v=20260801m"></script>
+<script src="main.js?v=20260801m"></script>
+<script src="contacto.js?v=20260801m"></script>
 </body>
 </html>
