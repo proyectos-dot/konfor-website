@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260803d">
-<link rel="stylesheet" href="v3.css?v=20260803d">
+<link rel="stylesheet" href="tokens.css?v=20260803f">
+<link rel="stylesheet" href="v3.css?v=20260803f">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -111,6 +111,8 @@
   <div class="centro">
     <p class="kicker" data-revelar>Los planes</p>
     <h2 class="titulo mascara" style="margin-top:1rem">Elige por el problema que quieres resolver.</h2>
+    <p class="prosa" data-revelar style="margin-top:1.2rem">Una residencia geriátrica privada en el país cuesta <strong>entre RD$&nbsp;40,000 y RD$&nbsp;105,000 al mes</strong>. Esto cuesta una fracción.</p>
+    <p class="prosa" data-revelar>La membresía no paga horas en tu casa. Paga <strong>que alguien mire todos los días</strong>.</p>
 
     <div class="planes">
 
@@ -166,6 +168,8 @@
 
     </div>
 
+    <p class="prosa" data-revelar style="margin-top:1.8rem">Desde la segunda persona, el Familiar sale más barato: dos planes Completo cuestan RD$&nbsp;11,800 y el Familiar cubre hasta cuatro por RD$&nbsp;9,900.</p>
+
     <div class="residente" data-revelar>
       <div>
         <p class="kicker">Residente de un nodo</p>
@@ -175,7 +179,13 @@
       <a class="boton boton-linea" href="nodos.html" data-traspaso>Ver dónde se vive →</a>
     </div>
 
-    <p class="nota" data-revelar style="margin-top:2rem">Sin permanencia: se cancela cuando quieras. Precios de lanzamiento, sujetos a confirmación.</p>
+    <ul class="nota" data-revelar style="margin-top:2rem;list-style:none;padding:0;display:grid;gap:.45rem">
+      <li>Sin permanencia. Se cancela cuando quieras.</li>
+      <li>Precios de lanzamiento, sujetos a confirmación.</li>
+      <li>No sustituye tu seguro. Trabaja con el que ya tienes.</li>
+      <li>Un estudio repetido cuesta más que un mes de membresía.</li>
+      <li>Rango de residencias: Diario Libre, 2024.</li>
+    </ul>
   </div>
 </section>
 
@@ -205,7 +215,10 @@
       <button class="boton boton-oro" type="submit">Que me llamen</button>
     </form>
 
-    <p class="nota" data-revelar style="margin-top:2.6rem"><strong>Fuentes de las referencias de mercado:</strong> concierge médico US$ 1,500–8,000 al año (promedio US$ 2,500–3,000); nutrición clínica US$ 70–100 por consulta de seguimiento; fisioterapia US$ 75–250 por sesión, US$ 100–150 a domicilio; entrenamiento personal US$ 250–400 al mes por dos sesiones semanales; panel de biomarcadores desde US$ 365 al año. Datos de mercado estadounidense 2026, usados como referencia de lo que cuesta cada pieza por separado.</p>
+    <details class="nota" data-revelar style="margin-top:2.6rem">
+      <summary style="cursor:pointer">Cómo calculamos esto</summary>
+      <p style="margin-top:.8rem"><strong>Fuentes de las referencias de mercado:</strong> concierge médico US$ 1,500–8,000 al año (promedio US$ 2,500–3,000); nutrición clínica US$ 70–100 por consulta de seguimiento; fisioterapia US$ 75–250 por sesión, US$ 100–150 a domicilio; entrenamiento personal US$ 250–400 al mes por dos sesiones semanales; panel de biomarcadores desde US$ 365 al año. Datos de mercado estadounidense 2026, usados como referencia de lo que cuesta cada pieza por separado.</p>
+    </details>
   </div>
 </section>
 
@@ -222,7 +235,8 @@
     <p class="pie-marca">KONFOR</p>
     <p>Un sistema de <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1 · Registro Mercantil 48605SD</p>
     <p>Av. César Nicolás Penson n.º 73, Gazcue, Santo Domingo, República Dominicana · Tel. <a href="tel:+18092215566" style="text-decoration:underline">(809) 221-5566</a> · <a href="mailto:proyectos@paez.com.do" style="text-decoration:underline">proyectos@paez.com.do</a></p>
-    <p>Oficina: lunes a viernes, 8:00 a.&nbsp;m. – 5:00 p.&nbsp;m. · <strong style="color:var(--tinta-45)">el servicio no tiene horario de oficina</strong>: la llamada de seguimiento, la enfermería de guardia y las alertas a la familia operan todos los días, incluidos fines de semana y feriados.</p>
+    <p>Oficina: lunes a viernes, 8:00 a.&nbsp;m. – 5:00 p.&nbsp;m.</p>
+    <p><strong style="color:var(--tinta-45)">El servicio, todos los días del año.</strong></p>
     <p>Nombre comercial registrado ONAPI n.º 945088.</p>
     <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye oferta pública de valores ni consejo médico. KONFOR no diagnostica ni prescribe.</p>
   </div>

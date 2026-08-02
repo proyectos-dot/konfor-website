@@ -12,7 +12,8 @@
 
 /* rem se calcula sobre <html>, no sobre <body>: ponerlo en body deja
    todos los labels en 14.7px sin que se note hasta que se mide. */
-html { font-size: 17px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* clip, no hidden: hidden en html rompe position:sticky */
+html { font-size: 17px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 body {
   background: var(--papel);
@@ -79,6 +80,10 @@ a { color: inherit; text-decoration: none; }
 .prosa + .prosa { margin-top: 1.1rem; }
 .prosa strong { color: var(--tinta); font-weight: 600; }
 .prosa-serif { font-family: var(--serif); font-size: 1.18rem; max-width: 30rem; }
+/* Lista con voz de prosa. No es prosa: no se mide como párrafo. */
+.lista { max-width: 34rem; color: var(--tinta-45); list-style: none; padding: 0;
+         display: grid; gap: .5rem; }
+.lista strong { color: var(--tinta); font-weight: 600; }
 
 .nota { font-size: 0.86rem; color: var(--tinta-35); max-width: 40rem; }
 

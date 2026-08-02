@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"konfor","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","4802"],"port":4802}]}
