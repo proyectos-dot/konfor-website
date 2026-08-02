@@ -127,11 +127,15 @@
       <div class="paso" data-revelar><h3>Alta en la red</h3><p>Su perfil, su centro y sus pacientes en KONFOR. Sin migrar nada.</p></div>
       <div class="paso" data-revelar><h3>Primer paciente</h3><p>Se empieza con uno. El bucle se ve cerrado antes de escalar.</p></div>
     </div>
-    <form class="forma" data-revelar action="mailto:proyectos@paez.com.do" method="post" enctype="text/plain">
+    <form class="forma" data-revelar action="https://konfor-company-os.onrender.com/api/v1/public/leads" method="post">
+      <label class="skip-link" for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Su nombre" required>
       <label class="skip-link" for="tel">Teléfono</label>
-      <input id="tel" name="telefono" type="tel" inputmode="tel" placeholder="Su teléfono" required>
+      <input id="tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="Su teléfono" required>
+      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="boton boton-oro" type="submit">Hablar con el equipo clínico</button>
     </form>
+    <p class="nota" data-revelar style="margin-top:.9rem">Al enviar, acepta que el equipo clínico le contacte.</p>
   </div>
 </section>
 
@@ -152,6 +156,8 @@
     <p>© <span data-anio>2026</span> KONFOR. KONFOR no diagnostica ni prescribe: coordina el cumplimiento de la indicación del médico tratante.</p>
   </div>
 </footer>
-<script src="v3.js?v=20260803d" defer></script>
+<script src="atribucion.js?v=20260803f" defer></script>
+<script src="envio.js?v=20260803f" defer></script>
+<script src="v3.js?v=20260803f" defer></script>
 </body>
 </html>
