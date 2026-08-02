@@ -589,3 +589,31 @@ a { color: inherit; text-decoration: none; }
   display: grid; gap: 1.4rem; align-items: center;
 }
 @media (min-width: 820px) { .residente { grid-template-columns: 1fr auto; gap: 2.4rem; } }
+
+/* ─── Corrección de encuadre ─────────────────────────────
+   Medido: en móvil las secciones a sangre daban cajas de 0.53–0.7 de
+   proporción sosteniendo fotos de 1.8 — se veía el 31% de la imagen.
+   En vez de recortar más, la sección se apila: la foto conserva su propia
+   proporción a todo el ancho y el texto baja al papel. Cero recorte. */
+
+@media (max-width: 759px) {
+  .sangre { min-height: 0 !important; display: block; background: var(--navy-grad); }
+  .sangre img { position: static; width: 100%; height: auto; aspect-ratio: 16 / 10; }
+  .sangre::after { display: none; }
+  .sangre-texto { padding-top: 2.2rem; }
+}
+
+/* La cara frontal de las tarjetas que se voltean tenía el mismo problema:
+   caja 0.75 con foto 1.79. La foto pasa arriba con su proporción y el texto
+   se apoya debajo, en vez de flotar sobre un recorte agresivo. */
+.cara-frente { display: flex; flex-direction: column; justify-content: flex-start; background: var(--navy); }
+.cara-frente img { position: static; width: 100%; height: auto; aspect-ratio: 16 / 10; flex: none; }
+.cara-frente .cara-texto {
+  background: none; flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.6rem 1.8rem 2rem;
+}
+.voltea-caja { min-height: 30rem; }
+
+/* Meriño 354 es una fachada vertical: en una caja 4:3 el encuadre se iba al
+   suelo. Se ancla arriba, que es donde está el edificio. */
+.ficha img { object-position: center 32%; }

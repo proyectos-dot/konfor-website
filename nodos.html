@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260803c">
-<link rel="stylesheet" href="v3.css?v=20260803c">
+<link rel="stylesheet" href="tokens.css?v=20260803d">
+<link rel="stylesheet" href="v3.css?v=20260803d">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -143,19 +143,26 @@
   </div>
 </section>
 
-<!-- N-04 · la salida · T5 -->
-<section class="sangre" style="min-height:88svh">
-  <img src="assets/img/01-mujer-balcon-2400.jpg"
-       srcset="assets/img/01-mujer-balcon-1200.jpg 1200w, assets/img/01-mujer-balcon-2400.jpg 2400w"
-       sizes="100vw" alt="La fachada de Vista de las Amapolas a la hora dorada, con la cordillera al fondo." loading="lazy" width="1933" height="2400">
-  <div class="sangre-texto">
-    <p class="kicker kicker-claro" data-revelar>Vista de las Amapolas</p>
-    <h2 class="display" data-revelar style="margin-top:1rem">Bienvenido a tu hogar con sistema.</h2>
-    <p class="prosa" data-revelar style="margin-top:1.4rem">El primer nodo de longevidad de República Dominicana. Villa Altagracia, a cuarenta minutos de Santo Domingo.</p>
-    <div class="acciones" data-revelar>
-      <a class="boton boton-oro" href="https://vistadelasamapolas.com/" rel="noopener">Entrar al proyecto →</a>
+<!-- N-04 · la salida · T5. El retrato de la fachada es 4:5: a sangre
+     panorámica perdía el 56% del encuadre. Se compone a dos columnas. -->
+<section class="seccion navy grano">
+  <div class="centro dos">
+    <div>
+      <p class="kicker kicker-claro" data-revelar>Vista de las Amapolas</p>
+      <h2 class="display" data-revelar style="margin-top:1rem">Bienvenido a tu hogar con sistema.</h2>
+      <p class="prosa" data-revelar style="margin-top:1.4rem">El primer nodo de longevidad de República Dominicana. Villa Altagracia, a cuarenta minutos de Santo Domingo.</p>
+      <div class="acciones" data-revelar>
+        <a class="boton boton-oro" href="https://vistadelasamapolas.com/" rel="noopener">Entrar al proyecto →</a>
+      </div>
+      <p class="nota" data-revelar style="margin-top:1.2rem;color:var(--sobre-navy-55)">Renders conceptuales del artista. Las imágenes son ilustrativas y no contractuales.</p>
     </div>
-    <p class="nota" data-revelar style="margin-top:1.2rem;color:rgba(245,243,238,.6)">Renders conceptuales del artista. Las imágenes son ilustrativas y no contractuales.</p>
+    <div data-revelar>
+      <img src="assets/img/01-mujer-balcon-1200.jpg"
+           srcset="assets/img/01-mujer-balcon-1200.jpg 966w, assets/img/01-mujer-balcon-2400.jpg 1933w"
+           sizes="(min-width:900px) 44vw, 92vw"
+           alt="La fachada de Vista de las Amapolas a la hora dorada, con una residente en su balcón."
+           style="border-radius:var(--r-tarjeta)" loading="lazy" width="966" height="1200">
+    </div>
   </div>
 </section>
 
@@ -175,6 +182,6 @@
     <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye oferta pública de valores.</p>
   </div>
 </footer>
-<script src="v3.js?v=20260803c" defer></script>
+<script src="v3.js?v=20260803d" defer></script>
 </body>
 </html>

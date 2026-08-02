@@ -21,8 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260803c">
-<link rel="stylesheet" href="v3.css?v=20260803c">
+<link rel="stylesheet" href="tokens.css?v=20260803d">
+<link rel="stylesheet" href="v3.css?v=20260803d">
 </head>
 <body>
 <a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -42,15 +42,22 @@
 
 <main id="contenido">
 
-<!-- F-01 -->
-<section class="sangre" style="min-height:88svh">
-  <img src="assets/img/04-hija-noche-2400.jpg"
-       srcset="assets/img/04-hija-noche-1200.jpg 1200w, assets/img/04-hija-noche-2400.jpg 2400w"
-       sizes="100vw" alt="Una mujer de 45 años en su sala de noche, teléfono en mano, tranquila." width="1933" height="2400">
-  <div class="sangre-texto">
-    <p class="kicker kicker-claro">Para quien cuida a distancia</p>
-    <h1 class="display" style="margin-top:1rem">No vives con ella. Igual eres responsable.</h1>
-    <p class="prosa" style="margin-top:1.4rem">Trabajas. Vives en la capital o en Nueva York. Ella tiene 74 y vive sola. No es que no la quieras: es que no sabes.</p>
+<!-- F-01 · el retrato es 4:5; en caja panorámica se veía el 44%.
+     Va en composición de dos columnas, que es lo que pide un vertical. -->
+<section class="seccion" style="padding-top:clamp(7rem,18vh,11rem)">
+  <div class="centro dos">
+    <div>
+      <p class="kicker" data-revelar>Para quien cuida a distancia</p>
+      <h1 class="display" data-revelar style="margin-top:1.1rem">No vives con ella. Igual eres responsable.</h1>
+      <p class="prosa" data-revelar style="margin-top:1.6rem">Trabajas. Vives en la capital o en Nueva York. Ella tiene 74 y vive sola. No es que no la quieras: es que no sabes.</p>
+    </div>
+    <div data-revelar>
+      <img src="assets/img/04-hija-noche-1200.jpg"
+           srcset="assets/img/04-hija-noche-1200.jpg 966w, assets/img/04-hija-noche-2400.jpg 1933w"
+           sizes="(min-width:900px) 44vw, 92vw"
+           alt="Una mujer de 45 años en su sala de noche, teléfono en mano, tranquila."
+           style="border-radius:var(--r-tarjeta)" width="966" height="1200">
+    </div>
   </div>
 </section>
 
@@ -149,6 +156,6 @@
     <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye consejo médico.</p>
   </div>
 </footer>
-<script src="v3.js?v=20260803c" defer></script>
+<script src="v3.js?v=20260803d" defer></script>
 </body>
 </html>
