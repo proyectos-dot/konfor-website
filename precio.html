@@ -3,250 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Precios de KONFOR Health — Lo que cuesta, y lo que costaría armarlo aparte</title>
-<meta name="description" content="Tres planes de KONFOR Health por el problema que resuelven. Nutrición, ejercicio, biomarcadores, coordinación médica y círculo familiar en un solo protocolo, por una fracción de lo que cuesta contratar cada pieza por separado.">
-<link rel="canonical" href="https://konfor.do/precio.html">
+<title>Precio — Un equipo entero. Por lo que cuesta una consulta.</title>
+<meta name="description" content="las membresías de KONFOR. Esencial RD$1,900, Completo RD$5,900 y Familiar RD$9,900 al mes.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#f5f3ee">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="KONFOR">
-<meta property="og:locale" content="es_DO">
-<meta property="og:url" content="https://konfor.do/precio.html">
-<meta property="og:title" content="Precios de KONFOR Health">
-<meta property="og:description" content="Un protocolo diseñado, seguido y ajustado. Por una fracción de lo que cuesta contratar cada pieza por separado.">
-<meta property="og:image" content="https://konfor.do/assets/img/15-medico-consultorio-1200.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://konfor.do/assets/img/15-medico-consultorio-1200.jpg">
+<link rel="canonical" href="https://konfor.do/precio.html">
+<meta name="theme-color" content="#0d0a06">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260803i">
-<link rel="stylesheet" href="v3.css?v=20260803i">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v4.css">
 </head>
 <body>
-<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<header class="cabecera posada">
-  <a class="marca" href="index.html" aria-label="KONFOR, inicio">
-    <span class="marca-bloque" aria-hidden="true"></span><span class="marca-nombre">KONFOR</span>
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-centro">
+    <p class="mono preloader-etiqueta">KONFOR · MEMBRESÍAS</p>
+    <p class="preloader-marca">PRECIO</p>
+    <p class="mono preloader-num" id="preloader-num">00</p>
+    <div class="preloader-barra"><span id="preloader-fill"></span></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor-punto"></div>
+  <div class="cursor-anillo"><span class="cursor-texto"></span></div>
+</div>
+<div class="progreso" aria-hidden="true"><span id="progreso-fill"></span></div>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="index.html" data-magnet aria-label="KONFOR, inicio">
+    <span class="marca-nucleo" aria-hidden="true"></span>
+    <span class="marca-nombre">KONFOR</span>
   </a>
-  <nav class="nav-alta" aria-label="Principal">
-    <a href="salud.html">Salud</a><a href="precio.html" aria-current="page">Precios</a>
-    <a href="familias.html">Familias</a><a href="medicos.html">Médicos</a>
-    <a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
+  <nav class="nav" aria-label="Principal">
+    <a href="salud.html" data-magnet>Salud</a>
+    <a href="familias.html" data-magnet>Familias</a>
+    <a href="medicos.html" data-magnet>Médicos</a>
+    <a href="desarrolladores.html" data-magnet>Desarrolladores</a>
+    <a href="nodos.html" data-magnet>Nodos</a>
+    <a href="precio.html" class="activo" data-magnet>Precio</a>
   </nav>
+  <div class="cabecera-derecha">
+    <span class="mono reloj" id="reloj">--:--</span>
+    <button type="button" class="boton boton-mini" data-gaveta data-magnet>Iniciar sesión</button>
+    <button class="hamburguesa" data-gaveta aria-label="Abrir menú"><span></span></button>
+  </div>
 </header>
 
-<main id="contenido">
+<aside class="riel" aria-hidden="true">
+  <span class="riel-num" id="riel-num">00</span>
+  <span class="riel-linea"><span id="riel-fill"></span></span>
+  <span class="mono riel-nombre" id="riel-nombre">PRECIO</span>
+</aside>
 
-<!-- P-01 · HERO -->
-<section class="seccion" style="padding-top:clamp(7rem,18vh,11rem)">
-  <div class="estrecho">
-    <p class="kicker" data-revelar>Precios</p>
-    <h1 class="display" data-revelar style="margin-top:1.1rem">Un equipo entero. Por lo que cuesta una consulta.</h1>
-    <p class="prosa" data-revelar style="margin-top:1.6rem">Para darle a una sola persona lo que KONFOR Health entrega cada mes, habría que contratar a cinco profesionales distintos — <strong>y ninguno hablaría con los otros</strong>.</p>
+<main>
+
+<!-- ══ HERO ══ -->
+<section class="hero-pagina">
+  <canvas class="hero-red" id="red" aria-hidden="true"></canvas>
+  <div class="hero-velo-pag" aria-hidden="true"></div>
+  <div class="hero-pagina-contenido">
+    <p class="mono miga" data-reveal><a href="index.html">KONFOR</a><span>/</span><span>MEMBRESÍAS</span></p>
+    <p class="mono kicker" data-reveal><span class="pulso" aria-hidden="true"></span>ELIGE POR EL PROBLEMA QUE QUIERES RESOLVER</p>
+    <h1 class="titulo-grande">
+      <span data-scramble>Un equipo entero.</span><br>
+      <em><span data-scramble data-retardo="350">Por lo que cuesta una consulta.</span></em>
+    </h1>
+    <p class="prosa" data-reveal data-retardo="600" style="margin-top:1.6rem">Hoy esa tranquilidad se compra en cinco cuentas separadas — enfermera, laboratorio, transporte, citas, llamadas — y ninguna habla con la otra. <strong>KONFOR es una sola membresía que las coordina todas.</strong></p>
   </div>
 </section>
 
-<!-- P-02 · LA PILA -->
-<section class="seccion" style="background:var(--papel-2);padding-top:0">
-  <div class="centro">
-    <p class="kicker" data-revelar>Lo que costaría armarlo aparte</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">Cinco cuentas separadas.</h2>
-
-    <div class="pila">
-      <div class="pila-fila" data-revelar><span class="pila-que">Médico con acceso directo y coordinación</span><span class="pila-cuanto">US$ 208 – 250 / mes</span></div>
-      <div class="pila-fila" data-revelar><span class="pila-que">Nutricionista con seguimiento, dos veces al mes</span><span class="pila-cuanto">US$ 140 – 200 / mes</span></div>
-      <div class="pila-fila" data-revelar><span class="pila-que">Fisioterapia o ejercicio supervisado</span><span class="pila-cuanto">US$ 150 – 300 / mes</span></div>
-      <div class="pila-fila" data-revelar><span class="pila-que">Entrenamiento con plan y progresión</span><span class="pila-cuanto">US$ 250 – 400 / mes</span></div>
-      <div class="pila-fila" data-revelar><span class="pila-que">Panel de biomarcadores y lectura</span><span class="pila-cuanto">US$ 30 / mes</span></div>
-      <div class="pila-fila pila-total" data-revelar><span class="pila-que">Total, sin que ninguno se hable con el otro</span><span class="pila-cuanto">US$ 778 – 1,180 / mes</span></div>
-    </div>
-
-    <p class="prosa" data-revelar style="margin-top:2rem;max-width:38rem">KONFOR Health Completo cuesta <strong>US$ 94 al mes</strong>. Entre ocho y doce veces menos — y con algo que la suma de los cinco no da: <strong>un solo protocolo</strong>.</p>
-    <p class="nota" data-revelar style="margin-top:1rem">Rangos de mercado estadounidense 2026 para servicio privado: concierge médico, nutrición clínica, fisioterapia, entrenamiento personal y paneles de biomarcadores. Ver fuentes al pie.</p>
-  </div>
-</section>
-
-<!-- P-03 · LO QUE NO HACE UN CHAT -->
-<section class="seccion navy grano">
-  <div class="centro dos">
-    <div>
-      <p class="kicker kicker-claro" data-revelar>La diferencia que importa</p>
-      <h2 class="titulo" data-revelar style="margin-top:1rem">Preguntarle a una IA no es tener un protocolo.</h2>
-      <p class="prosa" data-revelar style="margin-top:1.4rem">Puedes preguntarle a cualquier asistente qué comer con la glucosa alta, y te va a contestar bien: baja esto, sube aquello. Es una respuesta correcta y genérica.</p>
-      <p class="prosa" data-revelar>Lo que no va a hacer es <strong>diseñar tu protocolo contra un estándar clínico</strong>, firmarlo un especialista, seguirlo semana a semana, ajustarlo cuando tu analítica se mueva y responderte con tu historia delante.</p>
-      <p class="prosa-serif" data-revelar style="margin-top:1.6rem;color:var(--sobre-navy)">Un consejo es gratis. Un protocolo que se cumple, no.</p>
-    </div>
-    <div>
-      <div class="contraste" data-revelar>
-        <div class="contraste-col">
-          <p class="kicker">Un asistente cualquiera</p>
-          <ul>
-            <li>Te contesta lo que preguntas</li>
-            <li>No sabe tu último laboratorio</li>
-            <li>No firma nada</li>
-            <li>No te busca al día siguiente</li>
-            <li>No ajusta nada porque no mide nada</li>
-          </ul>
-        </div>
-        <div class="contraste-col contraste-si">
-          <p class="kicker kicker-claro">KONFOR</p>
-          <ul>
-            <li>Diseña el plan contra tu analítica</li>
-            <li>Lo firma tu especialista</li>
-            <li>Mide la adherencia de cada pilar</li>
-            <li>Lo ajusta cuando el dato se mueve</li>
-            <li>Y sí, también puedes preguntarle</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- P-04 · LOS PLANES -->
-<section class="seccion" id="planes">
-  <div class="centro">
-    <p class="kicker" data-revelar>Los planes</p>
-    <h2 class="titulo mascara" style="margin-top:1rem">Elige por el problema que quieres resolver.</h2>
-    <p class="prosa" data-revelar style="margin-top:1.2rem">Una residencia geriátrica privada en el país cuesta <strong>entre RD$&nbsp;40,000 y RD$&nbsp;105,000 al mes</strong>. Esto cuesta una fracción.</p>
-    <p class="prosa" data-revelar>La membresía no paga horas en tu casa. Paga <strong>que alguien mire todos los días</strong>.</p>
-
-    <div class="planes">
-
-      <div class="plan" data-revelar>
-        <p class="plan-nombre">Esencial</p>
-        <p class="plan-cifra">RD$ 1,900 <small>/ mes</small></p>
-        <p class="plan-alt">≈ US$ 30 al mes · una persona</p>
-        <p class="plan-problema">«No sé cómo va mi mamá entre una consulta y otra.»</p>
+<!-- ══ 01 · PLANES ══ -->
+<section class="capitulo" data-capitulo-id="01" data-capitulo-nombre="LOS PLANES">
+  <div class="contenedor">
+    <div class="planes" data-escalonar>
+      <article class="plan" data-tilt data-reveal>
+        <span class="mono plan-sello">ESENCIAL</span>
+        <h3>Esencial</h3>
+        <p class="plan-frase">«No sé cómo va mi mamá entre una consulta y otra.»</p>
+        <div class="plan-precio"><strong>RD$ 1,900</strong><span>/ mes</span></div>
+        <span class="plan-usd">≈ US$ 30 al mes · una persona</span>
         <ul>
-          <li><b>✓</b> Monitoreo diario y llamada de seguimiento</li>
-          <li><b>✓</b> Protocolo del día con recordatorios</li>
-          <li><b>✓</b> Círculo familiar con permisos que ella define</li>
-          <li><b>✓</b> Alerta a la familia cuando algo se sale</li>
-          <li><b>✓</b> Agenda, citas y gestión con su ARS</li>
-          <li><b>✓</b> Bóveda de estudios y recetas</li>
-          <li class="no">— Nutrición y ejercicio diseñados</li>
-          <li class="no">— Biomarcadores y edad por órgano</li>
+          <li>La llamada de cada mañana</li>
+          <li>Verificación de medicación</li>
+          <li>Aviso a la familia cuando hace falta</li>
+          <li>Memoria de vida: estudios y documentos en un lugar</li>
         </ul>
-      </div>
+        <a class="boton boton-fantasma" href="precio.html" data-magnet>Empezar con Esencial ↗</a>
+      </article>
 
-      <div class="plan destacado" data-revelar>
-        <p class="plan-nombre">Completo</p>
-        <p class="plan-cifra">RD$ 5,900 <small>/ mes</small></p>
-        <p class="plan-alt">≈ US$ 94 al mes · una persona</p>
-        <p class="plan-problema">«Quiero que alguien diseñe el plan, lo siga y lo ajuste.»</p>
+      <article class="plan plan-hero" data-tilt data-reveal>
+        <span class="mono plan-sello">EL MÁS ELEGIDO · COMPLETO</span>
+        <h3>Completo</h3>
+        <p class="plan-frase">«Quiero que alguien diseñe el plan, lo siga y lo ajuste.»</p>
+        <div class="plan-precio"><strong>RD$ 5,900</strong><span>/ mes</span></div>
+        <span class="plan-usd">≈ US$ 94 al mes · una persona</span>
         <ul>
-          <li><b>✓</b> Todo lo Esencial</li>
-          <li><b>✓</b> <strong>Nutrición diseñada</strong> contra tu analítica, no genérica</li>
-          <li><b>✓</b> <strong>Ejercicio prescrito y medido</strong>, con progresión</li>
-          <li><b>✓</b> Fisioterapia pautada y seguida</li>
-          <li><b>✓</b> Biomarcadores y edad biológica por órgano</li>
-          <li><b>✓</b> Protocolo firmado por tu especialista</li>
-          <li><b>✓</b> Un médico líder de caso que coordina al resto</li>
-          <li><b>✓</b> Consulta abierta: pregunta cuando quieras, con tu historia delante</li>
-          <li><b>✓</b> Informe para tu médico, cuando lo pidas</li>
+          <li>Todo lo de Esencial</li>
+          <li>Protocolo propio: nutrición, movimiento y sueño</li>
+          <li>Lectura de biomarcadores y seguimiento de curvas</li>
+          <li>Coordinación con tu médico e informe de evidencia</li>
         </ul>
-      </div>
+        <a class="boton boton-oro" href="precio.html" data-magnet>Empezar con Completo ↗</a>
+      </article>
 
-      <div class="plan" data-revelar>
-        <p class="plan-nombre">Familiar</p>
-        <p class="plan-cifra">RD$ 9,900 <small>/ mes</small></p>
-        <p class="plan-alt">≈ US$ 158 al mes · hasta 4 personas</p>
-        <p class="plan-problema">«No es solo mi papá. Es mi mamá, mi pareja y yo.»</p>
+      <article class="plan" data-tilt data-reveal>
+        <span class="mono plan-sello">HASTA 4 PERSONAS · FAMILIAR</span>
+        <h3>Familiar</h3>
+        <p class="plan-frase">«No es solo mi papá. Es mi mamá, mi pareja y yo.»</p>
+        <div class="plan-precio"><strong>RD$ 9,900</strong><span>/ mes</span></div>
+        <span class="plan-usd">≈ US$ 158 al mes · hasta 4 personas</span>
         <ul>
-          <li><b>✓</b> Todo lo Completo, <strong>para cada miembro</strong></li>
-          <li><b>✓</b> Tus padres, tu pareja y tus hijos en un mismo círculo</li>
-          <li><b>✓</b> Un tablero con el estado de cada uno</li>
-          <li><b>✓</b> Historial hereditario: lo que corre en tu sangre</li>
-          <li><b>✓</b> Coordinación cruzada entre sus médicos</li>
-          <li><b>✓</b> Una sola factura</li>
+          <li>Todo lo de Completo, para toda la familia</li>
+          <li>Panel de cada persona con su propio triaje</li>
+          <li>Ideal para la diáspora que cuida a distancia</li>
+          <li>Un solo equipo para todos los que quieres</li>
         </ul>
-      </div>
-
+        <a class="boton boton-fantasma" href="precio.html" data-magnet>Empezar con Familiar ↗</a>
+      </article>
     </div>
-
-    <p class="prosa" data-revelar style="margin-top:1.8rem">Desde la segunda persona, el Familiar sale más barato: dos planes Completo cuestan RD$&nbsp;11,800 y el Familiar cubre hasta cuatro por RD$&nbsp;9,900.</p>
-
-    <div class="residente" data-revelar>
-      <div>
-        <p class="kicker">Residente de un nodo</p>
-        <h3 class="subtitulo" style="margin-top:.5rem">Incluido en la membresía.</h3>
-        <p class="prosa" style="margin-top:.8rem">Quien vive en un nodo KONFOR no paga esto aparte, y además tiene enfermería, terapia física, hidroterapia y laboratorio in situ sin cargo adicional. Está instalado en el edificio.</p>
-      </div>
-      <a class="boton boton-linea" href="nodos.html" data-traspaso>Ver dónde se vive →</a>
-    </div>
-
-    <ul class="nota" data-revelar style="margin-top:2rem;list-style:none;padding:0;display:grid;gap:.45rem">
-      <li>Sin permanencia. Se cancela cuando quieras.</li>
-      <li>Precios de lanzamiento, sujetos a confirmación.</li>
-      <li>No sustituye tu seguro. Trabaja con el que ya tienes.</li>
-      <li>Un estudio repetido cuesta más que un mes de membresía.</li>
-      <li>Rango de residencias: Diario Libre, 2024.</li>
-    </ul>
+    <p class="mono" data-reveal style="color:var(--tinta-35); margin-top:2rem; font-size:0.55rem">LA MODALIDAD RESIDENCIAL (VIVIR EN UN NODO) SE COTIZA APARTE: ENTRE RD$ 40,000 Y RD$ 105,000 AL MES SEGÚN NODO Y UNIDAD.</p>
   </div>
 </section>
 
-<!-- P-05 · LOS LÍMITES -->
-<section class="seccion" style="background:var(--papel-2)">
-  <div class="estrecho">
-    <p class="kicker" data-revelar>Qué entra y qué no</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">La medicación la decide tu médico. Siempre.</h2>
-    <div class="limites">
-      <p class="limite" data-revelar><strong>Sí diseñamos y ajustamos:</strong> alimentación, ejercicio, movilidad, hábitos, sueño y el orden de tu día.</p>
-      <p class="limite" data-revelar><strong>No prescribimos medicación.</strong> Eso es del médico tratante, y nosotros nos encargamos de que su indicación se cumpla y se verifique.</p>
-      <p class="limite" data-revelar><strong>Lo presencial se cobra cuando se usa:</strong> visitas de enfermería, terapia y laboratorio, al precio de la red. En un nodo ya están incluidas.</p>
-      <p class="limite" data-revelar><strong>Aún no está:</strong> la integración con suplidores externos —farmacia, laboratorios y centros aliados— llega en una fase posterior.</p>
+<!-- ══ 02 · LA COMPARACIÓN ══ -->
+<section class="capitulo" data-capitulo-id="02" data-capitulo-nombre="LA CUENTA" style="background:var(--fondo-2)">
+  <div class="contenedor">
+    <p class="mono kicker" data-reveal>02 · LA CUENTA REAL</p>
+    <h2 class="titulo-grande" data-reveal>Cinco cuentas separadas. <em>O una membresía.</em></h2>
+    <div class="feed" style="margin-top:3rem" data-escalonar>
+      <div class="feed-item" data-reveal>
+        <span class="mono feed-hora">HOY</span>
+        <div><strong>Acompañante o enfermera a tiempo parcial</strong><p>Sin sistema, sin datos, sin coordinación con el médico.</p></div>
+        <span class="feed-pill warn">US$ 250–400 / MES</span>
+      </div>
+      <div class="feed-item" data-reveal>
+        <span class="mono feed-hora">HOY</span>
+        <div><strong>Chequeos y laboratorios por separado</strong><p>Cada resultado en un PDF distinto que nadie cruza.</p></div>
+        <span class="feed-pill warn">US$ 1,500–8,000 / AÑO</span>
+      </div>
+      <div class="feed-item" data-reveal>
+        <span class="mono feed-hora">HOY</span>
+        <div><strong>Nutrición clínica y seguimiento</strong><p>Un plan que se entrega una vez y nadie verifica.</p></div>
+        <span class="feed-pill warn">US$ 70+ / CONSULTA</span>
+      </div>
+      <div class="feed-item destacado" data-reveal>
+        <span class="mono feed-hora">KONFOR</span>
+        <div><strong>Todo coordinado en un solo sistema</strong><p>La llamada, la verificación, el protocolo, la evidencia al médico y la familia informada.</p></div>
+        <span class="feed-pill ok">DESDE RD$ 1,900 / MES</span>
+      </div>
     </div>
+    <p class="mono" data-reveal style="color:var(--tinta-35); margin-top:1.6rem; font-size:0.55rem">CIFRAS DE MERCADO DE REFERENCIA, NO COTIZACIONES.</p>
   </div>
 </section>
 
-<!-- P-06 · CIERRE -->
-<section class="seccion">
-  <div class="estrecho">
-    <p class="kicker" data-revelar>Empezar</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">Una conversación de veinte minutos.</h2>
-    <p class="prosa" data-revelar style="margin-top:1.2rem">Con una persona, no con un formulario. De ahí sale qué plan tiene sentido — y si ninguno lo tiene, se lo decimos.</p>
-    <form class="forma" data-revelar action="https://konfor-company-os.onrender.com/api/v1/public/leads" method="post">
-      <label class="skip-link" for="nombre">Nombre</label>
-      <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
-      <label class="skip-link" for="tel">Teléfono</label>
-      <input id="tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="Tu teléfono" required>
-      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="boton boton-oro" type="submit">Que me llamen</button>
-    </form>
-    <p class="nota" data-revelar style="margin-top:.9rem">Al enviar, aceptas que te llamemos.</p>
+<!-- ══ 03 · LO QUE NUNCA SE VENDE ══ -->
+<section class="capitulo" data-capitulo-id="03" data-capitulo-nombre="LOS LÍMITES">
+  <div class="contenedor" style="max-width:820px; text-align:center">
+    <p class="mono kicker" data-reveal style="justify-content:center">03 · LO QUE LA MEMBRESÍA NO COMPRA</p>
+    <h2 class="titulo-grande" data-reveal style="margin-inline:auto">La medicación la decide tu médico. <em>Siempre.</em></h2>
+    <p class="prosa prosa-centro" data-reveal style="margin-inline:auto">Ningún plan incluye diagnóstico ni prescripción. KONFOR organiza, verifica y coordina — la decisión clínica vive donde debe vivir: en tu médico.</p>
+  </div>
+</section>
 
-    <details class="nota" data-revelar style="margin-top:2.6rem">
-      <summary style="cursor:pointer">Cómo calculamos esto</summary>
-      <p style="margin-top:.8rem"><strong>Fuentes de las referencias de mercado:</strong> concierge médico US$ 1,500–8,000 al año (promedio US$ 2,500–3,000); nutrición clínica US$ 70–100 por consulta de seguimiento; fisioterapia US$ 75–250 por sesión, US$ 100–150 a domicilio; entrenamiento personal US$ 250–400 al mes por dos sesiones semanales; panel de biomarcadores desde US$ 365 al año. Datos de mercado estadounidense 2026, usados como referencia de lo que cuesta cada pieza por separado.</p>
-    </details>
+<!-- ══ CTA ══ -->
+<section class="cta-pagina" data-capitulo-id="04" data-capitulo-nombre="CONVERSAR">
+  <div class="contenedor">
+    <h2 class="titulo-final" data-reveal>Una conversación<br><em>de veinte minutos.</em></h2>
+    <p class="prosa prosa-centro" data-reveal style="margin:1.6rem auto 0">Cuéntanos a quién quieres cuidar y te decimos con honestidad qué plan le corresponde — o si KONFOR no es para ustedes todavía.</p>
+    <div class="acciones acciones-centro" data-reveal>
+      <a class="boton boton-oro boton-grande" href="precio.html" data-magnet data-cursor="Ir">Agendar la conversación ↗</a>
+      <a class="boton boton-fantasma boton-grande" href="familias.html" data-magnet>Ver cómo se siente</a>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer class="pie">
+  <p class="pie-marca" aria-hidden="true">KONFOR</p>
   <nav class="pie-nav" aria-label="Pie">
-    <a href="index.html">Inicio</a><a href="salud.html">Salud</a><a href="precio.html">Precios</a>
-    <a href="familias.html">Familias</a><a href="medicos.html">Médicos</a>
-    <a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
-    <a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a>
+    <a href="index.html">Inicio</a>
+    <a href="salud.html">Salud</a>
+    <a href="familias.html">Familias</a>
+    <a href="medicos.html">Médicos</a>
+    <a href="desarrolladores.html">Desarrolladores</a>
+    <a href="nodos.html">Nodos</a>
+    <a href="precio.html">Precio</a>
+    <a href="index.html">Sitio oficial</a>
   </nav>
-  <div class="pie-fondo">
-    <p class="pie-marca">KONFOR</p>
-    <p>KONFOR · nombre comercial registrado ONAPI n.º 945088 · operado por <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1</p>
-    <p>Av. César Nicolás Penson n.º 73, Gazcue, Santo Domingo, República Dominicana · Tel. <a href="tel:+18092215566" style="text-decoration:underline">(809) 221-5566</a> · <a href="mailto:proyectos@paez.com.do" style="text-decoration:underline">proyectos@paez.com.do</a></p>
-    <p>Oficina: lunes a viernes, 8:00 a.&nbsp;m. – 5:00 p.&nbsp;m.</p>
-    <p><strong style="color:var(--tinta-45)">El servicio, todos los días del año.</strong></p>
-    <p>Nombre comercial registrado ONAPI n.º 945088.</p>
-    <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye oferta pública de valores ni consejo médico. KONFOR no diagnostica ni prescribe.</p>
-  </div>
+  <p class="pie-legal">Un sistema de <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1 · Santo Domingo, República Dominicana</p>
+  <p class="pie-legal">© <span id="anio">2026</span> KONFOR · demostración. Precios sujetos a confirmación comercial.</p>
 </footer>
-<script src="atribucion.js?v=20260803i" defer></script>
-<script src="envio.js?v=20260803i" defer></script>
-<script src="v3.js?v=20260803i" defer></script>
+
+
+<!-- ══ GAVETA DE ACCESO ══ -->
+<div class="gaveta-velo" data-gaveta-cerrar></div>
+<aside class="gaveta" id="gaveta" aria-label="Acceso y navegación">
+  <div class="gaveta-cabecera">
+    <span class="mono">ACCEDER COMO</span>
+    <button class="gaveta-x" data-gaveta-cerrar aria-label="Cerrar">✕</button>
+  </div>
+  <div class="gaveta-roles">
+    <a class="gaveta-rol" href="salud.html"><span class="mono">01</span><strong>Yo cuido mi salud</strong><span>Protocolo, biomarcadores, mi cuerpo</span></a>
+    <a class="gaveta-rol" href="familias.html"><span class="mono">02</span><strong>Soy familia</strong><span>Cuido a alguien a distancia</span></a>
+    <a class="gaveta-rol" href="medicos.html"><span class="mono">03</span><strong>Soy médico</strong><span>La red clínica y la evidencia</span></a>
+    <a class="gaveta-rol" href="desarrolladores.html"><span class="mono">04</span><strong>Soy desarrollador / inversionista</strong><span>Certificación KOSD y la red</span></a>
+  </div>
+  <nav class="gaveta-nav" aria-label="Todas las pantallas">
+    <span class="mono">EXPLORAR</span>
+      <a href="index.html">Inicio <span>→</span></a>
+      <a href="salud.html">Salud <span>→</span></a>
+      <a href="familias.html">Familias <span>→</span></a>
+      <a href="medicos.html">Médicos <span>→</span></a>
+      <a href="desarrolladores.html">Desarrolladores <span>→</span></a>
+      <a href="nodos.html">Nodos <span>→</span></a>
+      <a href="precio.html" class="activo">Precio <span>→</span></a>
+  </nav>
+</aside>
+
+<script src="v4.js" defer></script>
 </body>
 </html>

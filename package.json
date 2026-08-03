@@ -1,0 +1,9 @@
+{
+  "name": "konfor-website",
+  "private": true,
+  "version": "4.0.0",
+  "description": "Sitio estático de KONFOR. El despliegue sigue siendo por archivos (GitHub Pages); npm run dev solo sirve la preview local.",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}

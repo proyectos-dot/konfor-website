@@ -3,143 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>KONFOR para familias — No vives con ella. Igual eres responsable.</title>
-<meta name="description" content="Para quien cuida a distancia: qué vas a saber, qué no vas a ver, cómo llega la alerta y cómo se lo propones a tu madre o a tu padre sin que suene a vigilancia.">
-<link rel="canonical" href="https://konfor.do/familias.html">
+<title>Familias — No vives con ella. Igual eres responsable.</title>
+<meta name="description" content="KONFOR para las familias y la diáspora. Alguien pregunta cada mañana, verifica cada toma y te avisa solo cuando hace falta.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#f5f3ee">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="KONFOR">
-<meta property="og:locale" content="es_DO">
-<meta property="og:url" content="https://konfor.do/familias.html">
-<meta property="og:title" content="KONFOR para familias">
-<meta property="og:description" content="No vives con ella. Igual eres responsable. Esto es lo que cambia.">
-<meta property="og:image" content="https://konfor.do/assets/img/04-hija-noche-1200.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://konfor.do/assets/img/04-hija-noche-1200.jpg">
+<link rel="canonical" href="https://konfor.do/familias.html">
+<meta name="theme-color" content="#0d0a06">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260803i">
-<link rel="stylesheet" href="v3.css?v=20260803i">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v4.css">
 </head>
 <body>
-<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<header class="cabecera posada">
-  <a class="marca" href="index.html" aria-label="KONFOR, inicio">
-    <span class="marca-bloque" aria-hidden="true"></span><span class="marca-nombre">KONFOR</span>
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-centro">
+    <p class="mono preloader-etiqueta">KONFOR · FAMILIAS</p>
+    <p class="preloader-marca">CERCA</p>
+    <p class="mono preloader-num" id="preloader-num">00</p>
+    <div class="preloader-barra"><span id="preloader-fill"></span></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor-punto"></div>
+  <div class="cursor-anillo"><span class="cursor-texto"></span></div>
+</div>
+<div class="progreso" aria-hidden="true"><span id="progreso-fill"></span></div>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="index.html" data-magnet aria-label="KONFOR, inicio">
+    <span class="marca-nucleo" aria-hidden="true"></span>
+    <span class="marca-nombre">KONFOR</span>
   </a>
-  <nav class="nav-alta" aria-label="Principal">
-    <a href="salud.html">Salud</a>
-    <a href="familias.html" aria-current="page">Familias</a>
-    <a href="medicos.html">Médicos</a>
-    <a href="certificacion.html">Certificación</a>
-    <a href="nodos.html">Dónde estamos</a>
+  <nav class="nav" aria-label="Principal">
+    <a href="salud.html" data-magnet>Salud</a>
+    <a href="familias.html" class="activo" data-magnet>Familias</a>
+    <a href="medicos.html" data-magnet>Médicos</a>
+    <a href="desarrolladores.html" data-magnet>Desarrolladores</a>
+    <a href="nodos.html" data-magnet>Nodos</a>
+    <a href="precio.html" data-magnet>Precio</a>
   </nav>
+  <div class="cabecera-derecha">
+    <span class="mono reloj" id="reloj">--:--</span>
+    <button type="button" class="boton boton-mini" data-gaveta data-magnet>Iniciar sesión</button>
+    <button class="hamburguesa" data-gaveta aria-label="Abrir menú"><span></span></button>
+  </div>
 </header>
 
-<main id="contenido">
+<aside class="riel" aria-hidden="true">
+  <span class="riel-num" id="riel-num">00</span>
+  <span class="riel-linea"><span id="riel-fill"></span></span>
+  <span class="mono riel-nombre" id="riel-nombre">FAMILIAS</span>
+</aside>
 
-<!-- F-01 · el retrato es 4:5; en caja panorámica se veía el 44%.
-     Va en composición de dos columnas, que es lo que pide un vertical. -->
-<section class="seccion" style="padding-top:clamp(7rem,18vh,11rem)">
-  <div class="centro dos">
+<main>
+
+<!-- ══ HERO ══ -->
+<section class="hero-pagina">
+  <img class="hero-foto" src="assets/hero-familias.jpg" alt="" aria-hidden="true">
+  <canvas class="hero-red" id="red" aria-hidden="true"></canvas>
+  <div class="hero-velo-pag" aria-hidden="true"></div>
+  <div class="hero-pagina-contenido">
+    <p class="mono miga" data-reveal><a href="index.html">KONFOR</a><span>/</span><span>FAMILIAS</span></p>
+    <p class="mono kicker" data-reveal><span class="pulso" aria-hidden="true"></span>PARA LOS QUE CUIDAN DESDE LEJOS</p>
+    <h1 class="titulo-grande">
+      <span data-scramble>No vives con ella.</span><br>
+      <em><span data-scramble data-retardo="350">Igual eres responsable.</span></em>
+    </h1>
+    <p class="prosa" data-reveal data-retardo="600" style="margin-top:1.6rem">Trabajas en Nueva York, en Madrid, en Santiago. Ella está en Santo Domingo y dice que está bien. <strong>KONFOR es la diferencia entre creerlo y saberlo.</strong></p>
+    <div class="hero-acciones" data-reveal data-retardo="800">
+      <a class="boton boton-oro" href="#chat-seccion" data-magnet data-cursor="Ver">Ver una mañana real</a>
+      <a class="boton boton-fantasma" href="precio.html" data-magnet>Plan Familiar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 01 · EL CHAT ══ -->
+<section class="capitulo" id="chat-seccion" data-capitulo-id="01" data-capitulo-nombre="UNA MAÑANA">
+  <div class="contenedor duo">
     <div>
-      <p class="kicker" data-revelar>Para quien cuida a distancia</p>
-      <h1 class="display" data-revelar style="margin-top:1.1rem">No vives con ella. Igual eres responsable.</h1>
-      <p class="prosa" data-revelar style="margin-top:1.6rem">Trabajas. Vives en la capital o en Nueva York. Ella tiene 74 y vive sola. No es que no la quieras: es que no sabes.</p>
+      <p class="mono kicker" data-reveal>01 · UNA MAÑANA CUALQUIERA</p>
+      <h2 class="titulo-grande" data-reveal>Esto llega a tu teléfono. <em>Sin que preguntes.</em></h2>
+      <p class="prosa" data-reveal style="margin-top:1.4rem">Cada mañana alguien la llama. Cada toma queda verificada. Y tú recibes exactamente dos cosas: la tranquilidad de los días normales y el aviso temprano de los días raros.</p>
+      <p class="prosa-serif" data-reveal>Nunca más «¿y si la llamo y no contesta?»</p>
     </div>
-    <div data-revelar>
-      <img src="assets/img/04-hija-noche-1200.jpg"
-           srcset="assets/img/04-hija-noche-1200.jpg 966w, assets/img/04-hija-noche-2400.jpg 1933w"
-           sizes="(min-width:900px) 44vw, 92vw"
-           alt="Una mujer de 45 años en su sala de noche, teléfono en mano, tranquila."
-           style="border-radius:var(--r-tarjeta)" width="966" height="1200">
-    </div>
-  </div>
-</section>
-
-<!-- F-02 -->
-<section class="seccion">
-  <div class="centro dos">
-    <div>
-      <p class="kicker" data-revelar>El cambio</p>
-      <h2 class="titulo" data-revelar style="margin-top:1rem">Lo que sabes hoy, y lo que sabrías.</h2>
-      <p class="prosa" data-revelar style="margin-top:1.4rem"><strong>Hoy:</strong> la llamas, te dice que está bien, cuelgas y te quedas igual. Te enteras de las cosas tarde y por teléfono.</p>
-      <p class="prosa" data-revelar><strong>Con KONFOR:</strong> abres la app y ves el estado real de cada persona de tu círculo — cómo va la adherencia, qué quedó sin marcar hoy, si hay algo que requiere atención.</p>
-      <p class="prosa-serif" data-revelar style="margin-top:1.4rem">Dejas de adivinar.</p>
-    </div>
-    <div style="display:grid;place-items:center" data-revelar>
-      <div class="telefono">
-        <img decoding="async" srcset="assets/app3/A-02-familia.webp" src="assets/app3/A-02-familia.jpg" alt="Pantalla Familia: cada persona del círculo con su estado, su porcentaje de adherencia y la acción pendiente." width="374" height="846">
+    <div class="chat" id="chat" data-reveal>
+      <div class="chat-cabecera">
+        <img class="chat-avatar" src="assets/rafael.jpg" alt="Retrato de Don Rafael">
+        <div>
+          <strong>Papá · Don Rafael</strong>
+          <span class="mono">KONFOR · VERIFICADO ✓</span>
+        </div>
+      </div>
+      <div class="msg msg-konfor" data-msg>
+        Buenos días, Don Rafael ☀️ ¿Cómo amaneció?
+        <small>KONFOR · 7:02 AM</small>
+      </div>
+      <div class="msg msg-hija" data-msg>
+        ¡Buenos días! Bien, dormí de un tirón.
+        <small>DON RAFAEL · 7:04 AM</small>
+      </div>
+      <div class="msg msg-konfor" data-msg>
+        Qué bueno escuchar eso. ¿Ya tomó la Losartán de la mañana?
+        <small>KONFOR · 7:04 AM</small>
+      </div>
+      <div class="msg msg-hija" data-msg>
+        Se me pasaba. Ya la tomé, con mi cafecito.
+        <small>DON RAFAEL · 7:11 AM · VERIFICADA ✓</small>
+      </div>
+      <div class="msg msg-alerta" data-msg>
+        <span class="oro">Para ti, Elena:</span> papá está bien hoy. Tomó su medicación (7:11 AM) y durmió 7.2 horas. La presión de ayer subió un poco — el Dr. Lora ya lo sabe. No tienes que hacer nada.
+        <small>RESUMEN DIARIO · SOLO SI HACE FALTA</small>
       </div>
     </div>
   </div>
 </section>
 
-<!-- F-03 · la alerta -->
-<section class="seccion navy grano">
-  <div class="centro">
-    <p class="kicker kicker-claro" data-revelar>La alerta</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">Qué la dispara, y qué te llega.</h2>
-    <div class="rejilla" style="margin-top:2.6rem">
-      <div class="tarjeta" data-revelar style="background:rgba(245,243,238,.06);border-color:var(--sobre-navy-14);color:var(--sobre-navy)">
-        <h3 style="color:var(--sobre-navy)">Qué la dispara</h3>
-        <p style="color:var(--sobre-navy-55)">Una toma crítica que pasa su ventana. Dos días sin actividad. Una medición fuera de rango. Una llamada de seguimiento sin respuesta.</p>
-      </div>
-      <div class="tarjeta" data-revelar style="background:rgba(245,243,238,.06);border-color:var(--sobre-navy-14);color:var(--sobre-navy)">
-        <h3 style="color:var(--sobre-navy)">Qué te llega</h3>
-        <p style="color:var(--sobre-navy-55)">El hecho, la hora y qué se hizo. No un susto: «Enalapril de las 8:00 p.&nbsp;m. sin marcar. Enfermería ya lo está llamando.»</p>
-      </div>
+<!-- ══ 02 · HOY VS CON KONFOR ══ -->
+<section class="capitulo" data-capitulo-id="02" data-capitulo-nombre="LA DIFERENCIA" style="background:var(--fondo-2)">
+  <div class="contenedor">
+    <p class="mono kicker" data-reveal>02 · LA DIFERENCIA</p>
+    <h2 class="titulo-grande" data-reveal>Lo que sabes hoy. <em>Lo que sabrías.</em></h2>
+    <div class="actos duo-actos" style="margin-top:3rem">
+      <article class="acto" data-reveal>
+        <span class="mono acto-num">HOY</span>
+        <h3>Fe ciega</h3>
+        <p>«Dice que está bien.» Llamas cada tres días con culpa. Te enteras de las cosas cuando ya son cita, cuando ya son susto, cuando ya es tarde para llegar tranquilo.</p>
+        <span class="mono acto-estado">ASÍ CUIDA LA DIÁSPORA HOY</span>
+      </article>
+      <article class="acto" data-reveal style="border-color:var(--linea-oro)">
+        <span class="mono acto-num" style="color:var(--oro-claro)">CON KONFOR</span>
+        <h3>Certeza diaria</h3>
+        <p>Sabes que desayunó, que tomó su pastilla a las 7:11, que durmió bien, que su médico vio la presión que subió. Y si un día no contesta — lo sabes esa misma mañana, no el jueves.</p>
+        <span class="mono acto-estado" style="color:var(--oro)">ASÍ SE CUIDA CON SISTEMA</span>
+      </article>
     </div>
-    <p class="prosa" data-revelar style="margin-top:2rem">Nunca vas a recibir un dato clínico crudo sin contexto ni sin que alguien ya haya empezado a actuar. Una alerta que no viene con una acción es solo ansiedad.</p>
   </div>
 </section>
 
-<!-- F-04 · lo que no puedes ver -->
-<section class="seccion">
-  <div class="estrecho">
-    <p class="kicker" data-revelar>El límite</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">Lo que <em>no</em> puedes ver, y por qué.</h2>
-    <p class="prosa" data-revelar style="margin-top:1.4rem">No ves su expediente completo. No ves lo que habla con su médico. No ves lo que ella decidió no compartir.</p>
-    <p class="prosa" data-revelar>Ella define los permisos y puede cambiarlos o revocarlos cuando quiera, sin avisarte y sin dar explicaciones.</p>
-    <p class="prosa-serif" data-revelar style="margin-top:1.6rem">Eso no es una limitación del producto. Es la única razón por la que ella va a aceptar usarlo.</p>
+<!-- ══ 03 · SU PANEL ══ -->
+<section class="capitulo" data-capitulo-id="03" data-capitulo-nombre="SU PANEL">
+  <div class="contenedor duo">
+    <div data-reveal>
+      <p class="mono kicker">03 · SU MUNDO, EN TU MANO</p>
+      <h2 class="titulo-grande">Su día entero, <em>sin invadirlo.</em></h2>
+      <p class="prosa" style="margin-top:1.4rem">Él vive su vida con su independencia intacta. Tú ves lo esencial: si está estable, si cumplió, si algo necesita tu decisión. Nada de espiar — todo de cuidar.</p>
+      <ul class="health-lista" data-escalonar style="margin-top:2rem">
+        <li data-reveal><span class="mono">→</span> Triaje sereno: Atención / Estable. Nunca pánico.</li>
+        <li data-reveal><span class="mono">→</span> Tomas verificadas, no «dice que la tomó».</li>
+        <li data-reveal><span class="mono">→</span> Sus indicadores y sus documentos, con su permiso.</li>
+        <li data-reveal><span class="mono">→</span> Resumen para su médico cuando haga falta.</li>
+      </ul>
+      <p class="mono" style="color:var(--tinta-35); margin-top:2rem; font-size:0.55rem">PANEL EN DISEÑO · VISTA CONCEPTUAL</p>
+    </div>
+    <div class="panel" data-reveal data-tilt-suave>
+      <div class="panel-cabecera">
+        <span class="mono">DON RAFAEL · 74 AÑOS</span>
+        <span class="feed-pill ok">ESTABLE</span>
+      </div>
+      <div style="display:flex; gap:1.6rem; align-items:center; margin:1.4rem 0">
+        <img src="assets/rafael.jpg" alt="Retrato de Don Rafael" style="width:84px; height:84px; border-radius:50%; object-fit:cover; border:2px solid var(--linea-oro)">
+        <svg width="0" height="0" aria-hidden="true"><defs>
+          <linearGradient id="gradOro" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#c9a052"/><stop offset="1" stop-color="#e8c87a"/>
+          </linearGradient>
+        </defs></svg>
+        <div class="anillo-wrap">
+          <svg viewBox="0 0 120 120" width="150" height="150" data-anillo="86" aria-label="Adherencia del mes: 86 por ciento">
+            <circle class="anillo-fondo" cx="60" cy="60" r="52"/>
+            <circle class="anillo-arco" data-arco cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="anillo-centro">86<small>%<br>MES</small></div>
+        </div>
+      </div>
+      <div class="panel-fila" style="grid-template-columns:repeat(3,1fr)">
+        <div class="panel-metrica"><span class="mono panel-metrica-num ok">4/4</span><span class="mono panel-metrica-etiqueta">TOMAS HOY</span></div>
+        <div class="panel-metrica"><span class="mono panel-metrica-num">7.2h</span><span class="mono panel-metrica-etiqueta">SUEÑO</span></div>
+        <div class="panel-metrica"><span class="mono panel-metrica-num">128/82</span><span class="mono panel-metrica-etiqueta">PRESIÓN AYER</span></div>
+      </div>
+      <p class="mono panel-pie">VISTA CONCEPTUAL · NO SON DATOS REALES</p>
+    </div>
   </div>
 </section>
 
-<!-- F-05 · cómo se lo propones -->
-<section class="seccion" style="background:var(--papel-2)">
-  <div class="centro dos invertida">
-    <div data-revelar>
-      <img src="assets/img/17-madre-hija-1200.jpg"
-           srcset="assets/img/17-madre-hija-1200.jpg 1200w, assets/img/17-madre-hija-2400.jpg 2400w"
-           sizes="(min-width:900px) 40vw, 92vw"
-           alt="Una madre y su hija sentadas en el sofá; la madre sostiene la tableta con las dos manos."
-           style="border-radius:var(--r-tarjeta)" loading="lazy" width="966" height="1200">
-    </div>
-    <div>
-      <p class="kicker" data-revelar>La conversación difícil</p>
-      <h2 class="titulo" data-revelar style="margin-top:1rem">Cómo se lo propones sin ofenderla.</h2>
-      <p class="prosa" data-revelar style="margin-top:1.4rem">Esta es la parte que nadie te enseña. Lo que ella oye cuando le propones esto no es «te quiero cuidar»: es <strong>«ya no confían en mí»</strong>. Por eso importa cómo se dice.</p>
-
-      <div class="limites">
-        <p class="limite" data-revelar><strong>No</strong> empieces por ti. «Yo me quedo más tranquilo» la convierte en tu problema.</p>
-        <p class="limite" data-revelar><strong>Sí</strong> empieza por ella: «Es para que no tengas que depender de mí para nada.»</p>
-        <p class="limite" data-revelar><strong>Dale el control desde el primer minuto.</strong> Que sea ella quien decide qué compartes, delante de ti, en su teléfono.</p>
-        <p class="limite" data-revelar><strong>No</strong> lo plantees como una decisión definitiva. «Probémoslo un mes» quita casi toda la resistencia.</p>
+<!-- ══ 04 · QUÉ TE LLEGA ══ -->
+<section class="capitulo" data-capitulo-id="04" data-capitulo-nombre="LOS AVISOS" style="background:var(--fondo-2)">
+  <div class="contenedor">
+    <p class="mono kicker" data-reveal>04 · CUÁNDO SUENA TU TELÉFONO</p>
+    <h2 class="titulo-grande" data-reveal>Qué la dispara. <em>Qué te llega.</em></h2>
+    <div class="feed" style="margin-top:3rem" data-escalonar>
+      <div class="feed-item destacado" data-reveal>
+        <span class="mono feed-hora">7:00 AM</span>
+        <div><strong>No contestó la llamada de la mañana</strong><p>Se intenta de nuevo, se avisa al nodo y tú recibes el aviso con lo que ya se hizo — no solo la alarma.</p></div>
+        <span class="feed-pill warn">TE LLEGA</span>
       </div>
+      <div class="feed-item" data-reveal>
+        <span class="mono feed-hora">DIARIO</span>
+        <div><strong>Se saltó una toma</strong><p>Primero se le recuerda con cariño. Si se repite, te llega a ti con el patrón completo.</p></div>
+        <span class="feed-pill warn">SI SE REPITE</span>
+      </div>
+      <div class="feed-item" data-reveal>
+        <span class="mono feed-hora">CONTINUO</span>
+        <div><strong>La curva se sale</strong><p>Presión, sueño, actividad. El médico lo ve primero; tú te enteras cuando ya hay una decisión tomada.</p></div>
+        <span class="feed-pill info">CON CONTEXTO</span>
+      </div>
+      <div class="feed-item" data-reveal>
+        <span class="mono feed-hora">CADA NOCHE</span>
+        <div><strong>Todo está bien</strong><p>El resumen sereno de un día normal. La notificación que más vale es la que no te pide nada.</p></div>
+        <span class="feed-pill ok">TRANQUILIDAD</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <form class="forma" data-revelar action="https://konfor-company-os.onrender.com/api/v1/public/leads" method="post">
-        <label class="skip-link" for="nombre">Nombre</label>
-        <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
-        <label class="skip-link" for="tel">Teléfono</label>
-        <input id="tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="Tu teléfono" required>
-        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="boton boton-oro" type="submit">Que me llamen</button>
-      </form>
-    <p class="nota" data-revelar style="margin-top:.9rem">Al enviar, aceptas que te llamemos.</p>
+<!-- ══ 05 · CÓMO PROponÉRSELO ══ -->
+<section class="capitulo" data-capitulo-id="05" data-capitulo-nombre="LA CONVERSACIÓN">
+  <div class="contenedor" style="max-width:820px; text-align:center">
+    <p class="mono kicker" data-reveal style="justify-content:center">05 · LA CONVERSACIÓN DIFÍCIL</p>
+    <h2 class="titulo-grande" data-reveal style="margin-inline:auto">No es «mamá, ya tú no puedes sola». <em>Es «mamá, alguien te va a llamar todos los días».</em></h2>
+    <p class="prosa prosa-centro" data-reveal style="margin-inline:auto">Ella no pierde independencia: gana un equipo. No la vigilan: la acompañan. Y tú dejas de ser la enfermera a distancia para volver a ser su hija, su hijo, su persona.</p>
+    <figure data-reveal style="margin-top:3rem; border-radius:var(--r-card); overflow:hidden">
+      <img src="assets/coordinacion.jpg" alt="Una mano joven sostiene con cariño la mano de una persona mayor sobre una mesa de madera." loading="lazy" style="width:100%">
+    </figure>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-pagina" data-capitulo-id="06" data-capitulo-nombre="EMPEZAR">
+  <div class="contenedor">
+    <h2 class="titulo-final" data-reveal>La distancia no se va.<br><em>La incertidumbre sí.</em></h2>
+    <div class="acciones acciones-centro" data-reveal>
+      <a class="boton boton-oro boton-grande" href="precio.html" data-magnet data-cursor="Ir">Ver el Plan Familiar</a>
+      <a class="boton boton-fantasma boton-grande" href="salud.html" data-magnet>Cómo funciona la salud</a>
     </div>
   </div>
 </section>
@@ -147,22 +243,47 @@
 </main>
 
 <footer class="pie">
+  <p class="pie-marca" aria-hidden="true">KONFOR</p>
   <nav class="pie-nav" aria-label="Pie">
-    <a href="index.html">Inicio</a><a href="salud.html">Salud</a><a href="precio.html">Precios</a><a href="familias.html">Familias</a>
-    <a href="medicos.html">Médicos</a><a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
-    <a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a>
+    <a href="index.html">Inicio</a>
+    <a href="salud.html">Salud</a>
+    <a href="familias.html">Familias</a>
+    <a href="medicos.html">Médicos</a>
+    <a href="desarrolladores.html">Desarrolladores</a>
+    <a href="nodos.html">Nodos</a>
+    <a href="precio.html">Precio</a>
+    <a href="index.html">Sitio oficial</a>
   </nav>
-  <div class="pie-fondo">
-    <p class="pie-marca">KONFOR</p>
-    <p>KONFOR · nombre comercial registrado ONAPI n.º 945088 · operado por <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1</p>
-    <p>Av. César Nicolás Penson n.º 73, Gazcue, Santo Domingo, República Dominicana · Tel. <a href="tel:+18092215566" style="text-decoration:underline">(809) 221-5566</a> · <a href="mailto:proyectos@paez.com.do" style="text-decoration:underline">proyectos@paez.com.do</a></p>
-    <p>Oficina: lunes a viernes, 8:00 a.&nbsp;m. – 5:00 p.&nbsp;m.</p>
-    <p><strong style="color:var(--tinta-45)">El servicio, todos los días del año.</strong></p>
-    <p>© <span data-anio>2026</span> KONFOR. Material informativo. No constituye consejo médico.</p>
-  </div>
+  <p class="pie-legal">Un sistema de <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1 · Santo Domingo, República Dominicana</p>
+  <p class="pie-legal">© <span id="anio">2026</span> KONFOR · demostración. No constituye consejo médico; KONFOR no diagnostica ni prescribe.</p>
 </footer>
-<script src="atribucion.js?v=20260803i" defer></script>
-<script src="envio.js?v=20260803i" defer></script>
-<script src="v3.js?v=20260803i" defer></script>
+
+
+<!-- ══ GAVETA DE ACCESO ══ -->
+<div class="gaveta-velo" data-gaveta-cerrar></div>
+<aside class="gaveta" id="gaveta" aria-label="Acceso y navegación">
+  <div class="gaveta-cabecera">
+    <span class="mono">ACCEDER COMO</span>
+    <button class="gaveta-x" data-gaveta-cerrar aria-label="Cerrar">✕</button>
+  </div>
+  <div class="gaveta-roles">
+    <a class="gaveta-rol" href="salud.html"><span class="mono">01</span><strong>Yo cuido mi salud</strong><span>Protocolo, biomarcadores, mi cuerpo</span></a>
+    <a class="gaveta-rol" href="familias.html"><span class="mono">02</span><strong>Soy familia</strong><span>Cuido a alguien a distancia</span></a>
+    <a class="gaveta-rol" href="medicos.html"><span class="mono">03</span><strong>Soy médico</strong><span>La red clínica y la evidencia</span></a>
+    <a class="gaveta-rol" href="desarrolladores.html"><span class="mono">04</span><strong>Soy desarrollador / inversionista</strong><span>Certificación KOSD y la red</span></a>
+  </div>
+  <nav class="gaveta-nav" aria-label="Todas las pantallas">
+    <span class="mono">EXPLORAR</span>
+      <a href="index.html">Inicio <span>→</span></a>
+      <a href="salud.html">Salud <span>→</span></a>
+      <a href="familias.html" class="activo">Familias <span>→</span></a>
+      <a href="medicos.html">Médicos <span>→</span></a>
+      <a href="desarrolladores.html">Desarrolladores <span>→</span></a>
+      <a href="nodos.html">Nodos <span>→</span></a>
+      <a href="precio.html">Precio <span>→</span></a>
+  </nav>
+</aside>
+
+<script src="v4.js" defer></script>
 </body>
 </html>

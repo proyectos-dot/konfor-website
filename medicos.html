@@ -3,161 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>KONFOR para médicos — Usted indica. Nosotros verificamos que se cumplió.</title>
-<meta name="description" content="El bucle KCE: el médico prescribe, KONFOR lo ejecuta en el mundo real —farmacia, estudio, autorización con la ARS— el paciente lo vive, y la adherencia observada vuelve como evidencia.">
-<link rel="canonical" href="https://konfor.do/medicos.html">
+<title>Médicos — Usted prescribe. Nosotros verificamos que se cumplió.</title>
+<meta name="description" content="KONFOR para médicos. Adherencia observada entre consultas, alertas cuando la curva se sale y evidencia real en su próxima cita.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#f5f3ee">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="KONFOR">
-<meta property="og:locale" content="es_DO">
-<meta property="og:url" content="https://konfor.do/medicos.html">
-<meta property="og:title" content="KONFOR para médicos">
-<meta property="og:description" content="Usted indica. Nosotros verificamos que se cumplió.">
-<meta property="og:image" content="https://konfor.do/assets/img/15-medico-consultorio-1200.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://konfor.do/assets/img/15-medico-consultorio-1200.jpg">
+<link rel="canonical" href="https://konfor.do/medicos.html">
+<meta name="theme-color" content="#0d0a06">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Outfit:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="tokens.css?v=20260803i">
-<link rel="stylesheet" href="v3.css?v=20260803i">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v4.css">
 </head>
 <body>
-<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<header class="cabecera posada">
-  <a class="marca" href="index.html" aria-label="KONFOR, inicio">
-    <span class="marca-bloque" aria-hidden="true"></span><span class="marca-nombre">KONFOR</span>
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-centro">
+    <p class="mono preloader-etiqueta">KONFOR · MÉDICOS</p>
+    <p class="preloader-marca">RED</p>
+    <p class="mono preloader-num" id="preloader-num">00</p>
+    <div class="preloader-barra"><span id="preloader-fill"></span></div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor-punto"></div>
+  <div class="cursor-anillo"><span class="cursor-texto"></span></div>
+</div>
+<div class="progreso" aria-hidden="true"><span id="progreso-fill"></span></div>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="index.html" data-magnet aria-label="KONFOR, inicio">
+    <span class="marca-nucleo" aria-hidden="true"></span>
+    <span class="marca-nombre">KONFOR</span>
   </a>
-  <nav class="nav-alta" aria-label="Principal">
-    <a href="salud.html">Salud</a><a href="precio.html">Precios</a><a href="familias.html">Familias</a>
-    <a href="medicos.html" aria-current="page">Médicos</a>
-    <a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
+  <nav class="nav" aria-label="Principal">
+    <a href="salud.html" data-magnet>Salud</a>
+    <a href="familias.html" data-magnet>Familias</a>
+    <a href="medicos.html" class="activo" data-magnet>Médicos</a>
+    <a href="desarrolladores.html" data-magnet>Desarrolladores</a>
+    <a href="nodos.html" data-magnet>Nodos</a>
+    <a href="precio.html" data-magnet>Precio</a>
   </nav>
+  <div class="cabecera-derecha">
+    <span class="mono reloj" id="reloj">--:--</span>
+    <button type="button" class="boton boton-mini" data-gaveta data-magnet>Iniciar sesión</button>
+    <button class="hamburguesa" data-gaveta aria-label="Abrir menú"><span></span></button>
+  </div>
 </header>
 
-<main id="contenido">
+<aside class="riel" aria-hidden="true">
+  <span class="riel-num" id="riel-num">00</span>
+  <span class="riel-linea"><span id="riel-fill"></span></span>
+  <span class="mono riel-nombre" id="riel-nombre">MÉDICOS</span>
+</aside>
 
-<!-- D-01 -->
-<section class="sangre" style="min-height:84svh">
-  <img src="assets/img/15-medico-consultorio-2400.jpg"
-       srcset="assets/img/15-medico-consultorio-1200.jpg 1200w, assets/img/15-medico-consultorio-2400.jpg 2400w"
-       sizes="100vw" alt="Una médica, un paciente mayor y su hija revisan juntos una tableta en la mesa redonda del consultorio." width="2400" height="1339">
-  <div class="sangre-texto">
-    <p class="kicker kicker-claro">Red de prestadores</p>
-    <h1 class="display" style="margin-top:1rem">Usted indica. Nosotros verificamos que se cumplió.</h1>
-    <p class="prosa" style="margin-top:1.4rem">La indicación que sale de su consulta no se queda en un papel. Se ejecuta, se registra y vuelve a usted con evidencia.</p>
-  </div>
-</section>
+<main>
 
-<!-- D-02 · el bucle -->
-<section class="seccion">
-  <div class="centro">
-    <p class="kicker" data-revelar>El bucle</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">Cuatro pasos que hoy nadie cierra.</h2>
-    <p class="prosa" data-revelar style="margin-top:1.2rem">Entre lo que usted indica y lo que el paciente realmente hace hay un hueco. Ese hueco es el motor de coordinación.</p>
-
-    <div class="bucle">
-
-      <div class="bucle-paso" data-revelar>
-        <div>
-          <p class="bucle-num">1</p>
-          <h3 class="subtitulo" style="margin-top:.6rem">Usted prescribe.</h3>
-          <p class="prosa" style="margin-top:.8rem">Firma la receta en su consulta, como siempre. El resto empieza solo.</p>
-        </div>
-        <img src="assets/app/med-M-11-receta.jpg" alt="Pantalla de receta del sistema KONFOR Médico." loading="lazy">
-      </div>
-
-      <div class="bucle-paso" data-revelar>
-        <div>
-          <p class="bucle-num">2</p>
-          <h3 class="subtitulo" style="margin-top:.6rem">Nosotros lo ejecutamos.</h3>
-          <p class="prosa" style="margin-top:.8rem">Se cotiza en farmacia, se agenda el estudio, se gestiona la autorización con la ARS. Usted ve el estado de cada loop y desbloquea lo que se estanca.</p>
-        </div>
-        <img src="assets/app/med-M-12-coordinacion.jpg" alt="Tablero de coordinación: loops activos, uno estancado esperando autorización, cotizaciones de farmacia y SLA por paso." loading="lazy">
-      </div>
-
-      <div class="bucle-paso" data-revelar>
-        <div>
-          <p class="bucle-num">3</p>
-          <h3 class="subtitulo" style="margin-top:.6rem">El paciente lo vive.</h3>
-          <p class="prosa" style="margin-top:.8rem">Su indicación aparece en la app como acciones concretas del día, con hora y recordatorio. No como un PDF que nadie abre.</p>
-        </div>
-        <img decoding="async" width="374" height="846" srcset="assets/app3/A-03-protocolo.webp" src="assets/app3/A-03-protocolo.jpg" alt="La indicación convertida en acciones del día en la app del paciente." loading="lazy" style="max-width:280px;justify-self:center">
-      </div>
-
-      <div class="bucle-paso" data-revelar>
-        <div>
-          <p class="bucle-num">4</p>
-          <h3 class="subtitulo" style="margin-top:.6rem">Vuelve a usted como evidencia.</h3>
-          <p class="prosa" style="margin-top:.8rem">Adherencia observada —no reportada—, resultados y una línea de tiempo que no se puede alterar.</p>
-        </div>
-        <img src="assets/app/med-M-13-resultados.jpg" alt="Pantalla de resultados con la evidencia de cumplimiento." loading="lazy">
-      </div>
-
+<!-- ══ HERO ══ -->
+<section class="hero-pagina">
+  <img class="hero-foto" src="assets/hero-medicos.jpg" alt="" aria-hidden="true">
+  <canvas class="hero-red" id="red" aria-hidden="true"></canvas>
+  <div class="hero-velo-pag" aria-hidden="true"></div>
+  <div class="hero-pagina-contenido">
+    <p class="mono miga" data-reveal><a href="index.html">KONFOR</a><span>/</span><span>MÉDICOS</span></p>
+    <p class="mono kicker" data-reveal><span class="pulso" aria-hidden="true"></span>PARA LOS QUE DECIDEN</p>
+    <h1 class="titulo-grande">
+      <span data-scramble>Usted prescribe.</span><br>
+      <em><span data-scramble data-retardo="350">Nosotros verificamos que se cumplió.</span></em>
+    </h1>
+    <p class="prosa" data-reveal data-retardo="600" style="margin-top:1.6rem">Su indicación muere el día que el paciente sale de la consulta. Nadie sabe si se cumplió hasta la próxima cita — tres meses después. <strong>KONFOR cierra ese hueco.</strong></p>
+    <div class="hero-acciones" data-reveal data-retardo="800">
+      <a class="boton boton-oro" href="#ciclo" data-magnet data-cursor="Ver">Ver el circuito</a>
+      <a class="boton boton-fantasma" href="#unirse" data-magnet>Unirme a la red</a>
     </div>
   </div>
 </section>
 
-<!-- D-03 -->
-<section class="seccion navy grano">
-  <div class="centro dos">
-    <div>
-      <p class="kicker kicker-claro" data-revelar>Lo que recupera</p>
-      <h2 class="titulo" data-revelar style="margin-top:1rem">Adherencia observada, no reportada.</h2>
-      <p class="prosa" data-revelar style="margin-top:1.4rem">Hoy usted pregunta «¿se está tomando la pastilla?» y recibe la respuesta que el paciente cree correcta. Con el bucle cerrado, la respuesta es un registro con hora.</p>
-      <p class="prosa" data-revelar>Toda acción clínica queda sellada con actor y marca de tiempo, y la línea de tiempo del paciente es de solo-agregado: nada se edita hacia atrás.</p>
-      <p class="nota" data-revelar style="margin-top:1.4rem;color:var(--sobre-navy-55)">Trazabilidad e interoperabilidad son requisitos del estándar, no funciones opcionales.</p>
-    </div>
-    <div data-revelar>
-      <img src="assets/app/med-D-02-expediente.jpg" alt="Expediente 360 del paciente con su historia consolidada." style="border-radius:var(--r-interna)" loading="lazy">
+<!-- ══ 01 · EL CIRCUITO ══ -->
+<section class="capitulo" id="ciclo" data-capitulo-id="01" data-capitulo-nombre="EL CIRCUITO">
+  <div class="contenedor">
+    <p class="mono kicker" data-reveal>01 · EL CIRCUITO CERRADO</p>
+    <h2 class="titulo-grande" data-reveal>Cuatro pasos que hoy <em>nadie cierra.</em></h2>
+    <div class="pasos" data-escalonar>
+      <div class="paso" data-reveal>
+        <span class="mono">01</span>
+        <h3>Usted prescribe</h3>
+        <p>Su criterio, su indicación, su paciente. KONFOR no toca la decisión clínica. Nunca.</p>
+      </div>
+      <div class="paso" data-reveal>
+        <span class="mono">02</span>
+        <h3>Nosotros lo ejecutamos</h3>
+        <p>Recordatorios, verificación de tomas, coordinación de estudios y citas. Lo operativo deja de depender de la memoria del paciente.</p>
+      </div>
+      <div class="paso" data-reveal>
+        <span class="mono">03</span>
+        <h3>El paciente lo vive</h3>
+        <p>Acompañado, sin culpa y sin sentirse vigilado. La adherencia sube porque alguien la sostiene todos los días.</p>
+      </div>
+      <div class="paso" data-reveal>
+        <span class="mono">04</span>
+        <h3>Vuelve como evidencia</h3>
+        <p>En su próxima consulta usted no pregunta «¿cómo le fue?»: abre un informe con tres meses de datos reales.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- D-04 -->
-<section class="seccion">
-  <div class="estrecho">
-    <p class="kicker" data-revelar>Cómo se integra</p>
-    <h2 class="titulo" data-revelar style="margin-top:1rem">No le cambiamos la consulta.</h2>
-    <div class="pasos">
-      <div class="paso" data-revelar><h3>Conversación con el equipo clínico</h3><p>Entendemos su práctica y qué parte del bucle le hace falta.</p></div>
-      <div class="paso" data-revelar><h3>Alta en la red</h3><p>Su perfil, su centro y sus pacientes en KONFOR. Sin migrar nada.</p></div>
-      <div class="paso" data-revelar><h3>Primer paciente</h3><p>Se empieza con uno. El bucle se ve cerrado antes de escalar.</p></div>
+<!-- ══ 02 · ADHERENCIA OBSERVADA ══ -->
+<section class="capitulo" data-capitulo-id="02" data-capitulo-nombre="SEÑALES" style="background:var(--fondo-2)">
+  <div class="contenedor duo duo-ancha">
+    <div class="duo-fija">
+      <p class="mono kicker" data-reveal>02 · ADHERENCIA OBSERVADA, NO REPORTADA</p>
+      <h2 class="titulo-grande" data-reveal>La curva le avisa <em>antes del síntoma.</em></h2>
+      <p class="prosa" data-reveal style="margin-top:1.4rem">Cuando un indicador se sale de su rango, usted lo sabe con el contexto completo: qué pasó, desde cuándo, qué ya se hizo. Sin llamadas de emergencia a ciegas. Sin sorpresas en la cita.</p>
+      <p class="mono" data-reveal style="color:var(--tinta-35); margin-top:2rem; font-size:0.55rem">FEED ILUSTRATIVO · CAPA CLÍNICA EN ESTRUCTURACIÓN</p>
     </div>
-    <form class="forma" data-revelar action="https://konfor-company-os.onrender.com/api/v1/public/leads" method="post">
-      <label class="skip-link" for="nombre">Nombre</label>
-      <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Su nombre" required>
-      <label class="skip-link" for="tel">Teléfono</label>
-      <input id="tel" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="Su teléfono" required>
-      <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="boton boton-oro" type="submit">Hablar con el equipo clínico</button>
-    </form>
-    <p class="nota" data-revelar style="margin-top:.9rem">Al enviar, acepta que el equipo clínico le contacte.</p>
+    <div class="feed" id="feed-senales">
+      <div class="feed-item destacado">
+        <span class="mono feed-hora">HOY 7:11</span>
+        <div><strong>D. Rafael M. · Losartán 50 mg</strong><p>Toma verificada. Adherencia del ciclo: 86% (24/28).</p></div>
+        <span class="feed-pill ok">CUMPLIDA</span>
+      </div>
+      <div class="feed-item">
+        <span class="mono feed-hora">AYER 22:40</span>
+        <div><strong>Sra. Carmen V. · Presión 148/94</strong><p>Tercera lectura alta en 5 días. Se coordinó cita; pendiente su confirmación.</p></div>
+        <span class="feed-pill warn">REVISAR</span>
+      </div>
+      <div class="feed-item">
+        <span class="mono feed-hora">LUNES</span>
+        <div><strong>Sr. José D. · A1c 5.82 → límite</strong><p>Protocolo nutricional activo. Próximo control de laboratorio: 6 semanas.</p></div>
+        <span class="feed-pill info">SEGUIMIENTO</span>
+      </div>
+      <div class="feed-item">
+        <span class="mono feed-hora">CICLO 4</span>
+        <div><strong>Panel de sus pacientes KONFOR</strong><p>Resumen del mes listo: adherencia, curvas y pendientes, en una página.</p></div>
+        <span class="feed-pill info">INFORME</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 · LO QUE NO CAMBIA ══ -->
+<section class="capitulo" data-capitulo-id="03" data-capitulo-nombre="SUS LÍMITES">
+  <div class="contenedor" style="text-align:center; max-width:860px">
+    <p class="mono kicker" data-reveal style="justify-content:center">03 · LO QUE NO CAMBIAMOS</p>
+    <h2 class="titulo-grande" data-reveal style="margin-inline:auto">No le cambiamos la consulta. <em>Le devolvemos el control sobre lo que pasa fuera de ella.</em></h2>
+    <div class="actos duo-actos" style="margin-top:3.5rem; text-align:left">
+      <article class="acto" data-reveal>
+        <span class="mono acto-num">KONFOR NO</span>
+        <h3>Su criterio manda</h3>
+        <p>No diagnostica, no prescribe, no ajusta dosis, no le recomienda nada al paciente sobre su tratamiento. La medicina es suya.</p>
+        <span class="mono acto-estado">LÍMITE ABSOLUTO</span>
+      </article>
+      <article class="acto" data-reveal style="border-color:var(--linea-oro)">
+        <span class="mono acto-num" style="color:var(--oro-claro)">KONFOR SÍ</span>
+        <h3>El sistema obedece</h3>
+        <p>Ejecuta lo que usted indicó, verifica que ocurra, vigila las curvas que usted definió y le devuelve evidencia ordenada.</p>
+        <span class="mono acto-estado" style="color:var(--oro)">FUNCIÓN DEL SISTEMA</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 · UNIRSE ══ -->
+<section class="capitulo" id="unirse" data-capitulo-id="04" data-capitulo-nombre="LA RED" style="background:var(--fondo-2)">
+  <div class="contenedor">
+    <p class="mono kicker" data-reveal>04 · ENTRAR A LA RED</p>
+    <h2 class="titulo-grande" data-reveal>Tres pasos. <em>Sin burocracia de seguros.</em></h2>
+    <div class="pasos pasos-3" data-escalonar>
+      <div class="paso" data-reveal>
+        <span class="mono">01</span>
+        <h3>Conversación con el equipo clínico</h3>
+        <p>Veinte minutos para entender su práctica, sus pacientes y qué curvas le importan.</p>
+      </div>
+      <div class="paso" data-reveal>
+        <span class="mono">02</span>
+        <h3>Alta en la red</h3>
+        <p>Su perfil clínico queda configurado: indicaciones, rangos de alerta y forma de contacto.</p>
+      </div>
+      <div class="paso" data-reveal>
+        <span class="mono">03</span>
+        <h3>Primer paciente</h3>
+        <p>Usted lo refiere, KONFOR lo incorpora y el circuito empieza a cerrarse esa misma semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-pagina" data-capitulo-id="05" data-capitulo-nombre="CONVERSAR">
+  <div class="contenedor">
+    <h2 class="titulo-final" data-reveal>Sus indicaciones merecen<br><em>cumplirse.</em></h2>
+    <div class="acciones acciones-centro" data-reveal>
+      <a class="boton boton-oro boton-grande" href="medicos.html" data-magnet data-cursor="Ir">Agendar conversación ↗</a>
+      <a class="boton boton-fantasma boton-grande" href="salud.html" data-magnet>Cómo vive el paciente</a>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer class="pie">
+  <p class="pie-marca" aria-hidden="true">KONFOR</p>
   <nav class="pie-nav" aria-label="Pie">
-    <a href="index.html">Inicio</a><a href="salud.html">Salud</a><a href="precio.html">Precios</a><a href="familias.html">Familias</a>
-    <a href="medicos.html">Médicos</a><a href="certificacion.html">Certificación</a><a href="nodos.html">Dónde estamos</a>
-    <a href="privacidad.html">Privacidad</a><a href="terminos.html">Términos</a>
+    <a href="index.html">Inicio</a>
+    <a href="salud.html">Salud</a>
+    <a href="familias.html">Familias</a>
+    <a href="medicos.html">Médicos</a>
+    <a href="desarrolladores.html">Desarrolladores</a>
+    <a href="nodos.html">Nodos</a>
+    <a href="precio.html">Precio</a>
+    <a href="index.html">Sitio oficial</a>
   </nav>
-  <div class="pie-fondo">
-    <p class="pie-marca">KONFOR</p>
-    <p>KONFOR · nombre comercial registrado ONAPI n.º 945088 · operado por <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1</p>
-    <p>Av. César Nicolás Penson n.º 73, Gazcue, Santo Domingo, República Dominicana · Tel. <a href="tel:+18092215566" style="text-decoration:underline">(809) 221-5566</a> · <a href="mailto:proyectos@paez.com.do" style="text-decoration:underline">proyectos@paez.com.do</a></p>
-    <p>Oficina: lunes a viernes, 8:00 a.&nbsp;m. – 5:00 p.&nbsp;m.</p>
-    <p><strong style="color:var(--tinta-45)">El servicio, todos los días del año.</strong></p>
-    <p>© <span data-anio>2026</span> KONFOR. KONFOR no diagnostica ni prescribe: coordina el cumplimiento de la indicación del médico tratante.</p>
-  </div>
+  <p class="pie-legal">Un sistema de <strong>Constructora Páez y Asociados, S.R.L.</strong> · RNC 1-01-65953-1 · Santo Domingo, República Dominicana</p>
+  <p class="pie-legal">© <span id="anio">2026</span> KONFOR · demostración. La capa clínica está en estructuración.</p>
 </footer>
-<script src="atribucion.js?v=20260803i" defer></script>
-<script src="envio.js?v=20260803i" defer></script>
-<script src="v3.js?v=20260803i" defer></script>
+
+
+<!-- ══ GAVETA DE ACCESO ══ -->
+<div class="gaveta-velo" data-gaveta-cerrar></div>
+<aside class="gaveta" id="gaveta" aria-label="Acceso y navegación">
+  <div class="gaveta-cabecera">
+    <span class="mono">ACCEDER COMO</span>
+    <button class="gaveta-x" data-gaveta-cerrar aria-label="Cerrar">✕</button>
+  </div>
+  <div class="gaveta-roles">
+    <a class="gaveta-rol" href="salud.html"><span class="mono">01</span><strong>Yo cuido mi salud</strong><span>Protocolo, biomarcadores, mi cuerpo</span></a>
+    <a class="gaveta-rol" href="familias.html"><span class="mono">02</span><strong>Soy familia</strong><span>Cuido a alguien a distancia</span></a>
+    <a class="gaveta-rol" href="medicos.html"><span class="mono">03</span><strong>Soy médico</strong><span>La red clínica y la evidencia</span></a>
+    <a class="gaveta-rol" href="desarrolladores.html"><span class="mono">04</span><strong>Soy desarrollador / inversionista</strong><span>Certificación KOSD y la red</span></a>
+  </div>
+  <nav class="gaveta-nav" aria-label="Todas las pantallas">
+    <span class="mono">EXPLORAR</span>
+      <a href="index.html">Inicio <span>→</span></a>
+      <a href="salud.html">Salud <span>→</span></a>
+      <a href="familias.html">Familias <span>→</span></a>
+      <a href="medicos.html" class="activo">Médicos <span>→</span></a>
+      <a href="desarrolladores.html">Desarrolladores <span>→</span></a>
+      <a href="nodos.html">Nodos <span>→</span></a>
+      <a href="precio.html">Precio <span>→</span></a>
+  </nav>
+</aside>
+
+<script src="v4.js" defer></script>
 </body>
 </html>

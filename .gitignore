@@ -1,2 +1,11 @@
 _v2/
 .DS_Store
+
+# Material de trabajo: vive en el disco, no se publica.
+# _v4 ya está copiado a la raíz; publicarlo daría un duplicado
+# público del sitio con las etiquetas de concepto intactas.
+_v4/
+fuentes/
+frames-escritorio/
+frames-movil/
+node_modules/
