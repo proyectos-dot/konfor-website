@@ -442,6 +442,30 @@ a { color: inherit; text-decoration: none; }
 }
 .telefono.visto { transform: none; }
 .telefono img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ─── La app viva ────────────────────────────────────────── */
+/* El iframe entra encima de la captura; la captura queda debajo como
+   fondo de carga, así nunca hay un marco vacío. */
+[data-app-viva] { isolation: isolate; }
+[data-app-viva] > img { position: absolute; inset: 0; z-index: 0; }
+[data-app-viva] iframe { z-index: 1; }
+.app-velo {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 1.4rem; border: 0; background: transparent; cursor: pointer;
+}
+.app-chip {
+  font-family: var(--ui); font-size: 0.82rem; font-weight: 600;
+  color: var(--navy); background: rgba(245, 243, 238, 0.92);
+  border: 1px solid rgba(10, 14, 28, 0.14);
+  padding: 0.55rem 1rem; border-radius: 999px;
+  box-shadow: 0 6px 20px -8px rgba(10, 14, 28, 0.45);
+  backdrop-filter: blur(6px);
+  transition: transform .5s var(--ease), opacity .5s var(--ease);
+}
+.app-velo:hover .app-chip { transform: translateY(-3px); }
+.app-velo.dormido { pointer-events: none; }
+.app-velo.dormido .app-chip { opacity: 0; transform: translateY(8px); }
 .telefonos { display: flex; gap: 1.4rem; justify-content: center; align-items: center; flex-wrap: wrap; }
 .telefonos .telefono { width: min(230px, 44vw); }
 .hilo { display: none; }
