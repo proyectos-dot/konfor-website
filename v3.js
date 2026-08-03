@@ -90,14 +90,45 @@
       ultimo = i;
     };
 
-    const cargar = () => {
-      for (let i = 0; i < TOTAL; i++) {
-        const img = new Image();
-        img.decoding = "async";
-        img.src = ruta(i);
-        if (i === 0) img.onload = () => { listo = true; medir(); pintar(0); };
-        cuadros[i] = img;
+    // Pedir los 40 cuadros de golpe bloqueaba el evento `load` 27 s: el
+    // navegador abre 6 conexiones por dominio y los 34 restantes hacían cola.
+    // Ahora el primero pinta de inmediato y el resto entra por tandas, ya
+    // fuera de la ruta crítica. El scroll nunca espera un cuadro.
+    const pedir = (i) => {
+      if (cuadros[i]) return cuadros[i];
+      const img = new Image();
+      img.decoding = "async";
+      img.src = ruta(i);
+      cuadros[i] = img;
+      return img;
+    };
+
+    // Si el cuadro exacto no llegó, se pinta el más cercano que sí esté.
+    const masCercano = (i) => {
+      for (let d = 0; d <= TOTAL; d++) {
+        const a = cuadros[i - d], b = cuadros[i + d];
+        if (a && a.complete && a.naturalWidth) return i - d;
+        if (b && b.complete && b.naturalWidth) return i + d;
       }
+      return -1;
+    };
+
+    const cargarResto = () => {
+      let i = 1;
+      const tanda = () => {
+        const fin = Math.min(i + 4, TOTAL);
+        for (; i < fin; i++) pedir(i);
+        if (i < TOTAL) {
+          (window.requestIdleCallback || ((f) => setTimeout(f, 120)))(tanda, { timeout: 400 });
+        }
+      };
+      tanda();
+    };
+
+    const cargar = () => {
+      pedir(0).onload = () => { listo = true; medir(); pintar(0); };
+      if (document.readyState === "complete") cargarResto();
+      else addEventListener("load", cargarResto, { once: true });
     };
 
     const avanzar = () => {
@@ -107,7 +138,12 @@
 
       if (listo && !quieto) {
         const i = Math.min(Math.round(p * (TOTAL - 1)), TOTAL - 1);
-        if (i !== ultimo) pintar(i);
+        if (i !== ultimo) {
+          // adelantar la carga de lo que viene, y pintar lo que ya haya
+          for (let k = i; k < Math.min(i + 3, TOTAL); k++) pedir(k);
+          const c = cuadros[i]?.complete && cuadros[i].naturalWidth ? i : masCercano(i);
+          if (c >= 0) pintar(c);
+        }
       }
       if (tiempos.length) {
         const activo = Math.min(Math.floor(p * tiempos.length), tiempos.length - 1);
