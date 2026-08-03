@@ -209,6 +209,29 @@
     });
   }
 
+  /* ── Los modos: un selector, dos pantallas que responden ── */
+  const modos = document.getElementById("modos");
+  if (modos) {
+    const botones = $$(".modo-boton", modos);
+    const elegir = (clave) => {
+      botones.forEach((b) => {
+        const activo = b.dataset.modo === clave;
+        b.classList.toggle("activo", activo);
+        b.setAttribute("aria-selected", String(activo));
+      });
+      $$(".modo-linea, .modo-img", modos).forEach((e) =>
+        e.classList.toggle("activo", e.dataset.modo === clave));
+    };
+    // Safari no da foco al botón clicado: sin esto, las flechas no responden
+    botones.forEach((b) => b.addEventListener("click", () => { b.focus(); elegir(b.dataset.modo); }));
+    modos.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const i = botones.findIndex((b) => b.classList.contains("activo"));
+      const j = (i + (e.key === "ArrowRight" ? 1 : botones.length - 1)) % botones.length;
+      botones[j].focus(); elegir(botones[j].dataset.modo);
+    });
+  }
+
   /* ── Año en el pie ──────────────────────────────────────── */
   $$("[data-anio]").forEach((e) => { e.textContent = new Date().getFullYear(); });
 })();

@@ -466,6 +466,36 @@ a { color: inherit; text-decoration: none; }
 .app-velo:hover .app-chip { transform: translateY(-3px); }
 .app-velo.dormido { pointer-events: none; }
 .app-velo.dormido .app-chip { opacity: 0; transform: translateY(8px); }
+
+/* ─── Los modos ──────────────────────────────────────────── */
+.modos-selector {
+  display: inline-flex; gap: 4px; margin-top: 1.6rem; padding: 4px;
+  border-radius: 999px; background: rgba(245, 243, 238, 0.08);
+  border: 1px solid rgba(245, 243, 238, 0.14);
+}
+.modo-boton {
+  font-family: var(--ui); font-size: 0.9rem; font-weight: 600;
+  color: var(--sobre-navy-55); background: transparent; border: 0;
+  padding: 0.55rem 1.15rem; min-height: 44px; border-radius: 999px; cursor: pointer;
+  transition: color .4s var(--ease), background .4s var(--ease);
+}
+.modo-boton:hover { color: var(--sobre-navy); }
+.modo-boton.activo { color: var(--navy); background: var(--oro); }
+.modos-glosa { position: relative; margin-top: 1.2rem; min-height: 3.4em; }
+.modo-linea {
+  position: absolute; inset: 0; opacity: 0; transform: translateY(6px);
+  transition: opacity .45s var(--ease), transform .45s var(--ease);
+  pointer-events: none;
+}
+.modo-linea.activo { opacity: 1; transform: none; }
+.modo-panel, .modo-panel-b { position: relative; }
+.modo-img {
+  position: absolute !important; inset: 0; opacity: 0;
+  transition: opacity .55s var(--ease);
+}
+.modo-img.activo { opacity: 1; }
+/* la segunda pantalla respira 90ms después: el ojo sigue un orden */
+.modo-panel-b .modo-img { transition-delay: 90ms; }
 .telefonos { display: flex; gap: 1.4rem; justify-content: center; align-items: center; flex-wrap: wrap; }
 .telefonos .telefono { width: min(230px, 44vw); }
 .hilo { display: none; }

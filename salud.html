@@ -118,18 +118,35 @@
   </div>
 </section>
 
-<!-- ═══ S-04 · MODO SIMPLE ═══════════════════════════════ -->
-<section class="seccion navy grano">
+<!-- ═══ S-04 · LOS MODOS ═════════════════════════════════ -->
+<section class="seccion navy grano" id="modos">
   <div class="centro dos">
     <div>
-      <p class="kicker kicker-claro" data-revelar>Modo simple</p>
-      <h2 class="titulo" data-revelar style="margin-top:1rem">La misma app, dos maneras de usarla.</h2>
-      <p class="prosa" data-revelar style="margin-top:1.4rem">Si le gusta el detalle, ahí está: cada marcador, la edad de cada órgano, cómo se movió cada curva. Si prefiere una sola lista donde encontrar cada cosa, esa también es la app.</p>
+      <p class="kicker kicker-claro" data-revelar>Los modos</p>
+      <h2 class="titulo" data-revelar style="margin-top:1rem">La misma app, tres maneras de vivirla.</h2>
+      <div class="modos-selector" data-revelar role="tablist" aria-label="Modos de la app">
+        <button class="modo-boton activo" role="tab" aria-selected="true" data-modo="simple">Simple</button>
+        <button class="modo-boton" role="tab" aria-selected="false" data-modo="detalle">Detalle</button>
+        <button class="modo-boton" role="tab" aria-selected="false" data-modo="familia">Familia</button>
+      </div>
+      <div class="modos-glosa" data-revelar>
+        <p class="prosa modo-linea activo" data-modo="simple">Una sola lista donde encontrar cada cosa. Nada que aprender.</p>
+        <p class="prosa modo-linea" data-modo="detalle">Cada marcador, la edad de cada órgano, cómo se movió cada curva.</p>
+        <p class="prosa modo-linea" data-modo="familia">Ella ve lo que tú autorizaste. Las dos pantallas no muestran lo mismo.</p>
+      </div>
       <p class="prosa-serif" data-revelar style="margin-top:1.4rem;color:var(--sobre-navy)">Nadie tiene que aprender a usar nada.</p>
     </div>
     <div class="telefonos" data-revelar>
-      <div class="telefono"><img decoding="async" srcset="assets/app3/A-05-estudios.webp" src="assets/app3/A-05-estudios.jpg" alt="La app completa: estudios, datos y biomarcadores." width="374" height="846"></div>
-      <div class="telefono"><img decoding="async" srcset="assets/app3/A-04-menu.webp" src="assets/app3/A-04-menu.jpg" alt="La misma app vista como índice: tu salud en una sola lista." width="374" height="846"></div>
+      <div class="telefono modo-panel">
+        <img class="modo-img activo" data-modo="simple" decoding="async" srcset="assets/app3/A-04-menu.webp" src="assets/app3/A-04-menu.jpg" alt="Modo simple: tu salud en una sola lista." width="374" height="846">
+        <img class="modo-img" data-modo="detalle" decoding="async" srcset="assets/app3/A-06-analitica.webp" src="assets/app3/A-06-analitica.jpg" alt="Modo detalle: la analítica de la semana, curva por curva." width="374" height="846" loading="lazy">
+        <img class="modo-img" data-modo="familia" decoding="async" srcset="assets/app3/A-02-familia.webp" src="assets/app3/A-02-familia.jpg" alt="Modo familia: el círculo de cuidado con permisos definidos." width="374" height="846" loading="lazy">
+      </div>
+      <div class="telefono modo-panel-b">
+        <img class="modo-img activo" data-modo="simple" decoding="async" srcset="assets/app3/A-01-hoy.webp" src="assets/app3/A-01-hoy.jpg" alt="El día de hoy: qué toca y qué ya se hizo." width="374" height="846">
+        <img class="modo-img" data-modo="detalle" decoding="async" srcset="assets/app3/A-05-estudios.webp" src="assets/app3/A-05-estudios.jpg" alt="Estudios y laboratorio, con cada resultado." width="374" height="846" loading="lazy">
+        <img class="modo-img" data-modo="familia" decoding="async" srcset="assets/app3/A-13-progreso.webp" src="assets/app3/A-13-progreso.jpg" alt="El progreso que la familia puede ver." width="374" height="846" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
