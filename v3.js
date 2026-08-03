@@ -66,7 +66,13 @@
     let ultimo = -1;
     let listo = false;
 
-    const ruta = (i) => `assets/seq/f_${String(i + 1).padStart(3, "0")}.jpg`;
+    // Dos juegos: 3200x1800 WebP para escritorio Retina (el canvas cubre
+    // 2880x1800 sin reescalar) y 1280 JPG para el resto. Si el WebP falla
+    // (Safari viejo), se cae al juego ligero: nunca un hero vacío.
+    let alta = innerWidth >= 900 && (devicePixelRatio || 1) > 1.3;
+    const ruta = (i) => alta
+      ? `assets/seq2x/f_${String(i + 1).padStart(3, "0")}.webp`
+      : `assets/seq/f_${String(i + 1).padStart(3, "0")}.jpg`;
 
     const medir = () => {
       if (!lienzo) return;
@@ -126,12 +132,23 @@
     };
 
     const cargar = () => {
-      pedir(0).onload = () => { listo = true; medir(); pintar(0); };
+      const primero = pedir(0);
+      primero.onload = () => { listo = true; medir(); pintar(0); };
+      primero.onerror = () => {
+        if (!alta) return;
+        alta = false; cuadros.length = 0; listo = false;
+        cargar();
+      };
       if (document.readyState === "complete") cargarResto();
       else addEventListener("load", cargarResto, { once: true });
     };
 
     const avanzar = () => {
+      // Safari puede medir antes de que el CSS asiente: si la caja real ya no
+      // coincide con el búfer, se remide — un hero borroso no se negocia.
+      if (lienzo && lienzo.clientWidth * Math.min(devicePixelRatio || 1, 2) !== lienzo.width) {
+        medir();
+      }
       const caja = recorrido.getBoundingClientRect();
       const total = recorrido.offsetHeight - innerHeight;
       const p = total > 0 ? Math.min(Math.max(-caja.top / total, 0), 1) : 0;
@@ -154,6 +171,8 @@
     cargar();
     addEventListener("scroll", avanzar, { passive: true });
     addEventListener("resize", () => { medir(); avanzar(); });
+    // Safari mide antes de asentar el layout: al load se remide y repinta
+    addEventListener("load", () => { medir(); avanzar(); }, { once: true });
     avanzar();
   }
 
